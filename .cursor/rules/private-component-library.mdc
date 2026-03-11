@@ -1,0 +1,54 @@
+---
+description: Komponenten aus Bibliotheken in der privaten Componentenbibliothek ablegen (nach Kategorien)
+alwaysApply: true
+---
+
+# Private Componentenbibliothek
+
+Wenn du **Elemente/Komponenten aus Bibliotheken** (z. B. shadcn, Aceternity, React Bits, Code-Snippets) vom Nutzer bekommst, werden diese in der **zentralen privaten Componentenbibliothek** abgelegt – **nach Kategorien sortiert**.
+
+## Zentraler Pfad
+
+- **Bibliothek:** `C:\Users\User\Documents\GitHub\Bibliothek`
+- In jedem Projekt: Komponenten von dort einbinden (z. B. kopieren, Symlink oder Build-Step), nicht pro Projekt neu ablegen.
+
+## Kategorien (Ordnerstruktur)
+
+Komponenten werden **nach Kategorie** abgelegt, nicht nach Quelle:
+
+| Kategorie   | Ordner            | Beispiele                    |
+|------------|--------------------|-----------------------------|
+| Button     | `Bibliothek/Button/`     | PrimaryButton, IconButton   |
+| Background | `Bibliothek/Background/` | Spotlight, Gradient, Mesh  |
+| Card       | `Bibliothek/Card/`       | Card, FeatureCard           |
+| Layout     | `Bibliothek/Layout/`     | Section, Container, Grid    |
+| Navigation | `Bibliothek/Navigation/`| Header, Footer, Menu        |
+| Form       | `Bibliothek/Form/`       | Input, Checkbox, FormField  |
+| Overlay    | `Bibliothek/Overlay/`    | Modal, Drawer, CookieBanner|
+| Animation  | `Bibliothek/Animation/`  | Parallax, FadeIn, Spline    |
+| Typography | `Bibliothek/Typography/` | Heading, Text               |
+| Sonstige   | `Bibliothek/Other/`      | Alles, was keiner Kategorie zuordbar ist |
+
+Neue Kategorien bei Bedarf anlegen (z. B. `Hero/`, `3d/`).
+
+## Vorgehen
+
+1. **Ablegen:** Jede übergebene Bibliotheks-Komponente in `C:\Users\User\Documents\GitHub\Bibliothek\<Kategorie>/` speichern.
+2. **Dateiname:** aussagekräftig, z. B. `Spotlight.tsx`, `SplineScene.tsx`, `Card.tsx`. Bei mehreren Varianten: `Card-basic.tsx`, `Card-feature.tsx`.
+3. **Abhängigkeiten:** In `Bibliothek/README.md` oder pro Kategorie dokumentieren (z. B. `cn`, framer-motion, welche npm-Pakete).
+4. **Im Projekt:** Komponenten aus der Bibliothek kopieren oder per Pfad einbinden; Imports (`@/lib/utils` etc.) an das jeweilige Projekt anpassen.
+
+## Sparsame Verwendung (Highlights)
+
+**Bibliotheks-Highlights** (z. B. ShinyButton, Spotlight, LiquidButton) gezielt und sparsam einsetzen – sie sollen aufwerten, nicht überladen:
+
+- **Pro Seite maximal 1×** ein solches Highlight-Element im Seiteninhalt (z. B. nur ein ShinyLink pro Seite oder nur ein Spotlight pro Seite).
+- **Im Header maximal 1×** ein Highlight-Element (z. B. nur ein besonderer Button wie „Projekt starten“).
+- Nicht mehrere Highlights derselben oder verschiedener Arten auf einer Seite stapeln; lieber eine starke Akzentstelle als viele.
+
+## Kurz-Checkliste
+
+- [ ] Komponente vom Nutzer erhalten?
+- [ ] Kategorie wählen (Button, Background, Card, …).
+- [ ] In `C:\Users\User\Documents\GitHub\Bibliothek\<Kategorie>/<Name>.tsx` ablegen.
+- [ ] Imports ggf. auf generisch halten oder in README dokumentieren.
