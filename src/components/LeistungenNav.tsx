@@ -10,9 +10,18 @@ const LEISTUNGEN_ITEMS = [
   { href: "/leistungen/paid-ads", label: "Paid Ads" },
 ] as const;
 
-export function LeistungenNav() {
-  const [open, setOpen] = useState(false);
+type LeistungenNavProps = {
+  open?: boolean;
+  onOpenChange?: (open: boolean) => void;
+};
+
+export function LeistungenNav({ open: controlledOpen, onOpenChange }: LeistungenNavProps = {}) {
+  const [internalOpen, setInternalOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+
+  const isControlled = onOpenChange !== undefined;
+  const open = isControlled ? (controlledOpen ?? false) : internalOpen;
+  const setOpen = isControlled ? (value: boolean) => onOpenChange?.(value) : setInternalOpen;
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -20,13 +29,13 @@ export function LeistungenNav() {
     };
     document.addEventListener("click", handleClickOutside);
     return () => document.removeEventListener("click", handleClickOutside);
-  }, []);
+  }, [isControlled]);
 
   return (
     <div className="relative" ref={ref}>
       <button
         type="button"
-        onClick={() => setOpen((o) => !o)}
+        onClick={() => setOpen(!open)}
         onMouseEnter={() => setOpen(true)}
         className="flex items-center gap-1 rounded-lg py-2 text-sm font-medium text-[var(--steel-graphite)] transition-colors hover:text-[var(--brand-accent)]"
         aria-expanded={open}

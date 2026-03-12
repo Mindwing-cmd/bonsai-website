@@ -9,9 +9,18 @@ const PREISE_ITEMS = [
   { href: "/preise/wartung", label: "Wartung & Betrieb" },
 ] as const;
 
-export function PreiseNav() {
-  const [open, setOpen] = useState(false);
+type PreiseNavProps = {
+  open?: boolean;
+  onOpenChange?: (open: boolean) => void;
+};
+
+export function PreiseNav({ open: controlledOpen, onOpenChange }: PreiseNavProps = {}) {
+  const [internalOpen, setInternalOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+
+  const isControlled = onOpenChange !== undefined;
+  const open = isControlled ? (controlledOpen ?? false) : internalOpen;
+  const setOpen = isControlled ? (value: boolean) => onOpenChange?.(value) : setInternalOpen;
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -19,13 +28,13 @@ export function PreiseNav() {
     };
     document.addEventListener("click", handleClickOutside);
     return () => document.removeEventListener("click", handleClickOutside);
-  }, []);
+  }, [isControlled]);
 
   return (
     <div className="relative" ref={ref}>
       <button
         type="button"
-        onClick={() => setOpen((o) => !o)}
+        onClick={() => setOpen(!open)}
         onMouseEnter={() => setOpen(true)}
         className="flex items-center gap-1 rounded-lg py-2 text-sm font-medium text-[var(--steel-graphite)] transition-colors hover:text-[var(--brand-accent)]"
         aria-expanded={open}

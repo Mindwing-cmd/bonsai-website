@@ -14,8 +14,16 @@ const navLinks = [
   { href: "/kontakt", label: "Kontakt" },
 ] as const;
 
+type OpenNav = "leistungen" | "preise" | null;
+
 export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [openNav, setOpenNav] = useState<OpenNav>(null);
+
+  const handleLeistungenOpen = (open: boolean) =>
+    setOpenNav(open ? "leistungen" : (prev) => (prev === "leistungen" ? null : prev));
+  const handlePreiseOpen = (open: boolean) =>
+    setOpenNav(open ? "preise" : (prev) => (prev === "preise" ? null : prev));
 
   return (
     <header className="fixed left-0 right-0 top-0 z-50 border-b border-[var(--light-industrial)] bg-[var(--background)]/95 backdrop-blur-sm">
@@ -32,8 +40,8 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden items-center gap-8 text-sm font-medium text-[var(--steel-graphite)] md:flex">
-          <LeistungenNav />
-          <PreiseNav />
+          <LeistungenNav open={openNav === "leistungen"} onOpenChange={handleLeistungenOpen} />
+          <PreiseNav open={openNav === "preise"} onOpenChange={handlePreiseOpen} />
           {navLinks.map(({ href, label }) => (
             <Link
               key={href}

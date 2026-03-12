@@ -86,17 +86,51 @@ export default function Home() {
       {/* Über-uns-Teaser mit Spotlight-Highlight */}
       <section className="relative overflow-hidden py-24 md:py-32 bg-[var(--background-alt)] text-[var(--foreground)]">
         <Spotlight className="-top-40 left-0 fill-[var(--brand-accent)]" />
-        <ParallaxSection speed={-0.2} className="relative mx-auto max-w-4xl px-6 md:px-12 text-center">
-          <FadeInOnScroll>
-            <h2 className="font-primary text-3xl font-bold md:text-4xl">
-              Technologie-getriebenes Digital Studio.
+        {/* Dezentes Raster für Struktur */}
+        <div
+          className="pointer-events-none absolute inset-0 z-0 opacity-[0.03]"
+          style={{
+            backgroundImage: `linear-gradient(var(--brand-accent) 1px, transparent 1px),
+                              linear-gradient(90deg, var(--brand-accent) 1px, transparent 1px)`,
+            backgroundSize: "min(80px, 12vw) min(80px, 12vw)",
+          }}
+        />
+        <ParallaxSection speed={-0.2} className="relative z-10 mx-auto max-w-4xl px-6 md:px-12">
+          <FadeInOnScroll className="text-center">
+            {/* Keyword-Pills für Kontext */}
+            <div className="flex flex-wrap justify-center gap-2 md:gap-3">
+              {["Webdesign", "KI-Systeme", "Apps", "Paid Ads"].map((label) => (
+                <span
+                  key={label}
+                  className="rounded-lg border border-[var(--light-industrial)] bg-[var(--background)]/80 px-3 py-1.5 text-xs font-medium uppercase tracking-wider text-[var(--steel-graphite)]"
+                >
+                  {label}
+                </span>
+              ))}
+            </div>
+            <h2 className="mt-8 font-primary text-3xl font-bold md:text-4xl lg:text-5xl">
+              Technologie-getriebenes{" "}
+              <span className="border-b-2 border-[var(--brand-accent)] text-[var(--brand-accent)]">
+                Digital Studio.
+              </span>
             </h2>
-            <p className="mx-auto mt-8 max-w-2xl text-[var(--steel-graphite)]">
-              Webdesign, KI-Systeme & Automatisierung, Web- und Mobile-Apps und Paid Ads. Präzise, technisch, minimal, selbstbewusst.
+            <p className="mx-auto mt-6 max-w-2xl text-[var(--steel-graphite)] md:text-lg">
+              Präzise, technisch, minimal, selbstbewusst – von der Strategie bis zum Launch.
             </p>
-            <Link href="/ueber-uns" className="mt-8 inline-block text-[var(--brand-accent)] font-medium hover:underline">
-              Über uns →
-            </Link>
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+              <Link
+                href="/ueber-uns"
+                className="rounded-xl border-2 border-[var(--brand-accent)] bg-[var(--brand-accent)]/10 px-6 py-3 font-medium text-[var(--brand-accent)] transition-all hover:bg-[var(--brand-accent)] hover:text-[var(--brand-foreground)] hover:shadow-glow"
+              >
+                Über uns
+              </Link>
+              <Link
+                href="/leistungen"
+                className="rounded-xl border-2 border-[var(--light-industrial)] px-6 py-3 font-medium text-[var(--foreground)] transition-colors hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)]"
+              >
+                Leistungen ansehen
+              </Link>
+            </div>
           </FadeInOnScroll>
         </ParallaxSection>
       </section>

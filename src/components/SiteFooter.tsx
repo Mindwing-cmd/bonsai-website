@@ -1,9 +1,13 @@
 import Link from "next/link";
+import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 
 export function SiteFooter() {
   return (
     <footer className="border-t border-[var(--light-industrial)] bg-[var(--background)] py-10">
       <div className="mx-auto max-w-6xl px-6 md:px-12">
+        <div className="mb-6 flex flex-wrap items-center gap-4">
+          <ThemeSwitcher />
+        </div>
         <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
           <span className="text-sm text-[var(--steel-graphite)]">
             © {new Date().getFullYear()} BonS-AI. Webdesign, KI-Systeme, Apps & Paid Ads.

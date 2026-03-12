@@ -150,17 +150,6 @@ export default function UeberUnsPage() {
         </div>
       </section>
 
-      {/* Ansatz & Prozess */}
-      <section className="py-24 md:py-32 bg-[var(--background-alt)]">
-        <div className="mx-auto max-w-4xl px-6 md:px-12">
-          <FadeInOnScroll>
-            <h2 className="font-primary text-2xl font-bold text-[var(--deep-carbon)]">Ansatz & Prozess</h2>
-            <p className="mt-6 text-[var(--steel-graphite)]">
-              Kurzes Kennenlerngespräch → klare Definition von Zielen und Scope → strukturierte Phasen mit Meilensteinen → Umsetzung mit regelmäßiger Abstimmung → Launch und optional Wartung. Transparent, ohne versteckte Überraschungen.
-            </p>
-          </FadeInOnScroll>
-        </div>
-      </section>
     </main>
   );
 }

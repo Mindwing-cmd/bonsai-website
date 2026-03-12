@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Outfit, DM_Sans } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -68,13 +70,22 @@ export default function RootLayout({
       }}
     >
       <body className="antialiased bg-[var(--background)] text-[var(--foreground)]">
+        <Script
+          id="theme-init"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var ids=['steel','carbon-copper','obsidian-emerald','slate-violet','titanium','midnight-cyan','coral-steel','lavender-iron'];var t=ids[Math.floor(Math.random()*ids.length)];document.documentElement.setAttribute('data-theme',t);})();`,
+          }}
+        />
         <OrganizationJsonLd />
-        <SmoothScroll>
-          <SiteHeader />
-          {children}
-          <SiteFooter />
-          <CookieBanner />
-        </SmoothScroll>
+        <ThemeProvider>
+          <SmoothScroll>
+            <SiteHeader />
+            {children}
+            <SiteFooter />
+            <CookieBanner />
+          </SmoothScroll>
+        </ThemeProvider>
       </body>
     </html>
   );
