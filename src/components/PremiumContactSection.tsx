@@ -16,6 +16,8 @@ import {
   Shield,
   Zap,
   Briefcase,
+  ChevronDown,
+  Layers,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { SynapseBackground } from "@/components/ui/synapse-background";
@@ -39,8 +41,8 @@ const contactMethods = [
   {
     icon: MapPin,
     title: "Standort",
-    description: "Ihre Region – wir sind digital für Sie da",
-    value: "Deutschland",
+    description: "Wir sind digital für Sie da",
+    value: "Deutschlandweit",
     link: "#",
   },
 ];
@@ -117,6 +119,7 @@ export function PremiumContactSection() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState("");
   const containerRef = useRef<HTMLDivElement>(null);
   const reduceMotion = usePrefersReducedMotion();
 
@@ -146,9 +149,24 @@ export function PremiumContactSection() {
     e.preventDefault();
     if (!validateForm()) return;
     setIsSubmitting(true);
-    await new Promise((r) => setTimeout(r, 1500));
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+    setSubmitError("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...formData, source: "Kontaktseite" }),
+      });
+      if (!res.ok) {
+        const data = (await res.json().catch(() => ({}))) as { error?: string };
+        setSubmitError(data.error ?? "Versand fehlgeschlagen. Bitte später erneut versuchen.");
+        return;
+      }
+      setIsSubmitted(true);
+    } catch {
+      setSubmitError("Netzwerkfehler. Bitte Verbindung prüfen und erneut versuchen.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -356,11 +374,22 @@ export function PremiumContactSection() {
                     />
                   </div>
 
-                  <div>
+                  <div className="relative">
+                    <label htmlFor="contact-project-type" className="sr-only">
+                      Projekttyp (optional)
+                    </label>
+                    <Layers className="pointer-events-none absolute left-3 top-1/2 z-[1] h-5 w-5 -translate-y-1/2 text-white/40" aria-hidden />
                     <select
+                      id="contact-project-type"
                       value={formData.projectType}
                       onChange={(e) => handleInputChange("projectType", e.target.value)}
-                      className="w-full px-4 py-4 rounded-xl border-2 border-white/[0.15] bg-white/[0.08] text-[var(--foreground)] focus:outline-none focus:border-[var(--brand-accent)] transition-colors"
+                      className={cn(
+                        "w-full cursor-pointer appearance-none rounded-xl border-2 border-white/[0.15] bg-white/[0.08] py-4 pl-10 pr-12 text-base",
+                        formData.projectType ? "text-[var(--foreground)]" : "text-white/40",
+                        "transition-colors [color-scheme:dark]",
+                        "focus:border-[var(--brand-accent)] focus:outline-none",
+                        "disabled:cursor-not-allowed disabled:opacity-50"
+                      )}
                     >
                       <option value="">Projekttyp (optional)</option>
                       <option value="webdesign">Webdesign</option>
@@ -369,6 +398,10 @@ export function PremiumContactSection() {
                       <option value="paid-ads">Paid Ads</option>
                       <option value="sonstiges">Sonstiges</option>
                     </select>
+                    <ChevronDown
+                      className="pointer-events-none absolute right-4 top-1/2 h-5 w-5 -translate-y-1/2 text-white/50"
+                      aria-hidden
+                    />
                   </div>
 
                   <div className="relative">
@@ -411,6 +444,9 @@ export function PremiumContactSection() {
                       </>
                     )}
                   </motion.button>
+                  {submitError && (
+                    <p className="mt-2 text-sm text-red-400">{submitError}</p>
+                  )}
                 </motion.form>
               ) : (
                 <motion.div

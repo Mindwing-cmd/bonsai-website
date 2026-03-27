@@ -46,7 +46,7 @@ export function SiteHeader() {
             <Link
               key={href}
               href={href}
-              className="rounded-lg py-2 transition-colors hover:text-[var(--brand-accent)]"
+              className="flex min-h-[44px] items-center rounded-lg py-2 transition-colors hover:text-[var(--brand-accent)]"
             >
               {label}
             </Link>

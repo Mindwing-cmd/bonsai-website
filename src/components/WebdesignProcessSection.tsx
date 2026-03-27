@@ -54,7 +54,7 @@ const PROCESS_DATA: TimelineEntry[] = [
     ),
   },
   {
-    title: "Informationsarchitektur & UX",
+    title: "Architektur & UX",
     content: (
       <>
         <StepImages srcs={STEP_IMAGES[1]!} stepLabel="Informationsarchitektur & UX" />

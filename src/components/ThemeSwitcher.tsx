@@ -4,14 +4,10 @@ import { useTheme, THEME_IDS, type ThemeId } from "@/components/ThemeProvider";
 import { useRef, useState, useEffect } from "react";
 
 const THEME_LABELS: Record<ThemeId, string> = {
-  steel: "Steel Blue",
-  "carbon-copper": "Carbon & Copper",
-  "obsidian-emerald": "Obsidian & Emerald",
-  "slate-violet": "Slate & Violet",
-  titanium: "Titanium",
-  "midnight-cyan": "Midnight Cyan",
-  "coral-steel": "Coral Steel",
   "lavender-iron": "Lavender Iron",
+  "coral-steel": "Coral Steel",
+  "carbon-copper": "Carbon & Copper",
+  titanium: "Titanium",
 };
 
 export function ThemeSwitcher() {
@@ -32,7 +28,7 @@ export function ThemeSwitcher() {
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
-        className="rounded-lg border-2 border-[var(--light-industrial)] bg-[var(--background-alt)] px-3 py-2 text-sm font-medium text-[var(--foreground)] transition-colors hover:border-[var(--brand-accent)] hover:shadow-glow"
+        className="min-h-[44px] min-w-[44px] rounded-lg border-2 border-[var(--light-industrial)] bg-[var(--background-alt)] px-3 py-2 text-sm font-medium text-[var(--foreground)] transition-colors hover:border-[var(--brand-accent)] hover:shadow-glow"
         aria-expanded={open}
         aria-haspopup="listbox"
         aria-label="Farbkonzept wechseln"
@@ -54,7 +50,7 @@ export function ThemeSwitcher() {
                   setTheme(id);
                   setOpen(false);
                 }}
-                className={`block w-full px-4 py-2.5 text-left text-sm transition-colors hover:bg-[var(--background)] hover:text-[var(--brand-accent)] ${
+                className={`flex min-h-[44px] w-full items-center px-4 py-2.5 text-left text-sm transition-colors hover:bg-[var(--background)] hover:text-[var(--brand-accent)] ${
                   theme === id ? "font-medium text-[var(--brand-accent)]" : "text-[var(--steel-graphite)]"
                 }`}
               >

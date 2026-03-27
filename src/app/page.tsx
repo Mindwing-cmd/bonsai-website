@@ -6,6 +6,13 @@ import { StaggeredReveal, StaggeredRevealItem } from "@/components/StaggeredReve
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Spotlight } from "@/components/ui/spotlight";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
+import { HomeContactForm } from "@/components/HomeContactForm";
+
+export const metadata = {
+  title: "BonS-AI – Webdesign & KI-Systeme aus Thüringen",
+  description:
+    "Digitales Studio aus Thüringen: Webdesign, KI-Systeme, Web- und Mobile-Apps. Für Unternehmen in Thüringen, Erfurt, Jena und bundesweit. Präzise, minimal, zukunftssicher.",
+};
 
 const LEISTUNGEN = [
   {
@@ -138,26 +145,33 @@ export default function Home() {
       {/* Kontakt-Teaser */}
       <section className="py-24 md:py-32 bg-[var(--background-alt)]">
         <div className="mx-auto max-w-6xl px-6 md:px-12">
-          <FadeInOnScroll>
-            <h2 className="font-primary text-3xl font-bold tracking-tight text-[var(--deep-carbon)] md:text-4xl">
-              <span className="border-b-2 border-[var(--brand-accent)]">Kontakt</span> aufnehmen
-            </h2>
-            <p className="mt-6 text-[var(--steel-graphite)]">
-              Projekt im Kopf? Wir melden uns zeitnah.
-            </p>
-            <div className="mt-8 flex flex-wrap items-center gap-6">
-              <Link
-                href="/kontakt"
-                className="rounded-xl bg-[var(--brand-accent)] px-6 py-3 font-medium text-[var(--brand-foreground)] shadow-sm transition-all hover:opacity-95 hover:shadow-md"
-              >
-                Gespräch vereinbaren
-              </Link>
-              <a
-                href="mailto:bonsai.schwinger@gmail.com"
-                className="rounded-xl border-2 border-[var(--foreground)] px-6 py-3 font-medium text-[var(--foreground)] transition-colors hover:bg-[var(--foreground)] hover:text-[var(--background)]"
-              >
-                bonsai.schwinger@gmail.com
-              </a>
+          <FadeInOnScroll className="grid grid-cols-1 gap-10 lg:grid-cols-5 lg:gap-12">
+            <div className="min-w-0 lg:col-span-2">
+              <h2 className="font-primary text-3xl font-bold tracking-tight text-[var(--deep-carbon)] md:text-4xl">
+                <span className="border-b-2 border-[var(--brand-accent)]">Kontakt</span> aufnehmen
+              </h2>
+              <p className="mt-6 text-[var(--steel-graphite)]">
+                Projekt im Kopf? Für Unternehmen in Thüringen und darüber hinaus – wir melden uns zeitnah.
+              </p>
+              <div className="mt-8 flex flex-wrap items-center gap-4">
+                <Link
+                  href="/kontakt"
+                  className="shrink-0 rounded-xl bg-[var(--brand-accent)] px-6 py-3 font-medium text-[var(--brand-foreground)] shadow-sm transition-all hover:opacity-95 hover:shadow-md"
+                >
+                  Gespräch vereinbaren
+                </Link>
+                <a
+                  href="mailto:bonsai.schwinger@gmail.com"
+                  className="min-w-0 rounded-xl border-2 border-[var(--light-industrial)] px-4 py-3 font-medium text-[var(--foreground)] transition-colors hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)] sm:px-6 sm:break-all"
+                >
+                  bonsai.schwinger@gmail.com
+                </a>
+              </div>
+            </div>
+            <div className="min-w-0 lg:col-span-3">
+              <div className="rounded-xl border-2 border-[var(--light-industrial)] bg-[var(--background)]/50 p-6 md:p-8">
+                <HomeContactForm />
+              </div>
             </div>
           </FadeInOnScroll>
         </div>

@@ -1,13 +1,18 @@
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import { FadeInOnScroll } from "@/components/FadeInOnScroll";
 import { StaggeredReveal, StaggeredRevealItem } from "@/components/StaggeredReveal";
-import { CelestialSphere } from "@/components/ui/celestial-sphere";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+
+const CelestialSphere = dynamic(
+  () => import("@/components/ui/celestial-sphere").then((m) => ({ default: m.CelestialSphere })),
+  { ssr: false }
+);
 
 export const metadata = {
   title: "Über uns – BonS-AI",
-  description: "Technologie-getriebenes Digital Studio. Wer wir sind und wie wir arbeiten.",
+  description: "BonS-AI – Digitales Studio aus Thüringen. Webdesign, KI-Systeme und digitale Innovation. Wer wir sind und wie wir arbeiten.",
 };
 
 const WERTE = [
@@ -41,7 +46,7 @@ export default function UeberUnsPage() {
               Ihre digitale Präsenz – unser Anspruch
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-base text-[var(--steel-graphite)] md:text-lg">
-              Mit Kompetenz und Fokus: Moderne Web- und KI-Lösungen, die auf Sie eingehen – von der Strategie bis zum Launch.
+              Aus Thüringen: Moderne Web- und KI-Lösungen, die auf Sie eingehen – von der Strategie bis zum Launch.
             </p>
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               <Link
@@ -73,6 +78,7 @@ export default function UeberUnsPage() {
                     height={680}
                     className="w-full object-contain object-bottom"
                     priority
+                    sizes="(max-width: 1024px) 320px, 420px"
                   />
                 </div>
                 {/* Karte nur für Text – Bild liegt daneben bzw. darunter */}
@@ -115,11 +121,11 @@ export default function UeberUnsPage() {
         </div>
       </section>
 
-      {/* Positioning */}
+      {/* Positionierung */}
       <section className="py-24 md:py-32 bg-[var(--background)]">
         <div className="mx-auto max-w-6xl px-6 md:px-12">
           <FadeInOnScroll>
-            <h2 className="font-primary text-2xl font-bold text-[var(--foreground)] md:text-3xl">Positioning</h2>
+            <h2 className="font-primary text-2xl font-bold text-[var(--foreground)] md:text-3xl">Positionierung</h2>
             <p className="mt-6 max-w-2xl text-[var(--steel-graphite)]">
               Wir entwickeln digitale Produkte und Markenauftritte, die funktionieren und überzeugen. Von der Strategie über Design bis zur technischen Umsetzung – mit klarem Prozess und messbarem Ergebnis.
             </p>

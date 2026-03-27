@@ -1,4 +1,5 @@
 import { FadeInOnScroll } from "@/components/FadeInOnScroll";
+import { LEGAL } from "@/data/legal";
 
 export const metadata = {
   title: "Impressum – BonS-AI",
@@ -20,39 +21,88 @@ export default function ImpressumPage() {
           <section>
             <h2 className="font-primary text-lg font-semibold text-[var(--deep-carbon)]">Anbieter</h2>
             <p className="mt-2">
-              BonS-AI<br />
-              [Firmenname / Inhaber]<br />
-              [Straße und Hausnummer]<br />
-              [PLZ und Ort]
+              {LEGAL.companyName}
+              <br />
+              {LEGAL.anbieter}
+              <br />
+              {LEGAL.strasse}
+              <br />
+              {LEGAL.plzOrt}
             </p>
           </section>
+
           <section>
             <h2 className="font-primary text-lg font-semibold text-[var(--deep-carbon)]">Kontakt</h2>
             <p className="mt-2">
-              E-Mail: bonsai.schwinger@gmail.com<br />
-              Telefon: +49 1515 6197764
+              Telefon:{" "}
+              <a href={`tel:${LEGAL.telefonInternational}`} className="text-[var(--brand-accent)] hover:underline">
+                {LEGAL.telefon}
+              </a>
+              <br />
+              E-Mail:{" "}
+              <a href={`mailto:${LEGAL.email}`} className="text-[var(--brand-accent)] hover:underline">
+                {LEGAL.email}
+              </a>
             </p>
           </section>
+
+          {LEGAL.ustIdNr ? (
+            <section>
+              <h2 className="font-primary text-lg font-semibold text-[var(--deep-carbon)]">Umsatzsteuer-ID</h2>
+              <p className="mt-2">
+                Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: {LEGAL.ustIdNr}
+              </p>
+            </section>
+          ) : null}
+
           <section>
-            <h2 className="font-primary text-lg font-semibold text-[var(--deep-carbon)]">Umsatzsteuer-ID</h2>
+            <h2 className="font-primary text-lg font-semibold text-[var(--deep-carbon)]">
+              Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV
+            </h2>
             <p className="mt-2">
-              Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: [USt-IdNr.]
+              {LEGAL.verantwortlich}
             </p>
           </section>
+
           <section>
-            <h2 className="font-primary text-lg font-semibold text-[var(--deep-carbon)]">Verantwortlich für den Inhalt</h2>
-            <p className="mt-2">
-              [Name und Anschrift]
-            </p>
-          </section>
-          <section>
-            <h2 className="font-primary text-lg font-semibold text-[var(--deep-carbon)]">Streitschlichtung</h2>
+            <h2 className="font-primary text-lg font-semibold text-[var(--deep-carbon)]">EU-Streitschlichtung</h2>
             <p className="mt-2">
               Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:{" "}
-              <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer" className="text-[var(--brand-accent)] hover:underline">
+              <a
+                href="https://ec.europa.eu/consumers/odr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[var(--brand-accent)] hover:underline"
+              >
                 https://ec.europa.eu/consumers/odr
               </a>
-              . Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+              .
+              <br />
+              Unsere E-Mail-Adresse finden Sie oben im Impressum.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="font-primary text-lg font-semibold text-[var(--deep-carbon)]">
+              Verbraucherstreitbeilegung / Universalschlichtungsstelle
+            </h2>
+            <p className="mt-2">
+              Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle
+              teilzunehmen.
+            </p>
+          </section>
+
+          <section className="border-t border-[var(--light-industrial)] pt-8 text-xs text-[var(--steel-graphite)]">
+            <p>
+              Quelle:{" "}
+              <a
+                href="https://www.e-recht24.de/impressum-generator.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[var(--brand-accent)] hover:underline"
+              >
+                https://www.e-recht24.de/impressum-generator.html
+              </a>
             </p>
           </section>
         </FadeInOnScroll>

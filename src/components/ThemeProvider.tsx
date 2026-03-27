@@ -2,7 +2,7 @@
 
 import React, { createContext, useCallback, useContext, useEffect, useState } from "react";
 
-export const THEME_IDS = ["steel", "carbon-copper", "obsidian-emerald", "slate-violet", "titanium", "midnight-cyan", "coral-steel", "lavender-iron"] as const;
+export const THEME_IDS = ["lavender-iron", "coral-steel", "carbon-copper", "titanium"] as const;
 export type ThemeId = (typeof THEME_IDS)[number];
 
 function isValidTheme(value: string): value is ThemeId {
@@ -23,7 +23,7 @@ export function useTheme(): ThemeContextValue {
 }
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<ThemeId>("steel");
+  const [theme, setThemeState] = useState<ThemeId>("lavender-iron");
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {

@@ -36,7 +36,7 @@ export function PreiseNav({ open: controlledOpen, onOpenChange }: PreiseNavProps
         type="button"
         onClick={() => setOpen(!open)}
         onMouseEnter={() => setOpen(true)}
-        className="flex items-center gap-1 rounded-lg py-2 text-sm font-medium text-[var(--steel-graphite)] transition-colors hover:text-[var(--brand-accent)]"
+        className="flex min-h-[44px] items-center gap-1 rounded-lg py-2 text-sm font-medium text-[var(--steel-graphite)] transition-colors hover:text-[var(--brand-accent)]"
         aria-expanded={open}
         aria-haspopup="true"
         aria-controls="preise-menu"

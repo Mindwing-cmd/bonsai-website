@@ -33,13 +33,13 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
-  title: "BonS-AI – Web Design & Digital Innovation",
+  title: "BonS-AI – Webdesign & KI-Systeme aus Thüringen",
   description:
-    "High-end technology-driven digital studio. Web design and AI-powered systems. Precise, minimal, confident.",
+    "Digitales Studio aus Thüringen: Webdesign, KI-Systeme und digitale Innovation. Präzise, minimal, zukunftssicher – für Unternehmen in Thüringen und darüber hinaus.",
   openGraph: {
-    title: "BonS-AI – Web Design & Digital Innovation",
+    title: "BonS-AI – Webdesign & KI-Systeme aus Thüringen",
     description:
-      "High-end technology-driven digital studio. Web design and AI-powered systems. Precise, minimal, confident.",
+      "Digitales Studio aus Thüringen: Webdesign, KI-Systeme und digitale Innovation. Für Unternehmen in Thüringen und darüber hinaus.",
     url: BASE_URL,
     siteName: "BonS-AI",
     locale: "de_DE",
@@ -47,9 +47,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "BonS-AI – Web Design & Digital Innovation",
+    title: "BonS-AI – Webdesign & KI-Systeme aus Thüringen",
     description:
-      "High-end technology-driven digital studio. Web design and AI-powered systems.",
+      "Digitales Studio aus Thüringen: Webdesign, KI-Systeme und digitale Innovation.",
   },
   alternates: {
     canonical: BASE_URL,
@@ -74,7 +74,7 @@ export default function RootLayout({
           id="theme-init"
           strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
-            __html: `(function(){var ids=['steel','carbon-copper','obsidian-emerald','slate-violet','titanium','midnight-cyan','coral-steel','lavender-iron'];var t=ids[Math.floor(Math.random()*ids.length)];document.documentElement.setAttribute('data-theme',t);})();`,
+            __html: `(function(){var ids=['lavender-iron','coral-steel','carbon-copper','titanium'];var t=ids[Math.floor(Math.random()*ids.length)];document.documentElement.setAttribute('data-theme',t);})();`,
           }}
         />
         <OrganizationJsonLd />

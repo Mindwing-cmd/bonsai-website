@@ -70,17 +70,17 @@ export function Timeline({ data, title, subtitle }: TimelineProps) {
             key={index}
             className="flex justify-start pt-10 md:pt-40 md:gap-10"
           >
-            <div className="sticky top-40 z-40 flex max-w-xs flex-col self-start md:w-full md:max-w-sm md:flex-row md:items-center lg:max-w-sm">
+            <div className="sticky top-40 z-40 flex min-w-0 max-w-xs flex-col self-start md:w-full md:max-w-sm md:flex-row md:items-center lg:max-w-sm">
               <div className="absolute left-3 h-10 w-10 md:left-3 flex items-center justify-center rounded-full bg-[var(--background)]">
                 <div className="h-4 w-4 rounded-full border border-[var(--light-industrial)] bg-[var(--card)] p-2" />
               </div>
-              <h3 className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold text-[var(--steel-graphite)]">
+              <h3 className="hidden md:block break-words text-xl md:pl-20 md:text-5xl font-bold text-[var(--steel-graphite)] whitespace-pre-line">
                 {item.title}
               </h3>
             </div>
 
             <div className="relative pl-20 pr-4 md:pl-4 w-full">
-              <h3 className="md:hidden block text-2xl mb-4 text-left font-bold text-[var(--steel-graphite)]">
+              <h3 className="md:hidden block break-words text-2xl mb-4 text-left font-bold text-[var(--steel-graphite)] whitespace-pre-line">
                 {item.title}
               </h3>
               {item.content}
