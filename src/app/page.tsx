@@ -7,12 +7,9 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Spotlight } from "@/components/ui/spotlight";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { HomeContactForm } from "@/components/HomeContactForm";
+import { buildPageMetadata } from "@/data/seo";
 
-export const metadata = {
-  title: "BonS-AI – Webdesign & KI-Systeme aus Thüringen",
-  description:
-    "Digitales Studio aus Thüringen: Webdesign, KI-Systeme, Web- und Mobile-Apps. Für Unternehmen in Thüringen, Erfurt, Jena und bundesweit. Präzise, minimal, zukunftssicher.",
-};
+export const metadata = buildPageMetadata("home");
 
 const LEISTUNGEN = [
   {
@@ -83,9 +80,19 @@ export default function Home() {
             ))}
           </StaggeredReveal>
           <FadeInOnScroll className="mt-10">
-            <Link href="/leistungen/webdesign" className="text-[var(--brand-accent)] font-medium hover:underline">
-              Alle Leistungen ansehen
-            </Link>
+            <div className="flex flex-wrap items-center gap-4 text-sm">
+              <Link href="/leistungen/webdesign" className="font-medium text-[var(--brand-accent)] hover:underline">
+                Alle Leistungen ansehen
+              </Link>
+              <span className="text-[var(--steel-graphite)]">•</span>
+              <Link href="/referenzen" className="font-medium text-[var(--brand-accent)] hover:underline">
+                Referenzen entdecken
+              </Link>
+              <span className="text-[var(--steel-graphite)]">•</span>
+              <Link href="/preise" className="font-medium text-[var(--brand-accent)] hover:underline">
+                Preise prüfen
+              </Link>
+            </div>
           </FadeInOnScroll>
         </div>
       </ParallaxSection>
@@ -122,7 +129,7 @@ export default function Home() {
               </span>
             </h2>
             <p className="mx-auto mt-6 max-w-2xl text-[var(--steel-graphite)] md:text-lg">
-              Präzise, technisch, minimal, selbstbewusst – von der Strategie bis zum Launch.
+              Präzise, technisch, minimal, selbstbewusst – aus Thüringen für Unternehmen mit klaren Wachstumszielen.
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
               <Link
@@ -166,6 +173,12 @@ export default function Home() {
                 >
                   bonsai.schwinger@gmail.com
                 </a>
+                <Link
+                  href="/referenzen"
+                  className="rounded-xl border-2 border-[var(--light-industrial)] px-4 py-3 font-medium text-[var(--foreground)] transition-colors hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)] sm:px-6"
+                >
+                  Referenzen ansehen
+                </Link>
               </div>
             </div>
             <div className="min-w-0 lg:col-span-3">

@@ -5,6 +5,7 @@ import { InteractiveNeuralVortex } from "@/components/InteractiveNeuralVortex";
 import { WebdesignPageWithTabs } from "@/components/WebdesignPageWithTabs";
 import { LeistungDetailWithRoadmap } from "@/components/LeistungDetailWithRoadmap";
 import { ROADMAPS } from "@/data/leistungen-roadmaps";
+import { buildLeistungMetadata } from "@/data/seo";
 
 const LEISTUNGEN_DATA: Record<
   string,
@@ -77,8 +78,8 @@ type Props = { params: Promise<{ slug: string }> };
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
   const data = LEISTUNGEN_DATA[slug];
-  if (!data) return { title: "Leistung – BonS-AI" };
-  return { title: `${data.title} – BonS-AI`, description: data.outcome };
+  if (!data) return buildLeistungMetadata(slug, "Leistung", "Leistungsdetails von BonS-AI");
+  return buildLeistungMetadata(slug, data.title, data.outcome);
 }
 
 export async function generateStaticParams() {
@@ -138,6 +139,9 @@ export default async function LeistungDetailPage({ params }: Props) {
             <span className="border-b-2 border-[var(--brand-accent)]">{data.title}</span>
           </h1>
           <p className="mt-6 text-lg text-[var(--steel-graphite)]">{data.outcome}</p>
+          <p className="mt-3 text-sm text-[var(--steel-graphite)]">
+            Umsetzung für Unternehmen in Thüringen mit klarer Struktur, messbaren KPIs und direktem Fokus auf Conversion.
+          </p>
         </FadeInOnScroll>
 
         <FadeInOnScroll className="mt-12">
@@ -170,12 +174,26 @@ export default async function LeistungDetailPage({ params }: Props) {
         )}
 
         <FadeInOnScroll className="mt-16">
-          <Link
-            href="/kontakt"
-            className="inline-block rounded-xl bg-[var(--brand-accent)] px-6 py-3 font-medium text-[var(--brand-foreground)] transition-colors hover:opacity-95 hover:shadow-md"
-          >
-            Gespräch vereinbaren
-          </Link>
+          <div className="flex flex-wrap items-center gap-4">
+            <Link
+              href="/kontakt"
+              className="inline-block rounded-xl bg-[var(--brand-accent)] px-6 py-3 font-medium text-[var(--brand-foreground)] transition-colors hover:opacity-95 hover:shadow-md"
+            >
+              Gespräch vereinbaren
+            </Link>
+            <Link
+              href="/referenzen"
+              className="inline-block rounded-xl border-2 border-[var(--light-industrial)] px-6 py-3 font-medium text-[var(--foreground)] transition-colors hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)]"
+            >
+              Passende Referenzen
+            </Link>
+            <Link
+              href="/preise"
+              className="inline-block rounded-xl border-2 border-[var(--light-industrial)] px-6 py-3 font-medium text-[var(--foreground)] transition-colors hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)]"
+            >
+              Preise ansehen
+            </Link>
+          </div>
         </FadeInOnScroll>
       </div>
       </InteractiveNeuralVortex>

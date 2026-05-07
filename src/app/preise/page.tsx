@@ -4,11 +4,9 @@ import { StaggeredReveal, StaggeredRevealItem } from "@/components/StaggeredReve
 import { PricingCard, ShaderCanvas } from "@/components/ui/animated-glassy-pricing";
 import { ShinyLink } from "@/components/ui/shiny-button";
 import { WEBSEITEN_PLÄNE, WARTUNG_PLÄNE } from "@/data/preise-pakete";
+import { buildPageMetadata } from "@/data/seo";
 
-export const metadata = {
-  title: "Preise – BonS-AI",
-  description: "Übersicht zu Webdesign-Preisen sowie Hosting und Wartung.",
-};
+export const metadata = buildPageMetadata("preise");
 
 export default function PreisePage() {
   return (

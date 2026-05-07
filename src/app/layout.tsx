@@ -8,8 +8,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { CookieBanner } from "@/components/CookieBanner";
 import { OrganizationJsonLd } from "@/components/OrganizationJsonLd";
-
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://bons-ai.de";
+import { buildPageMetadata, getWebmasterVerification } from "@/data/seo";
 
 const fontPrimary = Outfit({
   subsets: ["latin"],
@@ -32,28 +31,8 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL(BASE_URL),
-  title: "BonS-AI – Webdesign & KI-Systeme aus Thüringen",
-  description:
-    "Digitales Studio aus Thüringen: Webdesign, KI-Systeme und digitale Innovation. Präzise, minimal, zukunftssicher – für Unternehmen in Thüringen und darüber hinaus.",
-  openGraph: {
-    title: "BonS-AI – Webdesign & KI-Systeme aus Thüringen",
-    description:
-      "Digitales Studio aus Thüringen: Webdesign, KI-Systeme und digitale Innovation. Für Unternehmen in Thüringen und darüber hinaus.",
-    url: BASE_URL,
-    siteName: "BonS-AI",
-    locale: "de_DE",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "BonS-AI – Webdesign & KI-Systeme aus Thüringen",
-    description:
-      "Digitales Studio aus Thüringen: Webdesign, KI-Systeme und digitale Innovation.",
-  },
-  alternates: {
-    canonical: BASE_URL,
-  },
+  ...buildPageMetadata("home"),
+  verification: getWebmasterVerification(),
 };
 
 export default function RootLayout({

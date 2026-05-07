@@ -3,6 +3,7 @@ import Image from "next/image";
 import { FadeInOnScroll } from "@/components/FadeInOnScroll";
 import { StaggeredReveal, StaggeredRevealItem } from "@/components/StaggeredReveal";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import { buildPageMetadata } from "@/data/seo";
 
 const REFERENZEN: Array<{
   slug: string;
@@ -36,10 +37,7 @@ const REFERENZEN: Array<{
   },
 ];
 
-export const metadata = {
-  title: "Referenzen – BonS-AI",
-  description: "Ausgewählte Projekte: Webdesign, KI-Systeme & Automatisierung, Web- und Mobile-Apps, Paid Ads.",
-};
+export const metadata = buildPageMetadata("referenzen");
 
 export default function ReferenzenPage() {
   return (

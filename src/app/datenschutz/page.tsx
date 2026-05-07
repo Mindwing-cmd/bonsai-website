@@ -1,10 +1,8 @@
 import { FadeInOnScroll } from "@/components/FadeInOnScroll";
 import { DatenschutzContent } from "@/components/DatenschutzContent";
+import { buildPageMetadata } from "@/data/seo";
 
-export const metadata = {
-  title: "Datenschutz – BonS-AI",
-  description: "Datenschutzerklärung und Informationen zur Verarbeitung personenbezogener Daten.",
-};
+export const metadata = buildPageMetadata("datenschutz");
 
 export default function DatenschutzPage() {
   return (

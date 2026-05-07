@@ -4,16 +4,14 @@ import Link from "next/link";
 import { FadeInOnScroll } from "@/components/FadeInOnScroll";
 import { StaggeredReveal, StaggeredRevealItem } from "@/components/StaggeredReveal";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { buildPageMetadata } from "@/data/seo";
 
 const CelestialSphere = dynamic(
   () => import("@/components/ui/celestial-sphere").then((m) => ({ default: m.CelestialSphere })),
   { ssr: false }
 );
 
-export const metadata = {
-  title: "Über uns – BonS-AI",
-  description: "BonS-AI – Digitales Studio aus Thüringen. Webdesign, KI-Systeme und digitale Innovation. Wer wir sind und wie wir arbeiten.",
-};
+export const metadata = buildPageMetadata("ueberUns");
 
 const WERTE = [
   { nummer: "01", title: "Technologie & Präzision" },

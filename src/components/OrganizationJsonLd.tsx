@@ -1,36 +1,30 @@
 import { LEGAL } from "@/data/legal";
-
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://bons-ai.de";
+import { SEO_BASE_URL, SEO_LOCAL, SEO_SITE } from "@/data/seo";
 
 export function OrganizationJsonLd() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": SEO_LOCAL.businessType,
     name: LEGAL.companyName,
-    description: "Digitales Studio aus Thüringen: Webdesign, KI-Systeme und digitale Innovation. Für Unternehmen in Thüringen und darüber hinaus.",
-    url: BASE_URL,
-    sameAs: [] as string[],
+    description: SEO_SITE.defaultDescription,
+    url: SEO_BASE_URL,
+    sameAs: SEO_LOCAL.sameAs,
     address: {
       "@type": "PostalAddress",
-      streetAddress: LEGAL.strasse,
-      postalCode: LEGAL.postalCode,
-      addressLocality: LEGAL.city,
-      addressRegion: LEGAL.region,
+      streetAddress: LEGAL.strasse || undefined,
+      postalCode: LEGAL.postalCode || undefined,
+      addressLocality: LEGAL.city || undefined,
+      addressRegion: LEGAL.region || undefined,
       addressCountry: "DE",
     },
-    areaServed: [
-      { "@type": "State", name: "Thüringen" },
-      { "@type": "City", name: "Erfurt" },
-      { "@type": "City", name: "Jena" },
-      { "@type": "City", name: "Gera" },
-    ],
+    areaServed: SEO_LOCAL.areaServed,
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
-      email: LEGAL.email,
-      telephone: LEGAL.telefonInternational,
+      email: LEGAL.email || undefined,
+      telephone: LEGAL.telefonInternational || undefined,
       availableLanguage: "German, English",
-      areaServed: LEGAL.region,
+      areaServed: LEGAL.region || SEO_SITE.primaryRegion,
     },
   };
 

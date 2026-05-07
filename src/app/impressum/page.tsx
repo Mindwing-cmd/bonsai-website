@@ -1,10 +1,8 @@
 import { FadeInOnScroll } from "@/components/FadeInOnScroll";
 import { LEGAL } from "@/data/legal";
+import { buildPageMetadata } from "@/data/seo";
 
-export const metadata = {
-  title: "Impressum – BonS-AI",
-  description: "Impressum und Angaben gemäß § 5 TMG.",
-};
+export const metadata = buildPageMetadata("impressum");
 
 export default function ImpressumPage() {
   return (
