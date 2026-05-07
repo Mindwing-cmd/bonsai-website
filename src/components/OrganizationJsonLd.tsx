@@ -1,10 +1,10 @@
 import { LEGAL } from "@/data/legal";
-import { SEO_BASE_URL, SEO_LOCAL, SEO_SITE } from "@/data/seo";
+import { SEO_BASE_URL, SEO_LOCAL, SEO_PERSON, SEO_SITE } from "@/data/seo";
 
 export function OrganizationJsonLd() {
-  const jsonLd = {
-    "@context": "https://schema.org",
+  const organization = {
     "@type": SEO_LOCAL.businessType,
+    "@id": `${SEO_BASE_URL}#organization`,
     name: LEGAL.companyName,
     description: SEO_SITE.defaultDescription,
     url: SEO_BASE_URL,
@@ -26,6 +26,22 @@ export function OrganizationJsonLd() {
       availableLanguage: "German, English",
       areaServed: LEGAL.region || SEO_SITE.primaryRegion,
     },
+  };
+
+  const person = {
+    "@type": "Person",
+    "@id": `${SEO_BASE_URL}#person`,
+    name: SEO_PERSON.name,
+    jobTitle: SEO_PERSON.role,
+    image: SEO_PERSON.image,
+    url: SEO_PERSON.url,
+    worksFor: { "@id": `${SEO_BASE_URL}#organization` },
+    sameAs: SEO_PERSON.sameAs,
+  };
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [organization, person],
   };
 
   return (

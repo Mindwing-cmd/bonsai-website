@@ -22,9 +22,9 @@ type SeoPageConfig = {
 
 export const SEO_SITE = {
   brand: "BonS-AI",
-  defaultTitle: "BonS-AI – Webdesign & KI-Systeme aus Thüringen",
+  defaultTitle: "BonS-AI | Bastian Schwinger – Webdesign & KI aus Thüringen",
   defaultDescription:
-    "Digitales Studio aus Thüringen: Webdesign, KI-Systeme und digitale Innovation für messbare Ergebnisse.",
+    "BonS-AI von Bastian Schwinger: Digitales Studio aus Thüringen für Webdesign, KI-Systeme und digitale Innovation mit messbaren Ergebnissen.",
   primaryRegion: "Thüringen",
   secondaryRegions: ["Erfurt", "Jena", "Gera", "deutschlandweit"] as const,
   keywords: [
@@ -36,27 +36,35 @@ export const SEO_SITE = {
   ] as const,
 } as const;
 
+export const SEO_PERSON = {
+  name: "Bastian Schwinger",
+  role: "Gründer & Creative Director",
+  url: SEO_BASE_URL,
+  image: `${SEO_BASE_URL}/images/bastian.png`,
+  sameAs: [] as string[],
+} as const;
+
 export const SEO_PAGES: Record<SeoPageKey, SeoPageConfig> = {
   home: {
-    title: "BonS-AI – Webdesign & KI-Systeme aus Thüringen",
+    title: "BonS-AI | Bastian Schwinger – Webdesign & KI aus Thüringen",
     description:
-      "Webdesign, KI-Systeme und digitale Innovation aus Thüringen. Für Unternehmen in Erfurt, Jena, Gera und darüber hinaus. Jetzt Projekt anfragen.",
+      "BonS-AI von Bastian Schwinger: Webdesign, KI-Systeme und digitale Innovation aus Thüringen. Für Unternehmen in Erfurt, Jena, Gera und darüber hinaus.",
     canonicalPath: "/",
     intent: "Startseite mit Leistungsüberblick und Conversion-Einstieg",
     internalLinks: ["/leistungen", "/referenzen", "/kontakt", "/preise"],
   },
   kontakt: {
-    title: "Kontakt – BonS-AI",
+    title: "Kontakt mit Bastian Schwinger – BonS-AI",
     description:
-      "Kontakt für Webdesign und KI-Systeme aus Thüringen. Wir melden uns in der Regel innerhalb von 24 Stunden mit einem klaren nächsten Schritt.",
+      "Kontakt mit Bastian Schwinger für Webdesign und KI-Systeme aus Thüringen. In der Regel erhalten Sie innerhalb von 24 Stunden eine Rückmeldung.",
     canonicalPath: "/kontakt",
     intent: "Lead-Generierung und Anfrageabschluss",
     internalLinks: ["/leistungen", "/referenzen", "/preise"],
   },
   ueberUns: {
-    title: "Über uns – BonS-AI",
+    title: "Über Bastian Schwinger & BonS-AI",
     description:
-      "BonS-AI aus Thüringen: Technologiegetriebenes Team für Webdesign, KI-Systeme und digitale Produkte. Lernen Sie Arbeitsweise und Werte kennen.",
+      "Lernen Sie Bastian Schwinger und BonS-AI kennen: Technologiegetriebenes Studio aus Thüringen für Webdesign, KI-Systeme und digitale Produkte.",
     canonicalPath: "/ueber-uns",
     intent: "Vertrauensaufbau über Team, Werte und Positionierung",
     internalLinks: ["/kontakt", "/leistungen", "/referenzen"],

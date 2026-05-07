@@ -44,7 +44,7 @@ export default function UeberUnsPage() {
               Ihre digitale Präsenz – unser Anspruch
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-base text-[var(--steel-graphite)] md:text-lg">
-              Aus Thüringen: Moderne Web- und KI-Lösungen, die auf Sie eingehen – von der Strategie bis zum Launch.
+              Aus Thüringen: Bastian Schwinger und BonS-AI entwickeln moderne Web- und KI-Lösungen – von der Strategie bis zum Launch.
             </p>
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               <Link
@@ -87,7 +87,7 @@ export default function UeberUnsPage() {
                   <p className="text-sm text-[var(--steel-graphite)] md:text-base">
                     Unser Team bietet Ihnen eine zielgerichtete Beratung und Umsetzung mit modernster Technik – für Projekte, die messbar wirken.
                   </p>
-                  <p className="mt-4 font-primary text-xl font-bold text-[var(--foreground)]">Bastian</p>
+                  <p className="mt-4 font-primary text-xl font-bold text-[var(--foreground)]">Bastian Schwinger</p>
                   <p className="text-sm text-[var(--steel-graphite)]">Gründer & Creative Director</p>
                 </div>
               </div>
