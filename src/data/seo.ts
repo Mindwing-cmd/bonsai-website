@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
-export const SEO_BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://bons-ai.de";
+export const SEO_BASE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.bonsai-webdesign.de";
 
 export type SeoPageKey =
   | "home"
