@@ -7,32 +7,10 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Spotlight } from "@/components/ui/spotlight";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { HomeContactForm } from "@/components/HomeContactForm";
+import { LEISTUNGEN_TEASER } from "@/data/leistungen-teaser";
 import { buildPageMetadata } from "@/data/seo";
 
 export const metadata = buildPageMetadata("home");
-
-const LEISTUNGEN = [
-  {
-    slug: "webdesign",
-    title: "Webdesign",
-    description: "Klare, hochwertige Oberflächen. Starke Struktur, lesbare Hierarchie, minimal und wirkungsvoll.",
-  },
-  {
-    slug: "ki-systeme",
-    title: "KI-Systeme & Automatisierung",
-    description: "Technologie-getriebene Lösungen. Skalierbar und zukunftssicher.",
-  },
-  {
-    slug: "innovation",
-    title: "Web- und Mobile-Apps",
-    description: "Von der Strategie bis zum Launch. Native und Cross-Platform-Apps.",
-  },
-  {
-    slug: "paid-ads",
-    title: "Paid Ads",
-    description: "Bezahlte Werbung, die ankommt. Google Ads, Meta, LinkedIn – zielgerichtet und messbar.",
-  },
-] as const;
 
 export default function Home() {
   return (
@@ -49,7 +27,7 @@ export default function Home() {
             </h2>
           </FadeInOnScroll>
           <StaggeredReveal className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4" staggerDelay={0} childDelay={0.08}>
-            {LEISTUNGEN.map((item) => (
+            {LEISTUNGEN_TEASER.map((item) => (
               <StaggeredRevealItem key={item.slug} className="flex">
                 <Link
                   href={`/leistungen/${item.slug}`}
@@ -81,7 +59,7 @@ export default function Home() {
           </StaggeredReveal>
           <FadeInOnScroll className="mt-10">
             <div className="flex flex-wrap items-center gap-4 text-sm">
-              <Link href="/leistungen/webdesign" className="font-medium text-[var(--brand-accent)] hover:underline">
+              <Link href="/leistungen" className="font-medium text-[var(--brand-accent)] hover:underline">
                 Alle Leistungen ansehen
               </Link>
               <span className="text-[var(--steel-graphite)]">•</span>

@@ -71,9 +71,9 @@ export const SEO_PAGES: Record<SeoPageKey, SeoPageConfig> = {
     internalLinks: ["/kontakt", "/leistungen", "/referenzen"],
   },
   leistungen: {
-    title: "Leistungen – BonS-AI",
+    title: "Leistungen: Webdesign, KI, Apps & Paid Ads | BonS-AI",
     description:
-      "Leistungen aus Thüringen: Webdesign, KI-Systeme, Web- und Mobile-Apps sowie Paid Ads. Klar strukturiert, messbar und auf Wachstum ausgerichtet.",
+      "Digital Studio Thüringen: Webdesign, KI-Systeme, Web- und Mobile-Apps, Paid Ads. Klar strukturiert, messbar, auf Wachstum ausgerichtet – BonS-AI.",
     canonicalPath: "/leistungen",
     intent: "Leistungsverständnis und Angebotsqualifizierung",
     internalLinks: ["/kontakt", "/preise", "/referenzen"],
