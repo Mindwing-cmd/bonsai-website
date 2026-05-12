@@ -7,6 +7,7 @@ import { LeistungenNav } from "@/components/LeistungenNav";
 import { PreiseNav } from "@/components/PreiseNav";
 import { ShinyLink } from "@/components/ui/shiny-button";
 import { MobileNav, MobileNavTrigger } from "@/components/MobileNav";
+import { SITE_LOGO_PATH } from "@/data/seo";
 
 const navLinks = [
   { href: "/referenzen", label: "Referenzen" },
@@ -30,7 +31,7 @@ export function SiteHeader() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-8 px-6 md:px-12">
         <Link href="/" className="flex items-center gap-3">
           <Image
-            src="/images/logo.png"
+            src={SITE_LOGO_PATH}
             alt="BonS-AI – Webdesign, KI-Systeme & Apps"
             width={140}
             height={44}

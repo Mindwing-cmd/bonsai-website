@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 export const SEO_BASE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.bonsai-webdesign.de";
 
+/** Logo im Header und als Favicon / Apple Touch Icon (Datei: `public/images/logo.png`). */
+export const SITE_LOGO_PATH = "/images/logo.png";
+
 export type SeoPageKey =
   | "home"
   | "kontakt"
@@ -133,6 +136,10 @@ export function buildPageMetadata(pageKey: SeoPageKey): Metadata {
     metadataBase: new URL(SEO_BASE_URL),
     title: page.title,
     description: page.description,
+    icons: {
+      icon: SITE_LOGO_PATH,
+      apple: SITE_LOGO_PATH,
+    },
     keywords: [...SEO_SITE.keywords],
     alternates: {
       canonical: absoluteUrl(page.canonicalPath),
@@ -159,6 +166,10 @@ export function buildLeistungMetadata(slug: string, title: string, outcome: stri
     metadataBase: new URL(SEO_BASE_URL),
     title: `${title} – BonS-AI`,
     description: `${outcome} ${regionalSuffix}`.slice(0, 160),
+    icons: {
+      icon: SITE_LOGO_PATH,
+      apple: SITE_LOGO_PATH,
+    },
     keywords: [...SEO_SITE.keywords, `${title} Thüringen`],
     alternates: {
       canonical: absoluteUrl(`/leistungen/${slug}`),
