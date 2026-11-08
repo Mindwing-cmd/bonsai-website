@@ -86,9 +86,9 @@ export const SEO_PAGES: Record<SeoPageKey, SeoPageConfig> = {
     internalLinks: ["/kontakt", "/preise", "/referenzen"],
   },
   preise: {
-    title: "Preise: Webdesign ab 2.499 € und Wartung | BonS-AI",
+    title: "Leistungen und Pakete: Webdesign ab 2.499 € | BonS-AI",
     description:
-      "Webdesign bei BonS-AI ab 2.499 Euro einmalig, Wartung ab 99 Euro im Monat. Transparente Pakete aus Thüringen – individuelles Angebot nach dem Gespräch.",
+      "Webdesign bei BonS-AI ab 2.499 Euro, Wartung ab 99 Euro im Monat. Starter, Business, Enterprise sowie Essential Care, Business Care und Enterprise Care.",
     canonicalPath: "/preise",
     intent: "Preisorientierung und Angebotsvorbereitung",
     internalLinks: ["/kontakt", "/leistungen", "/referenzen"],

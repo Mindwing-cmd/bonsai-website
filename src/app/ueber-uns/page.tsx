@@ -48,8 +48,7 @@ export default function UeberUnsPage() {
             <p className="mx-auto mt-6 max-w-2xl text-base text-[var(--muted-foreground)] md:text-lg">
               Hinter BonS-AI steht Bastian Schwinger, Gründer und Creative Director. Das Digital Studio sitzt in
               Stadtilm, Thüringen, und entwickelt Websites, KI-Systeme, Apps und Paid Ads. Von der Strategie über
-              das Design bis zur technischen Umsetzung arbeitet er in einem klaren Prozess. E-Mail und Telefon
-              stehen im Impressum.
+              das Design bis zur technischen Umsetzung arbeitet er in einem klaren Prozess.
             </p>
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               <Link

@@ -14,7 +14,7 @@ const LEISTUNGEN_ITEMS = [
 const PREISE_ITEMS = [
   { href: "/preise", label: "Übersicht" },
   { href: "/preise/webdesign", label: "Leistungspakete (Webdesign)" },
-  { href: "/preise/wartung", label: "Wartung & Betrieb" },
+  { href: "/preise/wartung", label: "Wartung & Service" },
 ] as const;
 
 const NAV_LINKS = [

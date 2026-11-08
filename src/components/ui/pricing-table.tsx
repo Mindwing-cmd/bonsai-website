@@ -145,7 +145,7 @@ function PricingTablePlan({
         <span
           className={cn(
             "max-w-full whitespace-normal font-primary font-bold leading-tight text-[var(--foreground)]",
-            price.length > 18 ? "text-base tracking-tight" : "text-xl"
+            price.length > 22 ? "text-base tracking-tight" : "text-xl"
           )}
         >
           {price}

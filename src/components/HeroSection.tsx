@@ -69,9 +69,9 @@ export function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: reduceMotion ? 0.2 : 0.6, delay: reduceMotion ? 0 : 0.28 }}
-          className="mt-6 max-w-md text-[var(--muted-foreground)] drop-shadow-[0_1px_12px_rgba(11,8,18,0.45)]"
+          className="mt-6 max-w-lg text-[var(--muted-foreground)] drop-shadow-[0_1px_12px_rgba(11,8,18,0.45)]"
         >
-          BonS-AI ist das Digital Studio von Bastian Schwinger in Stadtilm, Thüringen. Wir gestalten Websites, KI-Systeme, Apps und Paid Ads – präzise, technisch und messbar.
+          BonS-AI entwickelt hochwertige Websites, individuelle Apps und intelligente KI-Systeme. Mit technischer Expertise, kreativen Lösungen und persönlicher Betreuung bringen wir Unternehmen digital voran.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: reduceMotion ? 0 : 16 }}

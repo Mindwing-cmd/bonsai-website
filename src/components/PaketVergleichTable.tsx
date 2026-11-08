@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import {
   PricingTable,
   PricingTableHeader,
@@ -9,7 +10,6 @@ import {
   PricingTableCell,
   PricingTablePlan,
 } from "@/components/ui/pricing-table";
-import { ShinyLink } from "@/components/ui/shiny-button";
 import type { FeatureItem } from "@/components/ui/pricing-table";
 import type { PaketPlanTable } from "@/data/preise-pakete";
 
@@ -34,12 +34,12 @@ export function PaketVergleichTable({ plans, features }: PaketVergleichTableProp
                 badge={plan.badge}
                 price={plan.price}
               >
-                <ShinyLink
+                <Link
                   href={plan.ctaHref}
-                  className="mt-2 block w-full rounded-xl py-2.5 text-center text-sm"
+                  className="mt-3 flex min-h-11 w-full items-center justify-center rounded-xl bg-[var(--brand-accent)] px-3 py-2 text-center font-secondary text-xs font-semibold leading-tight text-[var(--brand-foreground)] hover:opacity-95"
                 >
                   {plan.ctaText}
-                </ShinyLink>
+                </Link>
               </PricingTablePlan>
             </PricingTableHead>
           ))}

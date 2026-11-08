@@ -98,10 +98,9 @@ export function CookieBanner() {
         className="fixed bottom-0 left-0 right-0 z-[100] border-t-2 border-[var(--light-industrial)] bg-[var(--background-alt)] px-4 py-3 text-[var(--foreground)] shadow-[0_-4px_24px_rgba(0,0,0,0.3)]"
       >
         <div className="mx-auto flex max-w-6xl flex-col gap-3 md:flex-row md:items-center md:justify-between">
-          <p className="text-sm leading-snug text-[var(--steel-graphite)]">
-            Technisch Nötiges speichern wir ohne Einwilligung. Die 3D-Szene lädt erst, wenn Sie eingebettete
-            Inhalte erlauben. Details in der{" "}
-            <Link href="/datenschutz" className="underline hover:text-[var(--brand-accent)]">
+          <p className="max-w-xl text-sm leading-relaxed text-[var(--foreground)]">
+            Wir speichern nur, welche Auswahl Sie hier treffen. Den Roboter auf der Startseite laden wir, sobald Sie ihn erlauben. Mehr dazu in der{" "}
+            <Link href="/datenschutz" className="text-[var(--brand-accent)] underline underline-offset-2">
               Datenschutzerklärung
             </Link>
             .
@@ -167,8 +166,8 @@ export function CookieBanner() {
                     Immer aktiv
                   </span>
                 </div>
-                <p className="mt-2 text-sm text-[var(--steel-graphite)]">
-                  Cookies, die für den Betrieb der Website erforderlich sind.
+                <p className="mt-2 text-sm leading-relaxed text-[var(--steel-graphite)]">
+                  Speichert, was Sie in diesem Hinweis gewählt haben. Die Website bleibt auch ohne weitere Auswahl nutzbar.
                 </p>
               </li>
               <li className="border-b border-[var(--light-industrial)] pb-4">
@@ -192,13 +191,13 @@ export function CookieBanner() {
                     />
                   </button>
                 </div>
-                <p className="mt-2 text-sm text-[var(--steel-graphite)]">
-                  Derzeit ist kein Analysewerkzeug eingebunden. Die Auswahl wird nur gespeichert.
+                <p className="mt-2 text-sm leading-relaxed text-[var(--steel-graphite)]">
+                  Es ist kein Auswertungsprogramm eingebunden. Wenn Sie das einschalten, speichern wir nur diese Auswahl.
                 </p>
               </li>
               <li className="border-b border-[var(--light-industrial)] pb-4">
                 <div className="flex items-center justify-between gap-4">
-                  <p className="font-medium text-[var(--foreground)]">Sonstige</p>
+                  <p className="font-medium text-[var(--foreground)]">3D-Szene</p>
                   <button
                     type="button"
                     role="switch"
@@ -217,8 +216,8 @@ export function CookieBanner() {
                     />
                   </button>
                 </div>
-                <p className="mt-2 text-sm text-[var(--steel-graphite)]">
-                  Die 3D-Szene im Seitenkopf. Sie wird erst nach dieser Einwilligung von Spline geladen.
+                <p className="mt-2 text-sm leading-relaxed text-[var(--steel-graphite)]">
+                  Zeigt den Roboter auf der Startseite. Dafür verbindet sich der Browser mit Spline.
                 </p>
               </li>
             </ul>
