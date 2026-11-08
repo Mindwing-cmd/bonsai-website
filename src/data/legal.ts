@@ -15,7 +15,7 @@ export const LEGAL = {
   anschrift: "Nelkenweg 6, 99326 Stadtilm",
   /** Umsatzsteuer-ID – leer lassen, wenn nicht vorhanden */
   ustIdNr: "" as string,
-  /** Verantwortlich für den Inhalt gemäß § 55 Abs. 2 RStV / § 5 TMG */
+  /** Verantwortlich für den Inhalt gemäß § 18 Abs. 2 MStV / § 5 DDG */
   verantwortlich: "Bastian Schwinger, Nelkenweg 6, 99326 Stadtilm",
   email: "bastian.schwinger@bonsai-webdesign.de",
   /** Anzeige im Impressum / Footer */

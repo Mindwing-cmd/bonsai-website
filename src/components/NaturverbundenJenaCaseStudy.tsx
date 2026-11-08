@@ -98,7 +98,7 @@ const BESONDERES = [
 
 const UI_SHOWCASE_ITEMS = [
   {
-    src: "/images/referenzen/nj_hero.png",
+    src: "/images/referenzen/nj_hero.webp",
     title: "Startseite / Hero",
     alt: "Naturverbunden Jena Startseite",
     optimiert: "Markenname, ruhiger Hero und klarer Einstieg in Begleitung und Kennenlernen.",
@@ -126,7 +126,7 @@ const UI_SHOWCASE_ITEMS = [
     sinnvoll: "Niedrige Hürde zum Kennenlerngespräch – klar und mobil bedienbar.",
   },
   {
-    src: "/images/referenzen/nj_faq.png",
+    src: "/images/referenzen/nj_faq.webp",
     title: "FAQ",
     alt: "FAQ-Seite",
     optimiert: "Häufige Fragen zu Ablauf, Kosten und Rahmenbedingungen.",
@@ -205,7 +205,7 @@ export function NaturverbundenJenaCaseStudy() {
                   className="group relative aspect-video w-full max-w-2xl overflow-hidden rounded-xl border-2 border-[var(--light-industrial)] transition-all duration-300 hover:border-[var(--brand-accent)]/50 hover:shadow-glow"
                 >
                   <Image
-                    src="/images/referenzen/nj_hero.png"
+                    src="/images/referenzen/nj_hero.webp"
                     alt="Naturverbunden Jena Startseite"
                     fill
                     className="object-cover object-top transition-transform duration-500 group-hover:scale-105"

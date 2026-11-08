@@ -47,13 +47,13 @@ export function SiteFooter() {
               <span className="mt-2 flex flex-col gap-0">
                 <a
                   href={`mailto:${LEGAL.email}`}
-                  className="inline-flex w-fit items-center py-1 text-[var(--muted-foreground)] transition-colors hover:text-[var(--brand-accent)]"
+                  className="inline-flex min-h-11 w-fit items-center text-[var(--muted-foreground)] transition-colors hover:text-[var(--brand-accent)]"
                 >
                   {LEGAL.email}
                 </a>
                 <a
                   href={`tel:${LEGAL.telefonInternational}`}
-                  className="inline-flex w-fit items-center py-1 text-[var(--muted-foreground)] transition-colors hover:text-[var(--brand-accent)]"
+                  className="inline-flex min-h-11 w-fit items-center text-[var(--muted-foreground)] transition-colors hover:text-[var(--brand-accent)]"
                 >
                   {LEGAL.telefon}
                 </a>

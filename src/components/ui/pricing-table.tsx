@@ -119,30 +119,35 @@ function PricingTablePlan({
   return (
     <div
       className={cn(
-        "relative h-full overflow-hidden rounded-xl border-2 border-[var(--light-industrial)] bg-[var(--background)] p-4 font-normal transition-colors hover:border-[var(--brand-accent)]/50",
+        "relative h-full min-w-0 overflow-hidden whitespace-normal rounded-xl border-2 border-[var(--light-industrial)] bg-[var(--background)] p-4 font-normal transition-colors hover:border-[var(--brand-accent)]/50",
         className
       )}
       {...props}
     >
-      <div className="flex items-center gap-2 flex-wrap">
+      <div className="flex min-w-0 flex-wrap items-center gap-x-2 gap-y-1">
         {Icon && (
           <div className="flex items-center justify-center rounded-md border-2 border-[var(--light-industrial)] p-1.5">
             <Icon className="h-3 w-3 text-[var(--brand-accent)]" />
           </div>
         )}
-        <h3 className="font-primary text-sm font-semibold text-[var(--foreground)]">
+        <h3 className="min-w-0 font-primary text-sm font-semibold text-[var(--foreground)]">
           {name}
         </h3>
         <Badge
           variant="secondary"
-          className="ml-auto rounded-md border-2 border-[var(--light-industrial)] px-2 py-0.5 text-[10px] font-normal"
+          className="ml-auto shrink-0 rounded-md border-2 border-[var(--light-industrial)] px-2 py-0.5 text-[10px] font-normal"
         >
           {badge}
         </Badge>
       </div>
 
-      <div className="mt-3 flex items-baseline gap-2">
-        <span className="font-primary text-xl font-bold text-[var(--foreground)]">
+      <div className="mt-3 flex min-h-8 items-center">
+        <span
+          className={cn(
+            "max-w-full whitespace-normal font-primary font-bold leading-tight text-[var(--foreground)]",
+            price.length > 18 ? "text-base tracking-tight" : "text-xl"
+          )}
+        >
           {price}
         </span>
         {compareAt && (

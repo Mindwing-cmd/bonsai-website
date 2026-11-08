@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { LeistungenNav } from "@/components/LeistungenNav";
 import { PreiseNav } from "@/components/PreiseNav";
 import { ShinyLink } from "@/components/ui/shiny-button";
@@ -18,8 +19,21 @@ const navLinks = [
 type OpenNav = "leistungen" | "preise" | null;
 
 export function SiteHeader() {
+  const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openNav, setOpenNav] = useState<OpenNav>(null);
+  const [showCta, setShowCta] = useState(pathname !== "/");
+
+  useEffect(() => {
+    if (pathname !== "/") {
+      setShowCta(true);
+      return;
+    }
+    const onScroll = () => setShowCta(window.scrollY > window.innerHeight * 0.85);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [pathname]);
 
   const handleLeistungenOpen = (open: boolean) =>
     setOpenNav(open ? "leistungen" : (prev) => (prev === "leistungen" ? null : prev));
@@ -55,12 +69,13 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden md:block">
-          <ShinyLink
-            href="/kontakt"
-            className="rounded-xl px-4 py-2.5 text-sm min-h-0 min-w-0"
-          >
-            Projekt starten
-          </ShinyLink>
+          {showCta ? (
+            <ShinyLink href="/kontakt" className="min-h-11 rounded-xl px-4 py-2.5 text-sm">
+              Projekt starten
+            </ShinyLink>
+          ) : (
+            <span className="inline-block min-h-11 w-[9.5rem]" aria-hidden />
+          )}
         </div>
 
         <MobileNavTrigger open={mobileOpen} onClick={() => setMobileOpen((o) => !o)} />

@@ -93,9 +93,9 @@ export function DatenschutzContent() {
           bestehenden Kunden (Art. 6 Abs. 1 lit. b DSGVO) und im Interesse einer sicheren, schnellen und effizienten
           Bereitstellung unseres Online-Angebots durch einen professionellen Anbieter (Art. 6 Abs. 1 lit. f DSGVO).
           Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf
-          Grundlage von Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TTDSG, soweit die Einwilligung die Speicherung
+          Grundlage von Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG, soweit die Einwilligung die Speicherung
           von Cookies oder den Zugriff auf Informationen im Endgerät des Nutzers (z. B. Device-Fingerprinting) im
-          Sinne des TTDSG umfasst. Die Einwilligung ist jederzeit widerrufbar.
+          Sinne des TDDDG umfasst. Die Einwilligung ist jederzeit widerrufbar.
         </p>
         <p className="leading-relaxed">
           Unser Hoster wird Ihre Daten nur insoweit verarbeiten, wie dies zur Erfüllung seiner
@@ -193,7 +193,7 @@ export function DatenschutzContent() {
             personenbezogener Daten in Drittstaaten erfolgt die Datenverarbeitung außerdem auf Grundlage von Art.
             49 Abs. 1 lit. a DSGVO. Sofern Sie in die Speicherung von Cookies oder in den Zugriff auf Informationen in
             Ihr Endgerät (z. B. via Device-Fingerprinting) eingewilligt haben, erfolgt die Datenverarbeitung zusätzlich
-            auf Grundlage von § 25 Abs. 1 TTDSG. Die Einwilligung ist jederzeit widerrufbar. Sind Ihre Daten zur
+            auf Grundlage von § 25 Abs. 1 TDDDG. Die Einwilligung ist jederzeit widerrufbar. Sind Ihre Daten zur
             Vertragserfüllung oder zur Durchführung vorvertraglicher Maßnahmen erforderlich, verarbeiten wir Ihre
             Daten auf Grundlage des Art. 6 Abs. 1 lit. b DSGVO. Des Weiteren verarbeiten wir Ihre Daten, sofern diese
             zur Erfüllung einer rechtlichen Verpflichtung erforderlich sind, auf Grundlage von Art. 6 Abs. 1 lit. c DSGVO.
@@ -387,7 +387,7 @@ export function DatenschutzContent() {
             technisch fehlerfreien und optimierten Bereitstellung seiner Dienste. Sofern eine Einwilligung zur
             Speicherung von Cookies und vergleichbaren Wiedererkennungstechnologien abgefragt wurde, erfolgt die
             Verarbeitung ausschließlich auf Grundlage dieser Einwilligung (Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1
-            TTDSG); die Einwilligung ist jederzeit widerrufbar.
+            TDDDG); die Einwilligung ist jederzeit widerrufbar.
           </p>
           <p className="leading-relaxed">
             Sie können Ihren Browser so einstellen, dass Sie über das Setzen von Cookies informiert werden,
@@ -404,8 +404,10 @@ export function DatenschutzContent() {
           <p className="leading-relaxed">
             Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem
             Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage
-            und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre
-            Einwilligung weiter.
+            und für den Fall von Anschlussfragen bei uns gespeichert. Für den Versand der Anfrage an uns setzen
+            wir den Dienst Resend ein (Resend, Inc., USA). Dabei werden Name, E-Mail-Adresse, Nachricht und die
+            optionalen Angaben an Resend übermittelt. Resend verarbeitet diese Daten in unserem Auftrag. Weitere
+            Informationen: <ExtLink href="https://resend.com/legal/privacy-policy">resend.com/legal/privacy-policy</ExtLink>.
           </p>
           <p className="leading-relaxed">
             Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit
@@ -469,7 +471,7 @@ export function DatenschutzContent() {
           </p>
           <p className="leading-relaxed">
             Die Nutzung dieses Dienstes erfolgt auf Grundlage Ihrer Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO und §
-            25 Abs. 1 TTDSG. Die Einwilligung ist jederzeit widerrufbar. Die Datenübertragung in die USA wird auf die
+            25 Abs. 1 TDDDG. Die Einwilligung ist jederzeit widerrufbar. Die Datenübertragung in die USA wird auf die
             Standardvertragsklausel der EU-Kommission gestützt. Details finden Sie hier:{" "}
             <ExtLink href="https://gdpr.twitter.com/en/controller-to-controller-transfers.html">gdpr.twitter.com</ExtLink>.
             Ihre Datenschutzeinstellungen bei X (ehemals Twitter) können Sie in den Konto-Einstellungen unter{" "}
@@ -494,7 +496,7 @@ export function DatenschutzContent() {
           </p>
           <p className="leading-relaxed">
             Die Nutzung dieses Dienstes erfolgt auf Grundlage Ihrer Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO und §
-            25 Abs. 1 TTDSG. Die Einwilligung ist jederzeit widerrufbar.
+            25 Abs. 1 TDDDG. Die Einwilligung ist jederzeit widerrufbar.
             Soweit mit Hilfe des hier beschriebenen Tools personenbezogene Daten auf unserer Website erfasst und an
             Facebook bzw. Instagram weitergeleitet werden, sind wir und die Meta Platforms Ireland Limited, 4 Grand
             Canal Square, Grand Canal Harbour, Dublin 2, Irland gemeinsam für diese Datenverarbeitung
@@ -562,73 +564,19 @@ export function DatenschutzContent() {
 
       <section className="space-y-6">
         <h2 className="font-primary text-xl font-semibold text-[var(--deep-carbon)]">7. Plugins und Tools</h2>
-        <p className="leading-relaxed text-sm text-[var(--muted-foreground)]">Die folgenden Hinweise gelten, sofern entsprechende Funktionen auf dieser Website eingebunden sind.</p>
-
         <div className="space-y-4">
-          <h3 className="font-primary text-lg font-semibold text-[var(--deep-carbon)]">Vimeo</h3>
+          <h3 className="font-primary text-lg font-semibold text-[var(--deep-carbon)]">Spline</h3>
           <p className="leading-relaxed">
-            Diese Website kann Plugins des Videoportals Vimeo nutzen. Anbieter ist die Vimeo Inc., 555 West 18th Street, New
-            York, New York 10011, USA.
-            Wenn Sie eine unserer mit einem Video ausgestatteten Seiten besuchen, wird eine Verbindung zu
-            den Servern von Vimeo hergestellt. Dabei wird dem Vimeo-Server mitgeteilt, welche unserer Seiten Sie
-            besucht haben. Zudem erlangt Vimeo Ihre IP-Adresse. Dies gilt auch dann, wenn Sie nicht bei Vimeo
-            eingeloggt sind oder keinen Account bei Vimeo besitzen. Die von Vimeo erfassten Informationen werden an
-            den Vimeo-Server in den USA übermittelt.
+            Auf der Startseite kann eine 3D-Szene angezeigt werden, die uns gehört. Ausgeliefert wird sie über
+            den Dienst Spline (my.spline.design). Erst nach Ihrer Einwilligung in eingebettete Inhalte stellt Ihr
+            Browser eine Verbindung zu Spline her. Dabei erhält Spline Ihre IP-Adresse und die Information, dass
+            Sie unsere Startseite aufgerufen haben. Ohne diese Einwilligung bleibt die Szene aus.
           </p>
           <p className="leading-relaxed">
-            Wenn Sie in Ihrem Vimeo-Account eingeloggt sind, ermöglichen Sie Vimeo, Ihr Surfverhalten direkt Ihrem
-            persönlichen Profil zuzuordnen. Dies können Sie verhindern, indem Sie sich aus Ihrem Vimeo-Account
-            ausloggen.
-            Zur Wiedererkennung der Websitebesucher verwendet Vimeo Cookies bzw. vergleichbare
-            Wiedererkennungstechnologien (z. B. Device-Fingerprinting).
-          </p>
-          <p className="leading-relaxed">
-            Die Nutzung von Vimeo erfolgt im Interesse einer ansprechenden Darstellung unserer Onlineangebote.
-            Dies stellt ein berechtigtes Interesse im Sinne des Art. 6 Abs. 1 lit. f DSGVO dar. Sofern eine entsprechende
-            Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a
-            DSGVO und § 25 Abs. 1 TTDSG, soweit die Einwilligung die Speicherung von Cookies oder den Zugriff auf
-            Informationen im Endgerät des Nutzers (z. B. Device-Fingerprinting) im Sinne des TTDSG umfasst. Die
-            Einwilligung ist jederzeit widerrufbar.
-            Die Datenübertragung in die USA wird auf die Standardvertragsklausel der EU-Kommission sowie nach Aussage von Vimeo auf „berechtigte Geschäftsinteressen“ gestützt. Details finden Sie hier:{" "}
-            <ExtLink href="https://vimeo.com/privacy">vimeo.com/privacy</ExtLink>.
-          </p>
-          <p className="leading-relaxed">
-            Das Unternehmen verfügt über eine Zertifizierung nach dem „EU-US Data Privacy Framework“ (DPF). Weitere
-            Informationen hierzu erhalten Sie vom Anbieter unter{" "}
-            <ExtLink href="https://www.dataprivacyframework.gov/list">dataprivacyframework.gov/list</ExtLink>.
-          </p>
-        </div>
-
-        <div className="space-y-4">
-          <h3 className="font-primary text-lg font-semibold text-[var(--deep-carbon)]">Google Maps</h3>
-          <p className="leading-relaxed">
-            Diese Seite kann den Kartendienst Google Maps einbinden. Anbieter ist die Google Ireland Limited („Google“), Gordon
-            House, Barrow Street, Dublin 4, Irland. Mit Hilfe dieses Dienstes können wir Kartenmaterial auf unserer
-            Website einbinden.
-            Zur Nutzung der Funktionen von Google Maps ist es notwendig, Ihre IP-Adresse zu speichern. Diese
-            Informationen werden in der Regel an einen Server von Google in den USA übertragen und dort gespeichert.
-            Der Anbieter dieser Seite hat keinen Einfluss auf diese Datenübertragung. Wenn Google Maps aktiviert ist,
-            kann Google zum Zwecke der einheitlichen Darstellung der Schriftarten Google Fonts verwenden. Beim
-            Aufruf von Google Maps lädt Ihr Browser die benötigten Webfonts in den Browsercache, um Texte und
-            Schriftarten korrekt anzuzeigen.
-          </p>
-          <p className="leading-relaxed">
-            Die Nutzung von Google Maps erfolgt im Interesse einer ansprechenden Darstellung unserer Online-
-            Angebote und einer leichten Auffindbarkeit der von uns auf der Website angegebenen Orte. Dies stellt
-            ein berechtigtes Interesse im Sinne von Art. 6 Abs. 1 lit. f DSGVO dar. Sofern eine entsprechende
-            Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a
-            DSGVO und § 25 Abs. 1 TTDSG, soweit die Einwilligung die Speicherung von Cookies oder den Zugriff auf
-            Informationen im Endgerät des Nutzers (z. B. Device-Fingerprinting) im Sinne des TTDSG umfasst. Die
-            Einwilligung ist jederzeit widerrufbar.
-            Die Datenübertragung in die USA wird auf die Standardvertragsklausel der EU-Kommission gestützt.
-            Details finden Sie hier:{" "}
-            <ExtLink href="https://privacy.google.com/businesses/gdprcontrollerterms/">privacy.google.com</ExtLink> und{" "}
-            <ExtLink href="https://privacy.google.com/businesses/gdprcontrollerterms/sccs/">SCCs</ExtLink>.
-            Mehr Informationen zum Umgang mit Nutzerdaten finden Sie in der Datenschutzerklärung von Google:{" "}
-            <ExtLink href="https://policies.google.com/privacy?hl=de">policies.google.com/privacy</ExtLink>.
-            Das Unternehmen verfügt über eine Zertifizierung nach dem „EU-US Data Privacy Framework“ (DPF). Weitere
-            Informationen hierzu erhalten Sie vom Anbieter unter{" "}
-            <ExtLink href="https://www.dataprivacyframework.gov/s/participant-search/participantdetail?contact=true&amp;id=a2zt000000001L5AAI&amp;status=Active">dataprivacyframework.gov</ExtLink>.
+            Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG. Die
+            Einwilligung ist jederzeit widerrufbar, indem Sie die gespeicherte Entscheidung in Ihrem Browser
+            löschen und die Seite neu laden. Weitere Informationen:{" "}
+            <ExtLink href="https://spline.design/privacy">spline.design/privacy</ExtLink>.
           </p>
         </div>
       </section>

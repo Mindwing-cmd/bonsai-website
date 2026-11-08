@@ -75,7 +75,7 @@ export default function UeberUnsPage() {
                 {/* Bild: wesentlich größer, auf Mobil oben, ab lg links und aus der Box gelöst */}
                 <div className="relative z-0 mx-auto w-[min(100%,320px)] shrink-0 lg:absolute lg:left-0 lg:bottom-0 lg:mx-0 lg:w-[380px] xl:w-[420px]">
                   <Image
-                    src="/images/bastian.png"
+                    src="/images/bastian.webp"
                     alt="Porträt von Bastian Schwinger, Gründer und Creative Director von BonS-AI"
                     width={520}
                     height={680}

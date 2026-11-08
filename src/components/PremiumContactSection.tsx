@@ -7,6 +7,7 @@ import {
   Phone,
   MapPin,
   ArrowRight,
+  Briefcase,
   Clock,
   Shield,
   Zap,
@@ -42,7 +43,7 @@ const contactMethods = [
 
 const companyStats = [
   { label: "Antwortzeit", value: "< 24 h", icon: Clock, animateNumber: true, numberValue: 24, prefix: "< ", suffix: " h" },
-  { label: "Standort", value: "Stadtilm", icon: MapPin },
+  { label: "Projekte", value: "7", icon: Briefcase, animateNumber: true, numberValue: 7 },
   { label: "Sicherheit", value: "DSGVO-konform", icon: Shield },
   { label: "Umsetzung", value: "Messbar", icon: Zap },
 ];

@@ -255,6 +255,13 @@ export function ContactStepForm() {
       <p className="sr-only" aria-live="polite">
         Schritt {step + 1} von {STEPS.length}: {current.title}
       </p>
+      <p className="mb-4 text-sm leading-relaxed text-white/70">
+        Die Angaben verwenden wir zur Bearbeitung Ihrer Anfrage. Mehr dazu in der{" "}
+        <Link href="/datenschutz" className="text-[var(--brand-accent)] underline underline-offset-2">
+          Datenschutzerklärung
+        </Link>
+        .
+      </p>
 
       <div className="relative min-h-[18rem]">
         <AnimatePresence mode="wait" custom={direction} initial={false}>

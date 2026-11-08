@@ -26,7 +26,7 @@ const REFERENZEN: Array<{
     technologie: "Vercel, Supabase, Health-API",
     image: [
       "/images/referenzen/push-ui-screens-1.png",
-      "/images/referenzen/push-ui-challenges.png",
+      "/images/referenzen/push-ui-challenges.webp",
     ],
   },
   {
@@ -36,7 +36,7 @@ const REFERENZEN: Array<{
     branche: "Medizin / Zahnarztpraxis",
     leistung: "Webdesign, Content-Struktur, Kontaktformular",
     technologie: "Next.js, TypeScript, Tailwind, Resend, Vercel",
-    image: "/images/referenzen/zai_hero.png",
+    image: "/images/referenzen/zai_hero.webp",
   },
   {
     slug: "lindora-home",
@@ -54,7 +54,7 @@ const REFERENZEN: Array<{
     branche: "Psychologie / Naturtherapie",
     leistung: "Webdesign, Content, Local SEO",
     technologie: "Next.js, TypeScript, Tailwind, JSON-LD",
-    image: "/images/referenzen/nj_hero.png",
+    image: "/images/referenzen/nj_hero.webp",
   },
 ];
 

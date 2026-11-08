@@ -1,16 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, type RefObject } from "react";
 import { cn } from "@/lib/utils";
-
-const STORAGE_KEY = "bonsai-cookie-consent";
-
-type ConsentState = {
-  necessary: true;
-  analytics: boolean;
-  other: boolean;
-};
+import { readConsent, writeConsent, type ConsentState } from "@/lib/consent";
 
 const DEFAULT_CONSENT: ConsentState = {
   necessary: true,
@@ -18,30 +11,39 @@ const DEFAULT_CONSENT: ConsentState = {
   other: false,
 };
 
-function loadConsent(): ConsentState | null {
-  if (typeof window === "undefined") return null;
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return null;
-    const parsed = JSON.parse(raw) as ConsentState;
-    if (
-      typeof parsed?.necessary === "boolean" &&
-      typeof parsed?.analytics === "boolean" &&
-      typeof parsed?.other === "boolean"
-    )
-      return { necessary: true, analytics: parsed.analytics, other: parsed.other };
-    return null;
-  } catch {
-    return null;
-  }
-}
-
 function saveConsent(state: ConsentState) {
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    writeConsent(state);
   } catch {
     /* ignore */
   }
+}
+
+function useFocusTrap(active: boolean, ref: RefObject<HTMLElement | null>) {
+  useEffect(() => {
+    if (!active) return;
+    const root = ref.current;
+    if (!root) return;
+    const items = () =>
+      Array.from(root.querySelectorAll<HTMLElement>('a[href], button:not([disabled]), [role="switch"]'));
+    items()[0]?.focus({ preventScroll: true });
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key !== "Tab") return;
+      const list = items();
+      if (list.length === 0) return;
+      const first = list[0];
+      const last = list[list.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus({ preventScroll: true });
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus({ preventScroll: true });
+      }
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [active, ref]);
 }
 
 export function CookieBanner() {
@@ -50,10 +52,16 @@ export function CookieBanner() {
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [draft, setDraft] = useState<ConsentState>(DEFAULT_CONSENT);
 
+  const bannerRef = useRef<HTMLDivElement>(null);
+  const settingsRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    setConsent(loadConsent());
+    setConsent(readConsent());
     setMounted(true);
   }, []);
+
+  useFocusTrap(mounted && consent === null && !settingsOpen, bannerRef);
+  useFocusTrap(mounted && consent === null && settingsOpen, settingsRef);
 
   function reject() {
     const state: ConsentState = { necessary: true, analytics: false, other: false };
@@ -83,24 +91,22 @@ export function CookieBanner() {
   return (
     <>
       <div
+        ref={bannerRef}
         role="dialog"
+        aria-modal="true"
         aria-label="Cookie- und Datenschutzhinweis"
-        className="fixed bottom-0 left-0 right-0 z-[100] border-t-2 border-[var(--light-industrial)] bg-[var(--background-alt)] p-4 text-[var(--foreground)] shadow-[0_-4px_24px_rgba(0,0,0,0.3)] sm:p-5"
+        className="fixed bottom-0 left-0 right-0 z-[100] border-t-2 border-[var(--light-industrial)] bg-[var(--background-alt)] px-4 py-3 text-[var(--foreground)] shadow-[0_-4px_24px_rgba(0,0,0,0.3)]"
       >
-        <div className="mx-auto max-w-4xl">
-          <div className="flex flex-col gap-4 sm:gap-5">
-            <h2 className="font-primary text-base font-semibold sm:text-lg">
-              Cookies und Datennutzung
-            </h2>
-            <p className="text-sm leading-relaxed text-[var(--steel-graphite)] sm:text-base">
-              Diese Website nutzt technisch notwendige Cookies. Optional können Analyse-Cookies
-              zugelassen werden. Ihre Einwilligung ist freiwillig und kann jederzeit in der{" "}
-              <Link href="/datenschutz" className="underline hover:text-[var(--brand-accent)]">
-                Datenschutzerklärung
-              </Link>{" "}
-              widerrufen werden.
-            </p>
-            <div className="flex flex-wrap items-center gap-3">
+        <div className="mx-auto flex max-w-6xl flex-col gap-3 md:flex-row md:items-center md:justify-between">
+          <p className="text-sm leading-snug text-[var(--steel-graphite)]">
+            Technisch Nötiges speichern wir ohne Einwilligung. Die 3D-Szene lädt erst, wenn Sie eingebettete
+            Inhalte erlauben. Details in der{" "}
+            <Link href="/datenschutz" className="underline hover:text-[var(--brand-accent)]">
+              Datenschutzerklärung
+            </Link>
+            .
+          </p>
+          <div className="flex flex-wrap items-center gap-2">
               <button
                 type="button"
                 onClick={reject}
@@ -123,15 +129,6 @@ export function CookieBanner() {
                 Alle akzeptieren
               </button>
             </div>
-            <div className="flex flex-wrap items-center gap-4 border-t border-[var(--light-industrial)] pt-4 text-xs text-[var(--steel-graphite)] sm:text-sm">
-              <Link href="/impressum" className="underline hover:text-[var(--brand-accent)]">
-                Impressum
-              </Link>
-              <Link href="/datenschutz" className="underline hover:text-[var(--brand-accent)]">
-                Datenschutzerklärung
-              </Link>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -144,6 +141,7 @@ export function CookieBanner() {
           onClick={(e) => e.target === e.currentTarget && setSettingsOpen(false)}
         >
           <div
+            ref={settingsRef}
             className="relative max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-xl border-2 border-[var(--light-industrial)] bg-[var(--background-alt)] p-6 shadow-xl"
             onClick={(e) => e.stopPropagation()}
           >
@@ -195,7 +193,7 @@ export function CookieBanner() {
                   </button>
                 </div>
                 <p className="mt-2 text-sm text-[var(--steel-graphite)]">
-                  Anonyme Auswertung von Besucherzahlen und Seitenaufrufen.
+                  Derzeit ist kein Analysewerkzeug eingebunden. Die Auswahl wird nur gespeichert.
                 </p>
               </li>
               <li className="border-b border-[var(--light-industrial)] pb-4">
@@ -220,7 +218,7 @@ export function CookieBanner() {
                   </button>
                 </div>
                 <p className="mt-2 text-sm text-[var(--steel-graphite)]">
-                  Weitere Skripte und Cookies (z. B. eingebettete Inhalte).
+                  Die 3D-Szene im Seitenkopf. Sie wird erst nach dieser Einwilligung von Spline geladen.
                 </p>
               </li>
             </ul>

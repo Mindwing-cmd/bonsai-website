@@ -48,7 +48,7 @@ export const SEO_PERSON = {
   name: "Bastian Schwinger",
   role: "Gründer & Creative Director",
   url: SEO_BASE_URL,
-  image: `${SEO_BASE_URL}/images/bastian.png`,
+  image: `${SEO_BASE_URL}/images/bastian.webp`,
   sameAs: [] as string[],
 } as const;
 

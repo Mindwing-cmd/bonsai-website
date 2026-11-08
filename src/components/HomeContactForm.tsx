@@ -116,6 +116,13 @@ export function HomeContactForm() {
         {errors.message && <p className="mt-1 text-xs text-red-400">{errors.message}</p>}
       </div>
       <div className="sm:col-span-2">
+        <p className="mb-3 text-sm leading-relaxed text-[var(--muted-foreground)]">
+          Die Angaben verwenden wir zur Bearbeitung Ihrer Anfrage. Mehr dazu in der{" "}
+          <Link href="/datenschutz" className="text-[var(--brand-accent)] underline underline-offset-2">
+            Datenschutzerklärung
+          </Link>
+          .
+        </p>
         <button
           type="submit"
           disabled={isSubmitting}

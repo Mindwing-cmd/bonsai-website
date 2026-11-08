@@ -366,7 +366,7 @@ export function PushCaseStudy() {
               <div className="group w-full overflow-hidden rounded-sm border-2 border-[var(--light-industrial)] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--brand-accent)]/50 hover:shadow-glow">
                 <div className="relative aspect-video w-full overflow-hidden">
                   <Image
-                    src="/images/referenzen/push-ui-challenges.png"
+                    src="/images/referenzen/push-ui-challenges.webp"
                     alt="Push-App: Challenges, eigene Herausforderungen und Freunde"
                     fill
                     className="object-cover object-center transition-transform duration-500 group-hover:scale-105"

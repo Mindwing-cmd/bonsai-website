@@ -7,6 +7,7 @@ export function SmoothScroll({ children }: { children: ReactNode }) {
     let lenis: { raf: (t: number) => void; destroy: () => void } | null = null;
 
     const initLenis = async () => {
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
       const { default: Lenis } = await import("lenis");
       lenis = new Lenis({ duration: 1.2 });
       document.documentElement.classList.add("lenis", "lenis-smooth");

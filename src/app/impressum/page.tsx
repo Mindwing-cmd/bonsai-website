@@ -14,7 +14,7 @@ export default function ImpressumPage() {
           <h1 className="font-primary text-3xl font-bold tracking-tight text-[var(--deep-carbon)] md:text-4xl">
             Impressum
           </h1>
-          <p className="mt-4 text-sm text-[var(--muted-foreground)]">Angaben gemäß § 5 TMG</p>
+          <p className="mt-4 text-sm text-[var(--muted-foreground)]">Angaben gemäß § 5 DDG</p>
         </FadeInOnScroll>
 
         <FadeInOnScroll className="mt-12 space-y-8 text-[var(--muted-foreground)]">
@@ -57,28 +57,10 @@ export default function ImpressumPage() {
 
           <section>
             <h2 className="font-primary text-lg font-semibold text-[var(--deep-carbon)]">
-              Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV
+              Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV
             </h2>
             <p className="mt-2">
               {LEGAL.verantwortlich}
-            </p>
-          </section>
-
-          <section>
-            <h2 className="font-primary text-lg font-semibold text-[var(--deep-carbon)]">EU-Streitschlichtung</h2>
-            <p className="mt-2">
-              Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:{" "}
-              <a
-                href="https://ec.europa.eu/consumers/odr"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[var(--brand-accent)] hover:underline"
-              >
-                https://ec.europa.eu/consumers/odr
-              </a>
-              .
-              <br />
-              Unsere E-Mail-Adresse finden Sie oben im Impressum.
             </p>
           </section>
 

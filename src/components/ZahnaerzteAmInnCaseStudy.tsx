@@ -54,21 +54,21 @@ const BESONDERES = [
 
 const UI_SHOWCASE_ITEMS = [
   {
-    src: "/images/referenzen/zai_hero.png",
+    src: "/images/referenzen/zai_hero.webp",
     title: "Hero / Startseite",
     alt: "Startseite mit Hero-Bereich, Titel und Standort-Karten (Mühldorf, Töging)",
     optimiert: "Hero mit klarem Slogan („Ihre Gesundheit – unser Anspruch“), zwei direkte Kontakt-CTAs (Mühldorf / Töging), Team-Vorstellung und Qualitätsmerkmale (01–04) in kompakten Karten. Ruhige Typografie, hoher Kontrast.",
     sinnvoll: "Erster Eindruck zählt: Nutzer sehen sofort den Anspruch der Praxis und können den gewünschten Standort wählen. Werte wie Patientenorientierung und Qualität werden ohne Textflut vermittelt – wichtig für Vertrauen und mobile Nutzung.",
   },
   {
-    src: "/images/referenzen/zai_hero2.png",
+    src: "/images/referenzen/zai_hero2.webp",
     title: "Hero / Praxis-Eindrücke",
     alt: "Weiterer Hero- oder Praxisbereich",
     optimiert: "Großer Hero mit Luftbild, klare Navigation (Start, Praxis, Leistungen, Kontakt, Karriere), prominenter Titel zu Implantologie, Ästhetik & Orale Chirurgie. Zwei Standortkarten (Mühldorf / Töging) mit Adresse, Telefon und „Mehr erfahren“.",
     sinnvoll: "Beide Standorte gleichwertig sichtbar; Nutzer finden sofort Kontakt und können gezielt vertiefen. Praxis-Eindrücke stärken das Vertrauen vor dem ersten Besuch.",
   },
   {
-    src: "/images/referenzen/zai_leistungsuebersicht.png",
+    src: "/images/referenzen/zai_leistungsuebersicht.webp",
     title: "Leistungsübersicht",
     alt: "Übersicht der Leistungen",
     optimiert: "Einleitungssatz zur modernen Zahnmedizin, Leistungen als bildbasierte Kacheln (z. B. Implantologie, Oralchirurgie, Ganzheitliche Zahnerhaltung). Klare Zuordnung, einheitliche Kartenhöhe, Hover für Fokus.",
@@ -89,7 +89,7 @@ const UI_SHOWCASE_ITEMS = [
     sinnvoll: "Zwei Standorte erfordern klare Zuordnung; Nutzer sollen nicht raten, wo sie sich melden. DSGVO-konformer Hinweis und einfaches Formular erhöhen Absendequote und Rechtssicherheit.",
   },
   {
-    src: "/images/referenzen/zai_old.png",
+    src: "/images/referenzen/zai_old.webp",
     title: "Vorher",
     alt: "Alte Webpräsenz vor dem Relaunch",
     optimiert: "Vorher-Zustand dokumentiert: veraltete Struktur, weniger klare Hierarchie, kein einheitliches Standort-Konzept. Dient als Referenz für den Relaunch.",
@@ -169,7 +169,7 @@ export function ZahnaerzteAmInnCaseStudy() {
                 className="group relative aspect-video w-full max-w-2xl overflow-hidden rounded-xl border-2 border-[var(--light-industrial)] transition-all duration-300 hover:border-[var(--brand-accent)]/50 hover:shadow-glow"
               >
                 <Image
-                  src="/images/referenzen/zai_hero.png"
+                  src="/images/referenzen/zai_hero.webp"
                   alt="Zahnärzte am Inn – Startseite mit Hero-Bereich, Titel und zwei Standort-Karten (Mühldorf / Töging)"
                   fill
                   className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
@@ -243,7 +243,7 @@ export function ZahnaerzteAmInnCaseStudy() {
             <RevealOnScroll direction="right" className="flex justify-center">
               <div className="group relative aspect-video w-full max-w-md overflow-hidden rounded-xl border-2 border-[var(--light-industrial)] transition-all duration-300 hover:border-[var(--brand-accent)]/50 hover:shadow-glow">
                 <Image
-                  src="/images/referenzen/zai_old.png"
+                  src="/images/referenzen/zai_old.webp"
                   alt="Vorher: Alte Webpräsenz oder Ausgangslage"
                   fill
                   className="object-cover object-center transition-transform duration-500 group-hover:scale-105"

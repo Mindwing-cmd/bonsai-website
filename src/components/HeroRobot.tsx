@@ -1,5 +1,8 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import { CONSENT_EVENT, readConsent } from "@/lib/consent";
+
 const NEXBOT_SPLINE_EMBED_URL =
   "https://my.spline.design/nexbotrobotcharacterconceptforpersonaluse-l5MWJrKa6KfxFRMA1Sfyv0rL/?v=2";
 
@@ -10,6 +13,17 @@ const NEXBOT_SPLINE_EMBED_URL =
  *   dunkler Roboter bleibt sichtbar (ohne zusätzliche Abdunkelungs-Overlays)
  */
 export function HeroRobot() {
+  const [allowed, setAllowed] = useState(false);
+
+  useEffect(() => {
+    const sync = () => setAllowed(readConsent()?.other === true);
+    sync();
+    window.addEventListener(CONSENT_EVENT, sync);
+    return () => window.removeEventListener(CONSENT_EVENT, sync);
+  }, []);
+
+  if (!allowed) return null;
+
   return (
     <div
       className="absolute inset-0 h-full w-full overflow-hidden"

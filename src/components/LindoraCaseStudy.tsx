@@ -109,7 +109,7 @@ const UI_SHOWCASE_ITEMS = [
     sinnvoll: "Besucher verstehen sofort, was verkauft wird und können ohne Umwege in den Katalog oder zur Geschichte der Marke.",
   },
   {
-    src: "/images/referenzen/lindora_shop.png",
+    src: "/images/referenzen/lindora_shop.webp",
     title: "Shop / Katalog",
     alt: "Produktkatalog Lindora-Home",
     optimiert: "Produktkacheln mit Bild, Name und Einstieg in die Detailseite. Einheitliches Raster, mobile nutzbar.",
@@ -123,7 +123,7 @@ const UI_SHOWCASE_ITEMS = [
     sinnvoll: "Kaufentscheidung braucht Bild und Infos; die Detailseite führt gezielt zum Checkout.",
   },
   {
-    src: "/images/referenzen/lindora_ueber.png",
+    src: "/images/referenzen/lindora_ueber.webp",
     title: "Über Lindora",
     alt: "Über-uns-Seite mit Story und Portrait",
     optimiert: "Persönliche Story und Markenvertrauen – warum handgegossen und lokal aus Magdeburg.",
@@ -281,7 +281,7 @@ export function LindoraCaseStudy() {
               <RevealOnScroll direction="right" className="flex justify-center">
                 <div className="group relative aspect-video w-full max-w-md overflow-hidden rounded-xl border-2 border-[var(--light-industrial)] transition-all duration-300 hover:border-[var(--brand-accent)]/50 hover:shadow-glow">
                   <Image
-                    src="/images/referenzen/lindora_shop.png"
+                    src="/images/referenzen/lindora_shop.webp"
                     alt="Lindora Shop-Katalog"
                     fill
                     className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
