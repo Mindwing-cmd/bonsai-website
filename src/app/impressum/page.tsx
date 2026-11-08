@@ -12,10 +12,10 @@ export default function ImpressumPage() {
           <h1 className="font-primary text-3xl font-bold tracking-tight text-[var(--deep-carbon)] md:text-4xl">
             Impressum
           </h1>
-          <p className="mt-4 text-sm text-[var(--steel-graphite)]">Angaben gemäß § 5 TMG</p>
+          <p className="mt-4 text-sm text-[var(--muted-foreground)]">Angaben gemäß § 5 TMG</p>
         </FadeInOnScroll>
 
-        <FadeInOnScroll className="mt-12 space-y-8 text-[var(--steel-graphite)]">
+        <FadeInOnScroll className="mt-12 space-y-8 text-[var(--muted-foreground)]">
           <section>
             <h2 className="font-primary text-lg font-semibold text-[var(--deep-carbon)]">Anbieter</h2>
             <p className="mt-2">
@@ -90,7 +90,7 @@ export default function ImpressumPage() {
             </p>
           </section>
 
-          <section className="border-t border-[var(--light-industrial)] pt-8 text-xs text-[var(--steel-graphite)]">
+          <section className="border-t border-[var(--light-industrial)] pt-8 text-xs text-[var(--muted-foreground)]">
             <p>
               Quelle:{" "}
               <a

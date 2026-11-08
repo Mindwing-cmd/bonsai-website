@@ -1,12 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 import { FadeInOnScroll } from "@/components/FadeInOnScroll";
 import { StaggeredReveal, StaggeredRevealItem } from "@/components/StaggeredReveal";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { buildPageMetadata } from "@/data/seo";
+import { PROJEKT_WEBSITES, type ProjektSlug } from "@/data/projekt-websites";
 
 const REFERENZEN: Array<{
-  slug: string;
+  slug: ProjektSlug;
   title: string;
   kurzbeschreibung: string;
   branche: string;
@@ -35,7 +37,47 @@ const REFERENZEN: Array<{
     technologie: "Next.js, TypeScript, Tailwind, Resend, Vercel",
     image: "/images/referenzen/zai_hero.png",
   },
+  {
+    slug: "lindora-home",
+    title: "Lindora-Home – Onlineshop mit CMS",
+    kurzbeschreibung: "Onlineshop für handgegossene Kerzen: Katalog, Warenkorb, Stripe-Checkout und Pflege-CMS – verkaufsbereit und wartbar.",
+    branche: "Handwerk / E-Commerce",
+    leistung: "Onlineshop, CMS/Pflege, Checkout",
+    technologie: "Next.js, Supabase, Stripe, Resend",
+    image: "/images/referenzen/lindora_hero.png",
+  },
+  {
+    slug: "naturverbunden-jena",
+    title: "Naturverbunden Jena",
+    kurzbeschreibung: "Ruhige Website für naturnahe psychologisch-therapeutische Gespräche. Begleitung, Über mich, FAQ, Kontakt – Local SEO Jena.",
+    branche: "Psychologie / Naturtherapie",
+    leistung: "Webdesign, Content, Local SEO",
+    technologie: "Next.js, TypeScript, Tailwind, JSON-LD",
+    image: "/images/referenzen/nj_hero.png",
+  },
 ];
+
+function ProjektWebsiteLink({ slug }: { slug: ProjektSlug }) {
+  const site = PROJEKT_WEBSITES[slug];
+  return (
+    <a
+      href={site.href}
+      target="_blank"
+      rel="noopener"
+      title={site.href}
+      className="flex min-h-11 items-center justify-between gap-3 text-sm"
+    >
+      <span className="text-xs font-medium uppercase tracking-[0.14em] text-[var(--muted-foreground)]">
+        Live
+      </span>
+      <span className="inline-flex min-w-0 items-center gap-1.5 font-medium text-[var(--brand-accent)]">
+        <span className="truncate">{site.label}</span>
+        <ArrowUpRight className="size-4 shrink-0" aria-hidden />
+      </span>
+      <span className="sr-only"> (öffnet in neuem Tab)</span>
+    </a>
+  );
+}
 
 export const metadata = buildPageMetadata("referenzen");
 
@@ -47,62 +89,66 @@ export default function ReferenzenPage() {
           <h1 className="font-primary text-3xl font-bold tracking-tight text-[var(--deep-carbon)] md:text-4xl">
             <span className="border-b-2 border-[var(--brand-accent)]">Referenzen</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-[var(--steel-graphite)]">
+          <p className="mt-6 max-w-2xl text-[var(--muted-foreground)]">
             Ausgewählte Projekte – von Webdesign über KI-Systeme & Apps bis Paid Ads. Filterbar nach Branche und Leistung.
           </p>
         </FadeInOnScroll>
 
         <StaggeredReveal className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3" staggerDelay={0} childDelay={0.08}>
           {REFERENZEN.map((ref) => (
-            <StaggeredRevealItem key={ref.slug} className="flex">
-              <Link
-                href={`/referenzen/${ref.slug}`}
-                className="group block h-full w-full transition-all duration-300 hover:-translate-y-1 hover:shadow-glow"
+            <StaggeredRevealItem key={ref.slug} className="flex h-full">
+              <Card
+                variant="glass"
+                className="flex h-full w-full flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-glow"
               >
-                  <Card variant="glass" className="h-full overflow-hidden transition-shadow duration-300 group-hover:shadow-glow">
-                    <div className={`aspect-video w-full overflow-hidden ${ref.image ? "" : "bg-[var(--light-industrial)]"}`}>
-                      {ref.image ? (
-                        Array.isArray(ref.image) ? (
-                          <div className="grid h-full w-full grid-cols-2 gap-px">
-                            {ref.image.map((src, i) => (
-                              <div key={i} className="relative h-full min-h-0 w-full overflow-hidden">
-                                <Image
-                                  src={src}
-                                  alt=""
-                                  fill
-                                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 16.5vw"
-                                />
-                              </div>
-                            ))}
-                          </div>
-                        ) : (
-                          <div className="h-full w-full overflow-hidden">
-                            <Image
-                              src={ref.image}
-                              alt=""
-                              width={640}
-                              height={360}
-                              className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                            />
-                          </div>
-                        )
-                      ) : null}
-                    </div>
-                    <CardHeader>
-                      <CardTitle className="font-primary text-[var(--deep-carbon)]">{ref.title}</CardTitle>
-                      <CardDescription className="text-[var(--steel-graphite)]">{ref.kurzbeschreibung}</CardDescription>
-                    </CardHeader>
-                    <CardContent className="pt-0">
-                      <p className="text-xs text-[var(--muted-foreground)]">
-                        {ref.branche} · {ref.leistung} · {ref.technologie}
-                      </p>
-                      <span className="mt-4 inline-block text-sm font-medium text-[var(--brand-accent)]">Case Study ansehen →</span>
-                    </CardContent>
-                  </Card>
+                <Link href={`/referenzen/${ref.slug}`} className="group flex min-h-0 flex-1 flex-col">
+                  <div className={`aspect-video w-full overflow-hidden ${ref.image ? "" : "bg-[var(--light-industrial)]"}`}>
+                    {ref.image ? (
+                      Array.isArray(ref.image) ? (
+                        <div className="grid h-full w-full grid-cols-2 gap-px">
+                          {ref.image.map((src, i) => (
+                            <div key={i} className="relative h-full min-h-0 w-full overflow-hidden">
+                              <Image
+                                src={src}
+                                alt=""
+                                fill
+                                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 16.5vw"
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      ) : (
+                        <div className="h-full w-full overflow-hidden">
+                          <Image
+                            src={ref.image}
+                            alt=""
+                            width={640}
+                            height={360}
+                            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          />
+                        </div>
+                      )
+                    ) : null}
+                  </div>
+                  <CardHeader>
+                    <CardTitle className="font-primary text-[var(--deep-carbon)]">{ref.title}</CardTitle>
+                    <CardDescription className="text-[var(--muted-foreground)]">{ref.kurzbeschreibung}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="mt-auto pt-0">
+                    <p className="text-xs text-[var(--muted-foreground)]">
+                      {ref.branche} · {ref.leistung} · {ref.technologie}
+                    </p>
+                    <span className="mt-4 inline-block text-sm font-medium text-[var(--brand-accent)]">Case Study ansehen →</span>
+                  </CardContent>
                 </Link>
-              </StaggeredRevealItem>
+                <div className="px-6 pb-4">
+                  <div className="mb-1 h-px bg-gradient-to-r from-transparent via-[var(--brand-accent)]/50 to-transparent" />
+                  <ProjektWebsiteLink slug={ref.slug} />
+                </div>
+              </Card>
+            </StaggeredRevealItem>
             ))}
         </StaggeredReveal>
       </div>

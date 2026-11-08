@@ -3,7 +3,7 @@ import { SEO_BASE_URL } from "@/data/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const leistungen = ["webdesign", "ki-systeme", "innovation", "paid-ads"];
-  const referenzen = ["innovation-mvp", "zahnaerzte-am-inn"];
+  const referenzen = ["innovation-mvp", "zahnaerzte-am-inn", "lindora-home", "naturverbunden-jena"];
   const preise = ["wartung", "webdesign"];
 
   const staticPages: MetadataRoute.Sitemap = [

@@ -8,6 +8,7 @@ import { Spotlight } from "@/components/ui/spotlight";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { HomeContactForm } from "@/components/HomeContactForm";
 import { LEISTUNGEN_TEASER } from "@/data/leistungen-teaser";
+import { LEGAL } from "@/data/legal";
 import { buildPageMetadata } from "@/data/seo";
 
 export const metadata = buildPageMetadata("home");
@@ -46,7 +47,7 @@ export default function Home() {
                     <Card variant="glass" className="relative h-full border-2 border-[var(--light-industrial)] transition-all duration-300 group-hover:border-[var(--brand-accent)]/50 group-hover:shadow-glow">
                       <CardHeader>
                         <CardTitle className="font-primary text-[var(--deep-carbon)]">{item.title}</CardTitle>
-                        <CardDescription className="text-[var(--steel-graphite)]">{item.description}</CardDescription>
+                        <CardDescription className="text-[var(--muted-foreground)]">{item.description}</CardDescription>
                       </CardHeader>
                       <CardContent className="pt-0">
                         <span className="text-sm font-medium text-[var(--brand-accent)]">Mehr erfahren →</span>
@@ -62,11 +63,11 @@ export default function Home() {
               <Link href="/leistungen" className="font-medium text-[var(--brand-accent)] hover:underline">
                 Alle Leistungen ansehen
               </Link>
-              <span className="text-[var(--steel-graphite)]">•</span>
+              <span className="text-[var(--muted-foreground)]">•</span>
               <Link href="/referenzen" className="font-medium text-[var(--brand-accent)] hover:underline">
                 Referenzen entdecken
               </Link>
-              <span className="text-[var(--steel-graphite)]">•</span>
+              <span className="text-[var(--muted-foreground)]">•</span>
               <Link href="/preise" className="font-medium text-[var(--brand-accent)] hover:underline">
                 Preise prüfen
               </Link>
@@ -94,7 +95,7 @@ export default function Home() {
               {["Webdesign", "KI-Systeme", "Apps", "Paid Ads"].map((label) => (
                 <span
                   key={label}
-                  className="rounded-lg border border-[var(--light-industrial)] bg-[var(--background)]/80 px-3 py-1.5 text-xs font-medium uppercase tracking-wider text-[var(--steel-graphite)]"
+                  className="rounded-lg border border-[var(--light-industrial)] bg-[var(--background)]/80 px-3 py-1.5 text-xs font-medium uppercase tracking-wider text-[var(--muted-foreground)]"
                 >
                   {label}
                 </span>
@@ -106,7 +107,7 @@ export default function Home() {
                 Digital Studio.
               </span>
             </h2>
-            <p className="mx-auto mt-6 max-w-2xl text-[var(--steel-graphite)] md:text-lg">
+            <p className="mx-auto mt-6 max-w-2xl text-[var(--muted-foreground)] md:text-lg">
               Präzise, technisch, minimal, selbstbewusst – aus Thüringen für Unternehmen mit klaren Wachstumszielen.
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
@@ -135,7 +136,7 @@ export default function Home() {
               <h2 className="font-primary text-3xl font-bold tracking-tight text-[var(--deep-carbon)] md:text-4xl">
                 <span className="border-b-2 border-[var(--brand-accent)]">Kontakt</span> aufnehmen
               </h2>
-              <p className="mt-6 text-[var(--steel-graphite)]">
+              <p className="mt-6 text-[var(--muted-foreground)]">
                 Projekt im Kopf? Für Unternehmen in Thüringen und darüber hinaus – wir melden uns zeitnah.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -146,10 +147,10 @@ export default function Home() {
                   Gespräch vereinbaren
                 </Link>
                 <a
-                  href="mailto:bonsai.schwinger@gmail.com"
+                  href={`mailto:${LEGAL.email}`}
                   className="min-w-0 rounded-xl border-2 border-[var(--light-industrial)] px-4 py-3 font-medium text-[var(--foreground)] transition-colors hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)] sm:px-6 sm:break-all"
                 >
-                  bonsai.schwinger@gmail.com
+                  {LEGAL.email}
                 </a>
                 <Link
                   href="/referenzen"

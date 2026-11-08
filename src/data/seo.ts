@@ -3,8 +3,12 @@ import type { Metadata } from "next";
 export const SEO_BASE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.bonsai-webdesign.de";
 
-/** Logo im Header und als Favicon / Apple Touch Icon (Datei: `public/images/logo.png`). */
+/** Logo im Header (Datei: `public/images/logo.png` – transparent). */
 export const SITE_LOGO_PATH = "/images/logo.png";
+/** Breites Logo für Header-Alternativen / Social. */
+export const SITE_LOGO_WIDE_PATH = "/images/logo-wide.png";
+/** Quadratisches Logo für Favicon / Apple Touch / OG. */
+export const SITE_LOGO_SQUARE_PATH = "/images/logo-square-512.png";
 
 export type SeoPageKey =
   | "home"
@@ -137,8 +141,8 @@ export function buildPageMetadata(pageKey: SeoPageKey): Metadata {
     title: page.title,
     description: page.description,
     icons: {
-      icon: SITE_LOGO_PATH,
-      apple: SITE_LOGO_PATH,
+      icon: SITE_LOGO_SQUARE_PATH,
+      apple: SITE_LOGO_SQUARE_PATH,
     },
     keywords: [...SEO_SITE.keywords],
     alternates: {
@@ -151,11 +155,13 @@ export function buildPageMetadata(pageKey: SeoPageKey): Metadata {
       siteName: SEO_SITE.brand,
       locale: "de_DE",
       type: "website",
+      images: [{ url: SITE_LOGO_WIDE_PATH, width: 1200, height: 630, alt: "BonS-AI" }],
     },
     twitter: {
       card: "summary_large_image",
       title: page.title,
       description: page.description,
+      images: [SITE_LOGO_WIDE_PATH],
     },
   };
 }
@@ -167,8 +173,8 @@ export function buildLeistungMetadata(slug: string, title: string, outcome: stri
     title: `${title} – BonS-AI`,
     description: `${outcome} ${regionalSuffix}`.slice(0, 160),
     icons: {
-      icon: SITE_LOGO_PATH,
-      apple: SITE_LOGO_PATH,
+      icon: SITE_LOGO_SQUARE_PATH,
+      apple: SITE_LOGO_SQUARE_PATH,
     },
     keywords: [...SEO_SITE.keywords, `${title} Thüringen`],
     alternates: {
@@ -181,11 +187,13 @@ export function buildLeistungMetadata(slug: string, title: string, outcome: stri
       siteName: SEO_SITE.brand,
       locale: "de_DE",
       type: "article",
+      images: [{ url: SITE_LOGO_WIDE_PATH, width: 1200, height: 630, alt: "BonS-AI" }],
     },
     twitter: {
       card: "summary_large_image",
       title: `${title} – BonS-AI`,
       description: `${outcome} ${regionalSuffix}`.slice(0, 160),
+      images: [SITE_LOGO_WIDE_PATH],
     },
   };
 }

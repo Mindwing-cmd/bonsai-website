@@ -37,7 +37,7 @@ export function SynapseBackground({
     if (!ctx) return;
 
     const getComputedLineColor = () => {
-      if (typeof document === "undefined") return `rgba(3, 105, 161, ${opacity})`;
+      if (typeof document === "undefined") return `rgba(163, 136, 238, ${opacity})`;
       const resolved = getComputedStyle(document.documentElement)
         .getPropertyValue("--brand-accent")
         .trim();

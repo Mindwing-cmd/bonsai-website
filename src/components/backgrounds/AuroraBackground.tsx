@@ -15,9 +15,9 @@ type AuroraBackgroundProps = {
 };
 
 const brandColors: [string, string, string] = [
-  "rgba(3, 105, 161, 0.35)",
-  "rgba(95, 103, 110, 0.2)",
-  "rgba(3, 105, 161, 0.2)",
+  "rgba(163, 136, 238, 0.35)",
+  "rgba(123, 92, 217, 0.22)",
+  "rgba(196, 160, 255, 0.2)",
 ];
 
 export function AuroraBackground({

@@ -1,30 +1,42 @@
 import Link from "next/link";
-import { ThemeSwitcher } from "@/components/ThemeSwitcher";
+import Image from "next/image";
 import { LEGAL } from "@/data/legal";
+import { SITE_LOGO_WIDE_PATH } from "@/data/seo";
 
 export function SiteFooter() {
   return (
     <footer className="border-t-2 border-[var(--light-industrial)] bg-[var(--background)] py-12 md:py-16">
       <div className="mx-auto max-w-6xl px-6 md:px-12">
+        <div className="mb-10 brand-divider">
+          <span className="shrink-0 font-secondary text-[10px] font-medium uppercase tracking-[0.28em] text-[var(--muted-foreground)]">
+            Web Design &amp; Digital Innovation
+          </span>
+        </div>
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-8 lg:gap-12">
-          {/* Spalte 1: Marke */}
           <div className="flex flex-col md:border-r md:border-[var(--light-industrial)] md:pr-8">
-            <p className="font-primary text-lg font-bold tracking-tight text-[var(--foreground)]">BonS-AI</p>
-            <p className="mt-3 text-sm leading-relaxed text-[var(--steel-graphite)]">
+            <Link href="/" className="inline-flex w-fit items-center">
+              <Image
+                src={SITE_LOGO_WIDE_PATH}
+                alt="BonS-AI"
+                width={200}
+                height={64}
+                className="h-12 w-auto max-w-[180px] object-contain object-left"
+              />
+            </Link>
+            <p className="mt-4 text-sm leading-relaxed text-[var(--muted-foreground)]">
               Webdesign, KI-Systeme, Apps &amp; Paid Ads – präzise, technisch, messbar.
             </p>
-            <p className="mt-6 text-sm text-[var(--steel-graphite)]">
+            <p className="mt-6 text-sm text-[var(--muted-foreground)]">
               © {new Date().getFullYear()} BonS-AI
             </p>
           </div>
 
-          {/* Spalte 2: Kontakt */}
           <div className="flex flex-col border-t border-[var(--light-industrial)] pt-10 md:border-t-0 md:border-r md:border-[var(--light-industrial)] md:pt-0 md:pr-8">
-            <h2 className="font-primary text-base font-semibold text-[var(--foreground)]">
+            <h2 className="font-primary text-base font-semibold text-[var(--deep-carbon)]">
               <span className="border-b-2 border-[var(--brand-accent)]">Kontakt</span>
             </h2>
-            <address className="mt-4 not-italic text-sm leading-snug text-[var(--steel-graphite)]">
-              <span className="block text-[var(--foreground)]">
+            <address className="mt-4 not-italic text-sm leading-snug text-[var(--muted-foreground)]">
+              <span className="block text-[var(--deep-carbon)]">
                 {LEGAL.companyName} · {LEGAL.anbieter}
               </span>
               <span className="mt-1 block">
@@ -35,13 +47,13 @@ export function SiteFooter() {
               <span className="mt-2 flex flex-col gap-0">
                 <a
                   href={`mailto:${LEGAL.email}`}
-                  className="inline-flex w-fit items-center py-1 text-[var(--steel-graphite)] transition-colors hover:text-[var(--brand-accent)]"
+                  className="inline-flex w-fit items-center py-1 text-[var(--muted-foreground)] transition-colors hover:text-[var(--brand-accent)]"
                 >
                   {LEGAL.email}
                 </a>
                 <a
                   href={`tel:${LEGAL.telefonInternational}`}
-                  className="inline-flex w-fit items-center py-1 text-[var(--steel-graphite)] transition-colors hover:text-[var(--brand-accent)]"
+                  className="inline-flex w-fit items-center py-1 text-[var(--muted-foreground)] transition-colors hover:text-[var(--brand-accent)]"
                 >
                   {LEGAL.telefon}
                 </a>
@@ -49,30 +61,23 @@ export function SiteFooter() {
             </address>
           </div>
 
-          {/* Spalte 3: Farbkonzept & Rechtliches */}
           <div className="flex flex-col border-t border-[var(--light-industrial)] pt-10 md:border-t-0 md:pt-0">
-            <h2 className="font-primary text-base font-semibold text-[var(--foreground)]">
-              <span className="border-b-2 border-[var(--brand-accent)]">Farbkonzept</span>
+            <h2 className="font-primary text-base font-semibold text-[var(--deep-carbon)]">
+              <span className="border-b-2 border-[var(--brand-accent)]">Rechtliches</span>
             </h2>
-            <div className="mt-4">
-              <ThemeSwitcher />
-            </div>
-            <p className="mt-5 text-xs font-semibold uppercase tracking-wider text-[var(--steel-graphite)]">
-              Rechtliches
-            </p>
             <nav
-              className="mt-1 flex flex-col gap-0 text-sm text-[var(--steel-graphite)]"
+              className="mt-4 flex flex-col gap-0 text-sm text-[var(--muted-foreground)]"
               aria-label="Rechtliches"
             >
               <Link
                 href="/impressum"
-                className="flex w-fit items-center py-0.5 leading-tight transition-colors hover:text-[var(--brand-accent)]"
+                className="flex min-h-[44px] w-fit items-center py-1 leading-tight transition-colors hover:text-[var(--brand-accent)]"
               >
                 Impressum
               </Link>
               <Link
                 href="/datenschutz"
-                className="flex w-fit items-center py-0.5 leading-tight transition-colors hover:text-[var(--brand-accent)]"
+                className="flex min-h-[44px] w-fit items-center py-1 leading-tight transition-colors hover:text-[var(--brand-accent)]"
               >
                 Datenschutz
               </Link>

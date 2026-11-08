@@ -14,7 +14,7 @@ function ExtLink({ href, children }: { href: string; children: ReactNode }) {
 
 export function DatenschutzContent() {
   return (
-    <div className="space-y-12 text-[var(--steel-graphite)]">
+    <div className="space-y-12 text-[var(--muted-foreground)]">
       <section className="space-y-6">
         <h2 className="font-primary text-xl font-semibold text-[var(--deep-carbon)]">1. Datenschutz auf einen Blick</h2>
 
@@ -446,7 +446,7 @@ export function DatenschutzContent() {
 
       <section className="space-y-6">
         <h2 className="font-primary text-xl font-semibold text-[var(--deep-carbon)]">5. Soziale Medien</h2>
-        <p className="leading-relaxed text-sm text-[var(--steel-graphite)]">Die folgenden Hinweise gelten, sofern entsprechende Funktionen auf dieser Website eingebunden sind.</p>
+        <p className="leading-relaxed text-sm text-[var(--muted-foreground)]">Die folgenden Hinweise gelten, sofern entsprechende Funktionen auf dieser Website eingebunden sind.</p>
 
         <div className="space-y-4">
           <h3 className="font-primary text-lg font-semibold text-[var(--deep-carbon)]">X (ehemals Twitter)</h3>
@@ -529,7 +529,7 @@ export function DatenschutzContent() {
 
       <section className="space-y-4">
         <h2 className="font-primary text-xl font-semibold text-[var(--deep-carbon)]">6. Newsletter</h2>
-        <p className="leading-relaxed text-sm text-[var(--steel-graphite)]">Sofern wir einen Newsletter anbieten, gelten folgende Hinweise.</p>
+        <p className="leading-relaxed text-sm text-[var(--muted-foreground)]">Sofern wir einen Newsletter anbieten, gelten folgende Hinweise.</p>
         <h3 className="font-primary text-lg font-semibold text-[var(--deep-carbon)]">Newsletterdaten</h3>
         <p className="leading-relaxed">
           Wenn Sie den auf der Website angebotenen Newsletter beziehen möchten, benötigen wir von Ihnen eine E-Mail-Adresse
@@ -562,7 +562,7 @@ export function DatenschutzContent() {
 
       <section className="space-y-6">
         <h2 className="font-primary text-xl font-semibold text-[var(--deep-carbon)]">7. Plugins und Tools</h2>
-        <p className="leading-relaxed text-sm text-[var(--steel-graphite)]">Die folgenden Hinweise gelten, sofern entsprechende Funktionen auf dieser Website eingebunden sind.</p>
+        <p className="leading-relaxed text-sm text-[var(--muted-foreground)]">Die folgenden Hinweise gelten, sofern entsprechende Funktionen auf dieser Website eingebunden sind.</p>
 
         <div className="space-y-4">
           <h3 className="font-primary text-lg font-semibold text-[var(--deep-carbon)]">Vimeo</h3>
@@ -633,7 +633,7 @@ export function DatenschutzContent() {
         </div>
       </section>
 
-      <section className="border-t border-[var(--light-industrial)] pt-8 text-xs text-[var(--steel-graphite)]">
+      <section className="border-t border-[var(--light-industrial)] pt-8 text-xs text-[var(--muted-foreground)]">
         <p>
           Quelle:{" "}
           <ExtLink href="https://www.e-recht24.de">e-recht24.de</ExtLink>

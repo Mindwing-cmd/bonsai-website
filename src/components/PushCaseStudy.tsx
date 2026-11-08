@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { PROJEKT_WEBSITES } from "@/data/projekt-websites";
 import Image from "next/image";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -114,12 +115,15 @@ export function PushCaseStudy() {
                   <ShinyLink href="/kontakt" className="rounded-xl px-6 py-3 text-sm">
                     Projekt starten
                   </ShinyLink>
-                  <Link
-                    href="/referenzen"
-                    className="inline-flex items-center justify-center rounded-xl border-2 border-[var(--steel-graphite)] bg-transparent px-6 py-3 text-sm font-medium text-[var(--foreground)] transition-colors hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)]"
+                  <a
+                    href={PROJEKT_WEBSITES["innovation-mvp"].href}
+                    target="_blank"
+                    rel="noopener"
+                    className="inline-flex min-h-11 items-center justify-center rounded-xl border-2 border-[var(--steel-graphite)] bg-transparent px-6 py-3 text-sm font-medium text-[var(--foreground)] transition-colors hover:border-[var(--brand-accent)] hover:text-[var(--brand-accent)]"
                   >
-                    Alle Referenzen
-                  </Link>
+                    Website ansehen
+                    <span className="sr-only"> (öffnet in neuem Tab)</span>
+                  </a>
                 </div>
               </RevealOnScroll>
             </motion.div>
@@ -182,7 +186,7 @@ export function PushCaseStudy() {
 
       {/* Section 3 — Problem: Verlauf oben rechts */}
       <section className="relative border-t border-[var(--light-industrial)]/30 py-16 md:py-24">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_100%_0%,rgba(3,105,161,0.08)_0%,transparent_55%)]" aria-hidden />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_100%_0%,rgba(163,136,238,0.12)_0%,transparent_55%)]" aria-hidden />
         <div className="relative z-10 mx-auto max-w-6xl px-6 md:px-12">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <RevealOnScroll direction="left" className="space-y-6">

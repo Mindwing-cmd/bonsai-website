@@ -7,38 +7,40 @@ alwaysApply: true
 
 Diese Datei ist die Standard-Vorlage für den Design-Stil. In anderen Webdesign-Projekten: diese Datei kopieren und nur die Angaben unten anpassen.
 
+**Aktuell gewählter Stil:** tech / 3D / immersiv – Dark OLED + Lavendel/Violett (BonS-AI Logo-Brand)
+
 ## Design-Stil (für dieses Projekt)
 
 **Brand:** BonS-AI  
 **Positioning:** High-end technology-driven digital studio specializing in web design and AI-powered systems.  
 **Tone:** Precise, technical, minimal, confident.
 
-**Avoid:** Playful colors, generic startup design.
+**Avoid:** Playful colors, generic startup design, Multi-Theme-Switcher, Electric Blue.
 
-**Visual Style:** Brushed metal aesthetic, rounded corners, structured layout, strong grid, high contrast.
+**Visual Style:** Dark OLED, Lavendel-Akzente, abgerundete Kanten, starkes Raster, hoher Kontrast.
 
-- **Ästhetik:** Gebürstetes Metall, **abgerundete Kanten** (Buttons und Karten mit `rounded-lg` / `rounded-xl`), starkes Raster, hoher Kontrast.
+- **Ästhetik:** Deep Black / Midnight Violet, **abgerundete Kanten** (`rounded-lg` / `rounded-xl`), starkes Raster, hoher Kontrast.
 - **Ziel:** Beeindruckende, immersive Agentur-Website mit 3D-Scroll und präziser, technischer Ästhetik.
 - **Wirkung:** Hochwertig, selbstbewusst, minimal aber kraftvoll; hohe Whitespace-Kontrolle.
+- **Theme:** Ein festes Brand-Theme (kein Random, kein Theme-Switcher).
 
 ---
 
-## Rahmen & Oberflächen (Borders / Metall-Look)
+## Rahmen & Oberflächen
 
-- **Kanten:** **Abgerundete Kanten** – Buttons und Karten mit `rounded-lg` oder `rounded-xl`; einheitlich, nicht verspielt.
+- **Kanten:** Buttons und Karten mit `rounded-lg` oder `rounded-xl`; einheitlich, nicht verspielt.
 - **Stärke:** Klickbare Karten und Container: **2 px Rahmen** (`border-2`), klar sichtbar.
-- **Ruhezustand:** Steel Graphite / Industrial Grey – `border-[var(--steel-graphite)]` oder `border-[var(--light-industrial)]`.
-- **Hover / Fokus:** Akzent in **Electric AI Blue** (`hover:border-[var(--brand-accent)]`) plus **subtilen Blue Glow** (`hover:shadow-glow`).
-- **Metall-Optik:** Gebürstetes Metall durch klare Schatten und hohen Kontrast; starkes Grid, strukturierte Layouts.
+- **Ruhezustand:** Border Violet Night – `border-[var(--light-industrial)]` (`#2A2438`).
+- **Hover / Fokus:** Akzent in **Lavendel** (`hover:border-[var(--brand-accent)]`) plus **subtilen Violet Glow** (`hover:shadow-glow`).
+- **Dividers:** Dünne Horizontal-Linien mit Lavendel-Gradient (Logo-Tagline-Motiv).
 
 ---
 
 ## Karten (Leistungen / Projekte / Team)
 
 - **Grid:** Starkes Raster; Karten an klaren Spalten ausgerichtet, einheitliche Abstände.
-- **Kanten:** Scharfe Ecken (keine großen Rundungen).
 - **Gleiche Höhe:** Im Grid einheitliche Höhe (`items-stretch`, `h-full`, `flex flex-col`, Text mit `flex-1`).
-- **Hover:** Rand in Electric AI Blue + **subtilen Blue Glow** (Micro-Animation); optional minimaler Lift.
+- **Hover:** Rand in Lavendel + **subtilen Violet Glow**; optional minimaler Lift.
 - **Whitespace:** Hohe Kontrolle – großzügige Abstände, minimale aber kraftvolle Sektionen.
 - **Sektionsüberschriften:** Ein Wort mit Akzent (Farbe oder Unterstreichung in `--brand-accent`), Rest zurückhaltend.
 
@@ -48,17 +50,13 @@ Diese Datei ist die Standard-Vorlage für den Design-Stil. In anderen Webdesign-
 
 Im Layout per `next/font/google` laden, Tailwind: `font-primary`, `font-secondary`, `font-body`.
 
-| Rolle           | Schrift          | Verwendung                     |
-| --------------- | ---------------- | ------------------------------ |
-| **Primary**     | (serifenlos, kräftig) | Logo-ähnlich, Hero, große Überschriften |
-| **Secondary**   | (modern, klar)   | Subheadlines, Akzente, Buttons |
-| **Fließtext/UI**| (gut lesbar)     | Body, Navigation, Listen       |
+| Rolle | Schrift | Verwendung |
+| --- | ---- | --- |
+| **Primary** | Libre Bodoni (Serif) | Hero, große Überschriften, Display (Logo-Monogramm-Energie) |
+| **Secondary** | DM Sans | Subheadlines, Akzente, Buttons |
+| **Fließtext/UI** | DM Sans | Body, Navigation, Listen |
 
-**Konkret für BonS-AI (technologisch, hochwertig):**
-
-- **1. Schrift (Primary):** z. B. Outfit, Syne oder Clash Display – kräftig, modern, kein Bonsai-Serif
-- **2. Schrift (Secondary):** z. B. DM Sans, Geist oder Inter – klar, tech-nah
-- **3. Schrift (Fließtext/UI):** DM Sans oder Source Sans 3 – excellent readability
+**Wordmark:** `BonS-` in Weiß, `-AI` mit Brand-Gradient (`text-brand-ai`).
 
 ---
 
@@ -79,103 +77,91 @@ Verfügbare Komponenten: [shadcnregistry.com/react-bits](https://shadcnregistry.
 Die Website soll **beeindruckend** und **immersiv** wirken. 3D-Tiefe, Schatten und leichte Bewegung beim Scrollen sind zentral.
 
 - **Parallax / Tiefe:** Sektionen oder Hintergründe mit unterschiedlicher Scroll-Geschwindigkeit (Parallax); Ebenen wirken räumlich getrennt.
-- **Scroll-basierte Animationen:** Elemente faden ein, gleiten oder skalieren abhängig vom Scroll-Progress (z. B. mit `Intersection Observer`, Framer Motion, oder CSS `animation-timeline: scroll()`).
-- **Metall-/3D-Optik:** Wo passend: weiche Schatten, die sich beim Scroll leicht verschieben; Gradient-Overlays (silber/grau); Glanz-Effekte auf Buttons oder Karten.
-- **Performance:** 3D-Effekte ressourcenschonend umsetzen (CSS/Transform bevorzugt; WebGL/Three.js nur wo wirklich nötig). Mobile: reduzierte oder abstellbare Motion optional (prefers-reduced-motion).
-- **Bibliotheken:** z. B. Framer Motion, React Scroll Parallax, oder native Scroll-Driven Animations (CSS). Für echte 3D-Szenen: React Three Fiber.
+- **Scroll-basierte Animationen:** Elemente faden ein, gleiten oder skalieren abhängig vom Scroll-Progress.
+- **Violet-/3D-Optik:** Weiche Schatten, Gradient-Overlays (deep black / lavender); dezenter Glow auf Buttons oder Karten.
+- **Performance:** CSS/Transform bevorzugt; WebGL/Three.js / Spline nur wo nötig. Mobile: `prefers-reduced-motion`.
+- **Bibliotheken:** Framer Motion, Lenis, React Three Fiber / Spline wo passend.
 
 ---
 
 ## Hauptfarben (BonS-AI Brand)
 
 **Primary Colors:**
-- **Steel Graphite:** `#5F676E` – Flächen, sekundäre Texte, Rahmen (`--steel-graphite`)
-- **Deep Carbon:** `#2C2F33` – Texte, dunkle Bereiche, starke Kontraste (`--deep-carbon`)
-- **Light Industrial Grey:** `#E6E8EA` – Hintergründe, große Flächen (`--light-industrial`)
+- **Deep Void:** `#0B0812` / `#000000` – Hintergründe (`--background`, `--black`)
+- **Surface:** `#12101A` – Karten, Alt-Flächen (`--card`, `--background-alt`)
+- **Border Night:** `#2A2438` – Rahmen (`--light-industrial`)
+- **Text:** `#FFFFFF` / `#E8E4F0` – Primär / Body (`--deep-carbon`, `--foreground`)
+- **Muted:** `#B8A9D9` / `#C4B5FD` – sekundäre Texte (`--muted-foreground`, `--steel-graphite`)
 
 **Accent:**
-- **Electric AI Blue:** `#0369a1` – CTAs, Links, Hover, Fokus, AI-Akzente, Micro-Animation Glow (`--brand-accent`)
+- **Lavender:** `#A388EE` – CTAs, Links, Hover (`--brand-accent`)
+- **Violet Deep:** `#7B5CD9` – Gradient-Ende (`--brand-dark`)
+- **Soft Accent:** `#C4A0FF` – Highlights (`--brand-accent-soft`)
+- **Glow:** `rgba(163, 136, 238, 0.28)` – `shadow-glow`
 
 **Design Principles:**
-- Strong grid system – Layout strikt am Raster ausgerichtet
-- Clear hierarchy – klare typografische und räumliche Hierarchie
-- Micro-animations with subtle blue glow – Hover/Focus mit dezentem Electric-Blue-Glow
-- Minimal but powerful sections – wenige, starke Sektionen
-- High whitespace control – großzügige Abstände, keine überladenen Flächen
-
-Diese Farben verbindlich nutzen; keine verspielten oder generischen Startup-Farben. Abgerundete Kanten (`rounded-lg`/`rounded-xl`), Glow nur dezent in Electric AI Blue.
+- Strong grid system
+- Clear hierarchy
+- Micro-animations with subtle violet glow
+- Minimal but powerful sections
+- High whitespace control
+- Ein festes Brand-Theme
 
 ---
 
 ## Design Principles (verbindlich)
 
-- **Strong grid system** – Layout strikt am Raster; `grid` mit klaren Spalten, konsistente Gaps.
-- **Clear hierarchy** – Typografie und Abstände führen die Leserführung; ein klares H1 → H2 → Body.
-- **Micro-animations with subtle blue glow** – Hover/Focus mit `shadow-glow` (Electric AI Blue), keine lauten Animationen.
-- **Minimal but powerful sections** – Wenige Sektionen, jede mit klarer Botschaft; keine Fülltexte.
-- **High whitespace control** – Großzügige `py-32`/`py-40`, `gap-8`/`gap-10`; keine überladenen Flächen.
-- **Rounded UI** – Buttons und Karten mit `rounded-lg`/`rounded-xl`; einheitlich, nicht eckig.
-- **Avoid** – Playful colors, generic startup design.
+- **Strong grid system** – Layout strikt am Raster.
+- **Clear hierarchy** – H1 → H2 → Body.
+- **Micro-animations with subtle violet glow** – `shadow-glow`, keine lauten Animationen.
+- **Minimal but powerful sections** – Wenige Sektionen, klare Botschaft.
+- **High whitespace control** – Großzügige `py-24`/`py-32`, `gap-8`/`gap-10`.
+- **Rounded UI** – `rounded-lg`/`rounded-xl`.
+- **Highlights sparsam** – max. 1× Header + 1× Seite (ShinyButton, Spotlight etc.).
+- **Avoid** – Playful colors, generic startup design, Multi-Theme.
 
 ---
 
 ## Mobile-Optimierung
 
-Bei jedem Layout und jeder Komponente von Anfang an berücksichtigen. Relevante Begriffe und Anforderungen:
-
-1. **Responsive Design** – Layout bricht sinnvoll auf Breakpoints (sm/md/lg) um.
-2. **Touch Targets** – Klick-/Touchflächen mind. 44×44 px, ausreichend Abstand.
-3. **Viewport** – Meta viewport gesetzt, keine horizontale Scrollbarkeit auf kleinen Screens.
-4. **Lesbare Schriftgrößen** – Body mind. 16 px, Überschriften skaliert.
-5. **Performance** – Bilder lazy/optimiert (next/image), wenig Blocking Resources.
-6. **Navigation** – Mobilmenü klar bedienbar (Hamburger, Vollbild oder Bottom).
-7. **Abstände/Padding** – Ausreichend Abstand zu Rändern und zwischen Elementen.
-8. **Formulare** – Große Eingabefelder, passende input types (tel, email), Labels sichtbar.
-9. **Above the Fold** – Wichtiger Inhalt und CTA ohne viel Scrollen erreichbar.
-10. **Testen** – Auf echten Geräten oder DevTools Device-Modus prüfen.
+1. Responsive Design (sm/md/lg)
+2. Touch Targets mind. 44×44 px
+3. Viewport, kein horizontales Scrollen
+4. Body mind. 16 px
+5. next/image, next/font
+6. Klare Mobile-Navigation
+7. Ausreichende Abstände
+8. Große Formularfelder
+9. Above the Fold: Brand + CTA
+10. Auf Geräten / DevTools prüfen
 
 ---
 
 ## SEO-Optimierung
 
-Bei jeder Seite und jedem Inhalt beachten. Relevante Begriffe und Anforderungen:
-
-1. **Meta Title & Description** – Pro Seite eindeutig, aussagekräftig, Länge (Title ~60 Zeichen, Description ~155).
-2. **Semantisches HTML** – Korrekte Überschriften-Hierarchie (ein H1, H2–H6 logisch), article/section/nav.
-3. **Strukturierte Daten** – JSON-LD (z. B. Organization, LocalBusiness, FAQ) wo sinnvoll.
-4. **Sitemap** – sitemap.xml pflegen und in Search Console einbinden.
-5. **robots.txt** – Erlaubnis/Verbote für Crawler definieren.
-6. **Canonical URLs** – Duplicate Content vermeiden, canonical setzen.
-7. **Alt-Texte** – Alle relevanten Bilder mit beschreibendem alt-Text.
-8. **Schnelle Ladezeiten** – Core Web Vitals (LCP, FID/INP, CLS), Caching, Optimierung.
-9. **Mobile-First / Mobile-Friendly** – Google bewertet mobil; responsive und nutzbar.
-10. **Interne Verlinkung** – Wichtige Seiten sinnvoll miteinander verlinken.
+1. Meta Title & Description pro Seite
+2. Semantisches HTML
+3. JSON-LD wo sinnvoll
+4. sitemap.ts / robots.ts
+5. Canonical URLs
+6. Alt-Texte
+7. Core Web Vitals
+8. Mobile-First
+9. Interne Verlinkung
+10. OG mit Brand-Logo
 
 ---
 
 ## Cookie-Notice (verpflichtend)
 
-**Eine Cookie-Notice bzw. Einwilligungshinweis ist in diesem Projekt verpflichtend.**
-
-- Beim ersten Besuch muss ein Hinweis auf Cookies/Datennutzung angezeigt werden (Banner oder Bar).
-- Optionen: „Alle akzeptieren“, „Nur notwendige“, „Einstellungen“ (Details) – je nach Einsatz von Analyse-/Marketing-Cookies.
-- Link zur Datenschutzerklärung muss enthalten sein.
-- Einwilligung speichern (z. B. localStorage), damit der Hinweis nicht bei jedem Laden erscheint.
-- DSGVO-konform: vor dem Setzen nicht notwendiger Cookies Einwilligung einholen.
-
-Bei neuen Projekten oder Seiten: Cookie-Komponente einplanen und in Layout (z. B. Footer oder Overlay) einbinden.
+- Banner beim ersten Besuch
+- Optionen: Alle akzeptieren / Nur notwendige / Einstellungen
+- Link zur Datenschutzerklärung
+- Einwilligung in localStorage
+- DSGVO: vor nicht notwendigen Cookies Einwilligung
 
 ---
 
 ## Vordefinierte Stil-Optionen
 
-Einen der folgenden Stile oben eintragen (Zeile „Aktuell gewählter Stil“):
-
-- **minimalistisch, ruhig** – viel Weißraum, reduzierte Elemente, dezente Akzente
-- **corporate, seriös** – sachlich, klare Strukturen, professionell
-- **modern, klar** – zeitgemäß, klare Typografie, zurückhaltende Farben
-- **medizinisch / vertrauenswürdig** – ruhig, vertrauenserweckend, gut lesbar, professionell
-- **kreativ, lebhaft** – auffällige Gestaltung, mutige Farben oder Formen
-- **elegant, hochwertig** – zurückhaltend luxuriös, feine Typo und Abstände
-- **natur / zen** – erdige Töne, ruhig, organisch
-- **tech / 3D / immersiv** – metallisch, Tiefe, 3D-Scroll, Silber/Grau + Blau (BonS-AI Standard)
+- **tech / 3D / immersiv** – Dark OLED, Lavendel/Violett, Serif+Sans (BonS-AI Standard) ✓ aktuell

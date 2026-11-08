@@ -7,7 +7,7 @@ import { LeistungenNav } from "@/components/LeistungenNav";
 import { PreiseNav } from "@/components/PreiseNav";
 import { ShinyLink } from "@/components/ui/shiny-button";
 import { MobileNav, MobileNavTrigger } from "@/components/MobileNav";
-import { SITE_LOGO_PATH } from "@/data/seo";
+import { SITE_LOGO_WIDE_PATH } from "@/data/seo";
 
 const navLinks = [
   { href: "/referenzen", label: "Referenzen" },
@@ -27,20 +27,20 @@ export function SiteHeader() {
     setOpenNav(open ? "preise" : (prev) => (prev === "preise" ? null : prev));
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 border-b border-[var(--light-industrial)] bg-[var(--background)]/95 backdrop-blur-sm">
+    <header className="fixed left-0 right-0 top-0 z-50 border-b border-[var(--light-industrial)] bg-[var(--background)]/90 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-8 px-6 md:px-12">
-        <Link href="/" className="flex items-center gap-3">
+        <Link href="/" className="flex min-h-[44px] items-center gap-3">
           <Image
-            src={SITE_LOGO_PATH}
+            src={SITE_LOGO_WIDE_PATH}
             alt="BonS-AI – Webdesign, KI-Systeme & Apps"
-            width={140}
-            height={44}
-            className="h-10 w-auto object-contain"
+            width={200}
+            height={56}
+            className="h-10 w-auto max-w-[160px] object-contain object-left sm:h-11 sm:max-w-[200px]"
             priority
           />
         </Link>
 
-        <nav className="hidden items-center gap-8 text-sm font-medium text-[var(--steel-graphite)] md:flex">
+        <nav className="hidden items-center gap-8 text-sm font-medium text-[var(--muted-foreground)] md:flex">
           <LeistungenNav open={openNav === "leistungen"} onOpenChange={handleLeistungenOpen} />
           <PreiseNav open={openNav === "preise"} onOpenChange={handlePreiseOpen} />
           {navLinks.map(({ href, label }) => (

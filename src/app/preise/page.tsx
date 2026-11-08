@@ -19,7 +19,7 @@ export default function PreisePage() {
           <h1 className="font-primary text-3xl font-bold tracking-tight text-[var(--deep-carbon)] md:text-4xl">
             <span className="border-b-2 border-[var(--brand-accent)]">Preise</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-[var(--steel-graphite)]">
+          <p className="mt-6 max-w-2xl text-[var(--muted-foreground)]">
             Transparente Orientierung für Webdesign sowie Hosting und Wartung. Individuelle Angebote nach Abstimmung.
           </p>
         </FadeInOnScroll>
@@ -31,7 +31,7 @@ export default function PreisePage() {
               Pakete Webdesign
             </Link>
           </h2>
-          <p className="mt-2 text-[var(--steel-graphite)]">
+          <p className="mt-2 text-[var(--muted-foreground)]">
             Richtwerte je nach Umfang und Anforderungen. Einmalige Projektpreise.
           </p>
           <p className="mt-2">
@@ -58,7 +58,7 @@ export default function PreisePage() {
               Pakete Web-Wartung
             </Link>
           </h2>
-          <p className="mt-2 text-[var(--steel-graphite)]">
+          <p className="mt-2 text-[var(--muted-foreground)]">
             Sicherer Betrieb und optional laufende Betreuung Ihrer Website.
           </p>
           <p className="mt-2">
@@ -79,7 +79,7 @@ export default function PreisePage() {
         </FadeInOnScroll>
 
         <FadeInOnScroll className="mt-16">
-          <p className="text-[var(--steel-graphite)]">
+          <p className="text-[var(--muted-foreground)]">
             Für KI-Systeme & Automatisierung sowie Web- und Mobile-Apps erstellen wir individuelle Angebote. Gern im Gespräch klären.
           </p>
           <div className="mt-8">

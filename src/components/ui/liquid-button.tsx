@@ -6,13 +6,13 @@ import { Liquid, type Colors } from "@/components/ui/button-1";
 
 const COLORS: Colors = {
   color1: "#FFFFFF",
-  color2: "#0369a1",
+  color2: "#a388ee",
   color3: "#7dd3fc",
   color4: "#f0f9ff",
   color5: "#e0f2fe",
   color6: "#bae6fd",
   color7: "#0284c7",
-  color8: "#0369a1",
+  color8: "#7b5cd9",
   color9: "#0c4a6e",
   color10: "#164e63",
   color11: "#0c4a6e",
@@ -20,7 +20,7 @@ const COLORS: Colors = {
   color13: "#0284c7",
   color14: "#7dd3fc",
   color15: "#bae6fd",
-  color16: "#0369a1",
+  color16: "#c4a0ff",
   color17: "#0c4a6e",
 };
 

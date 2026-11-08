@@ -1,8 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import { Outfit, DM_Sans } from "next/font/google";
-import Script from "next/script";
+import { Libre_Bodoni, DM_Sans } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/ThemeProvider";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -10,7 +8,7 @@ import { CookieBanner } from "@/components/CookieBanner";
 import { OrganizationJsonLd } from "@/components/OrganizationJsonLd";
 import { buildPageMetadata, getWebmasterVerification } from "@/data/seo";
 
-const fontPrimary = Outfit({
+const fontPrimary = Libre_Bodoni({
   subsets: ["latin"],
   variable: "--font-primary",
   display: "swap",
@@ -27,7 +25,7 @@ const fontSecondary = DM_Sans({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#0f172a",
+  themeColor: "#0B0812",
 };
 
 export const metadata: Metadata = {
@@ -49,22 +47,13 @@ export default function RootLayout({
       }}
     >
       <body className="antialiased bg-[var(--background)] text-[var(--foreground)]">
-        <Script
-          id="theme-init"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `(function(){var ids=['lavender-iron','coral-steel','carbon-copper','titanium'];var t=ids[Math.floor(Math.random()*ids.length)];document.documentElement.setAttribute('data-theme',t);})();`,
-          }}
-        />
         <OrganizationJsonLd />
-        <ThemeProvider>
-          <SmoothScroll>
-            <SiteHeader />
-            {children}
-            <SiteFooter />
-            <CookieBanner />
-          </SmoothScroll>
-        </ThemeProvider>
+        <SmoothScroll>
+          <SiteHeader />
+          {children}
+          <SiteFooter />
+          <CookieBanner />
+        </SmoothScroll>
       </body>
     </html>
   );

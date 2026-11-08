@@ -100,10 +100,10 @@ export function InteractiveNeuralVortex({
         noise += pow(noise, 10.);
         noise = max(.0, noise - .5);
         noise *= (1. - length(vUv - .5));
-        color = vec3(0.5, 0.15, 0.65);
+        color = vec3(0.64, 0.53, 0.93);
         float scrollMix = 0.32 + 0.16 * sin(2.0 * u_scroll_progress * u_scroll_influence + 1.2);
-        color = mix(color, vec3(0.02, 0.7, 0.9), scrollMix);
-        color += vec3(0.15, 0.0, 0.6) * sin(2.0 * u_scroll_progress * u_scroll_influence + 1.5);
+        color = mix(color, vec3(0.48, 0.36, 0.85), scrollMix);
+        color += vec3(0.77, 0.63, 1.0) * sin(2.0 * u_scroll_progress * u_scroll_influence + 1.5) * 0.35;
         color = color * noise;
         gl_FragColor = vec4(color, noise);
       }

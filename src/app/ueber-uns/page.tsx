@@ -26,12 +26,12 @@ export default function UeberUnsPage() {
       {/* Hero-Section mit Celestial-Sphere-Hintergrund, Headline, CTAs und zwei Glass-Karten */}
       <section className="relative min-h-[80vh] overflow-hidden py-24 md:py-32">
         <CelestialSphere
-          hue={210}
+          hue={270}
           speed={0.35}
           zoom={1.2}
           particleSize={3}
           mouseInfluence={0.12}
-          saturation={0.4}
+          saturation={0.45}
           className="absolute inset-0 h-full w-full"
         />
         <div
@@ -43,7 +43,7 @@ export default function UeberUnsPage() {
             <h1 className="font-primary text-3xl font-bold tracking-tight text-[var(--foreground)] md:text-4xl lg:text-5xl">
               Ihre digitale Präsenz – unser Anspruch
             </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-base text-[var(--steel-graphite)] md:text-lg">
+            <p className="mx-auto mt-6 max-w-2xl text-base text-[var(--muted-foreground)] md:text-lg">
               Aus Thüringen: Bastian Schwinger und BonS-AI entwickeln moderne Web- und KI-Lösungen – von der Strategie bis zum Launch.
             </p>
             <div className="mt-10 flex flex-wrap justify-center gap-4">
@@ -84,11 +84,11 @@ export default function UeberUnsPage() {
                   className="relative z-10 mt-6 rounded-xl border-2 border-[var(--steel-graphite)]/30 bg-white/5 p-6 shadow-lg backdrop-blur-xl transition-all duration-300 hover:border-[var(--brand-accent)]/50 hover:shadow-glow lg:ml-44 lg:mt-0 lg:min-w-[280px] xl:ml-52 xl:p-8"
                   style={{ boxShadow: "0 0 0 1px rgba(255,255,255,0.06)" }}
                 >
-                  <p className="text-sm text-[var(--steel-graphite)] md:text-base">
+                  <p className="text-sm text-[var(--muted-foreground)] md:text-base">
                     Unser Team bietet Ihnen eine zielgerichtete Beratung und Umsetzung mit modernster Technik – für Projekte, die messbar wirken.
                   </p>
                   <p className="mt-4 font-primary text-xl font-bold text-[var(--foreground)]">Bastian Schwinger</p>
-                  <p className="text-sm text-[var(--steel-graphite)]">Gründer & Creative Director</p>
+                  <p className="text-sm text-[var(--muted-foreground)]">Gründer & Creative Director</p>
                 </div>
               </div>
             </FadeInOnScroll>
@@ -109,7 +109,7 @@ export default function UeberUnsPage() {
                 </ul>
                 <div className="mt-8 pt-6 border-t border-[var(--steel-graphite)]/20">
                   <p className="font-primary text-lg font-bold text-[var(--foreground)]">Für Sie da</p>
-                  <p className="mt-1 text-sm text-[var(--steel-graphite)]">
+                  <p className="mt-1 text-sm text-[var(--muted-foreground)]">
                     BonS-AI – Ihr Partner für Webdesign, KI-Systeme und digitale Produkte.
                   </p>
                 </div>
@@ -124,7 +124,7 @@ export default function UeberUnsPage() {
         <div className="mx-auto max-w-6xl px-6 md:px-12">
           <FadeInOnScroll>
             <h2 className="font-primary text-2xl font-bold text-[var(--foreground)] md:text-3xl">Positionierung</h2>
-            <p className="mt-6 max-w-2xl text-[var(--steel-graphite)]">
+            <p className="mt-6 max-w-2xl text-[var(--muted-foreground)]">
               Wir entwickeln digitale Produkte und Markenauftritte, die funktionieren und überzeugen. Von der Strategie über Design bis zur technischen Umsetzung – mit klarem Prozess und messbarem Ergebnis.
             </p>
           </FadeInOnScroll>
@@ -145,7 +145,7 @@ export default function UeberUnsPage() {
                     <CardTitle className="font-primary text-lg text-[var(--foreground)]">{item.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="pt-0">
-                    <p className="text-sm text-[var(--steel-graphite)]">{item.text}</p>
+                    <p className="text-sm text-[var(--muted-foreground)]">{item.text}</p>
                   </CardContent>
                 </Card>
               </StaggeredRevealItem>

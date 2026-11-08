@@ -29,7 +29,7 @@ export default function LeistungenPage() {
           <h1 className="font-primary text-3xl font-bold tracking-tight text-[var(--deep-carbon)] md:text-4xl">
             <span className="border-b-2 border-[var(--brand-accent)]">Leistungen</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-[var(--steel-graphite)]">
+          <p className="mt-6 max-w-2xl text-[var(--muted-foreground)]">
             BonS-AI – technologiegetriebenes Digital Studio aus Thüringen: Webdesign, KI-Systeme, Web- und
             Mobile-Apps sowie Paid Ads. Kurzüberblick mit Tiefgang auf den Detailseiten.
           </p>
@@ -48,7 +48,7 @@ export default function LeistungenPage() {
                 >
                   <CardHeader>
                     <CardTitle className="font-primary text-[var(--deep-carbon)]">{item.title}</CardTitle>
-                    <CardDescription className="text-[var(--steel-graphite)]">{item.description}</CardDescription>
+                    <CardDescription className="text-[var(--muted-foreground)]">{item.description}</CardDescription>
                   </CardHeader>
                   <CardContent className="pt-0">
                     <span className="text-sm font-medium text-[var(--brand-accent)]">Details & Ablauf →</span>
@@ -60,7 +60,7 @@ export default function LeistungenPage() {
         </StaggeredReveal>
 
         <FadeInOnScroll className="mt-16 rounded-xl border-2 border-[var(--light-industrial)] bg-[var(--background)]/75 p-6 shadow-sm backdrop-blur-sm md:p-8">
-          <p className="text-[var(--steel-graphite)]">
+          <p className="text-[var(--muted-foreground)]">
             Projekt oder Fragen zu einer Leistung? Wir melden uns in der Regel innerhalb von 24 Stunden.
           </p>
           <Link

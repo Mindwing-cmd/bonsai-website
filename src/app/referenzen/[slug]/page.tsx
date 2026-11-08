@@ -4,6 +4,8 @@ import { FadeInOnScroll } from "@/components/FadeInOnScroll";
 import { ShinyLink } from "@/components/ui/shiny-button";
 import { PushCaseStudy } from "@/components/PushCaseStudy";
 import { ZahnaerzteAmInnCaseStudy } from "@/components/ZahnaerzteAmInnCaseStudy";
+import { LindoraCaseStudy } from "@/components/LindoraCaseStudy";
+import { NaturverbundenJenaCaseStudy } from "@/components/NaturverbundenJenaCaseStudy";
 
 const CASE_STUDIES: Record<
   string,
@@ -34,6 +36,20 @@ const CASE_STUDIES: Record<
     prozess: ["Briefing & Konzept", "Struktur & Inhalte", "Design & Abnahme", "Umsetzung", "Content & Bilder", "SEO & Resend", "Launch & Einweisung"],
     ergebnis: "Live-Website, wartbar, suchmaschinen- und nutzerfreundlich. Schnelle Ladezeiten, Kontaktformular per Resend, regionale Suchbegriffe abgedeckt.",
   },
+  "lindora-home": {
+    title: "Lindora-Home – Onlineshop mit CMS",
+    ausgangslage: "Handgegossene Kerzen aus Magdeburg brauchten einen verkaufsbereiten Shop inkl. Wunschkerzen, Pflege und Rechtstexten.",
+    lösung: "Next.js-Onlineshop mit Katalog, Warenkorb, Stripe-Checkout, Admin-/CMS-Bereich, Supabase und Shop-Rechtstexten.",
+    prozess: ["Briefing & Sortiment", "Informationsarchitektur", "Design & Marke", "Shop-Umsetzung", "CMS / Pflege", "Integrationen", "Recht & SEO", "Launch"],
+    ergebnis: "Verkaufsbereiter Shop mit CMS-Pflege, Checkout und rechtssicheren Seiten – wartbar ohne Agentur-Engpass.",
+  },
+  "naturverbunden-jena": {
+    title: "Naturverbunden Jena",
+    ausgangslage: "Für naturnahe psychologisch-therapeutische Gespräche fehlte eine ruhige, vertrauenswürdige Webpräsenz mit Local SEO für Jena.",
+    lösung: "Content-Website mit Begleitung, Über mich, FAQ, Kontakt, Impressum und Datenschutz – Next.js, klare Struktur, Local SEO.",
+    prozess: ["Briefing & Positionierung", "Informationsarchitektur", "Design & Atmosphäre", "Content & Angebot", "Umsetzung", "SEO & Vertrauen", "Launch"],
+    ergebnis: "Live unter www.naturverbunden-jena.de: klare Angebotswege, Vertrauensaufbau und regionale Auffindbarkeit.",
+  },
 };
 
 type Props = { params: Promise<{ slug: string }> };
@@ -55,6 +71,20 @@ export async function generateMetadata({ params }: Props) {
         "Case Study: Praxis-Website für zwei Standorte. Webdesign, SEO, DSGVO, Kontaktformular. Next.js, Resend, JSON-LD.",
     };
   }
+  if (slug === "lindora-home") {
+    return {
+      title: "Lindora-Home – Onlineshop mit CMS – BonS-AI",
+      description:
+        "Case Study: Onlineshop für handgegossene Kerzen. Stripe-Checkout, CMS/Pflege, Supabase, Rechtstexte. Next.js.",
+    };
+  }
+  if (slug === "naturverbunden-jena") {
+    return {
+      title: "Naturverbunden Jena – BonS-AI",
+      description:
+        "Case Study: Ruhige Website für naturnahe Gespräche in Jena. Webdesign, Content, Local SEO, DSGVO. Next.js.",
+    };
+  }
   if (!data) return { title: "Referenz – BonS-AI" };
   return { title: `${data.title} – BonS-AI`, description: data.ergebnis };
 }
@@ -73,6 +103,12 @@ export default async function ReferenzDetailPage({ params }: Props) {
   }
   if (slug === "zahnaerzte-am-inn") {
     return <ZahnaerzteAmInnCaseStudy />;
+  }
+  if (slug === "lindora-home") {
+    return <LindoraCaseStudy />;
+  }
+  if (slug === "naturverbunden-jena") {
+    return <NaturverbundenJenaCaseStudy />;
   }
 
   return (

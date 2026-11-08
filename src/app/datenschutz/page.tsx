@@ -12,7 +12,7 @@ export default function DatenschutzPage() {
           <h1 className="font-primary text-3xl font-bold tracking-tight text-[var(--deep-carbon)] md:text-4xl">
             Datenschutzerklärung
           </h1>
-          <p className="mt-4 text-sm text-[var(--steel-graphite)]">Informationen gemäß Art. 13/14 DSGVO</p>
+          <p className="mt-4 text-sm text-[var(--muted-foreground)]">Informationen gemäß Art. 13/14 DSGVO</p>
         </FadeInOnScroll>
 
         <FadeInOnScroll className="mt-12">

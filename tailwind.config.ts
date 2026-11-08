@@ -24,19 +24,23 @@ const config: Config = {
         body: "var(--font-body)",
       },
       backgroundImage: {
-        "gradient-metallic":
-          "linear-gradient(135deg, #ffffff 0%, #e6e8ea 50%, #e6e8ea 100%)",
-        "gradient-carbon":
-          "linear-gradient(180deg, #5f676e 0%, #2c2f33 100%)",
+        "gradient-brand":
+          "linear-gradient(90deg, #a388ee 0%, #7b5cd9 50%, #c4a0ff 100%)",
+        "gradient-hero":
+          "linear-gradient(135deg, #0b0812 0%, #12101a 40%, #000000 100%)",
         "gradient-carbon-dark":
-          "linear-gradient(180deg, #1e293b 0%, #0f172a 100%)",
+          "linear-gradient(180deg, #12101a 0%, #0b0812 100%)",
+        "gradient-metallic":
+          "linear-gradient(135deg, #ffffff 0%, #e8e4f0 50%, #c4b5fd 100%)",
+        "gradient-carbon":
+          "linear-gradient(180deg, #2a2438 0%, #0b0812 100%)",
       },
       boxShadow: {
-        metal: "0 2px 8px 0 rgba(44, 47, 51, 0.08), 0 1px 2px 0 rgba(44, 47, 51, 0.06)",
+        metal: "0 2px 8px 0 rgba(11, 8, 18, 0.45), 0 1px 2px 0 rgba(163, 136, 238, 0.08)",
         "metal-lg":
-          "0 8px 24px -4px rgba(44, 47, 51, 0.12), 0 2px 6px -2px rgba(44, 47, 51, 0.08)",
-        glow: "0 0 16px rgba(3, 105, 161, 0.22)",
-        "glow-strong": "0 0 24px rgba(3, 105, 161, 0.3)",
+          "0 8px 24px -4px rgba(11, 8, 18, 0.55), 0 2px 6px -2px rgba(163, 136, 238, 0.12)",
+        glow: "0 0 16px rgba(163, 136, 238, 0.28)",
+        "glow-strong": "0 0 24px rgba(163, 136, 238, 0.4)",
       },
       keyframes: {
         spotlight: {

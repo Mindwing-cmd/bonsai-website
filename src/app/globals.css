@@ -3,144 +3,38 @@
 @tailwind utilities;
 
 :root {
-  /* Fallback vor theme-init: Lavender Iron (wie data-theme lavender-iron) */
+  /* BonS-AI Brand – Deep Black + Lavendel/Violett (festes Theme) */
   --steel-graphite: #c4b5fd;
-  --deep-carbon: #f5f3ff;
-  --light-industrial: #4c1d95;
-  --silver-base: #3730a3;
-  --silver-light: #5b21b6;
-  --silver-dark: #4c1d95;
-  --brand-accent: #a855f7;
-  --brand-accent-soft: #c084fc;
-  --brand-accent-muted: rgba(168, 85, 247, 0.12);
-  --brand: #a855f7;
-  --brand-dark: #9333ea;
-  --brand-foreground: #18181b;
-  --hero-bg-start: #18181b;
-  --hero-bg-mid: #27272a;
-  --hero-bg-end: #0f0f11;
+  --deep-carbon: #ffffff;
+  --light-industrial: #2a2438;
+  --silver-base: #1a1524;
+  --silver-light: #2a2438;
+  --silver-dark: #12101a;
+  --brand-accent: #a388ee;
+  --brand-accent-soft: #c4a0ff;
+  --brand-accent-muted: rgba(163, 136, 238, 0.14);
+  --brand: #a388ee;
+  --brand-dark: #7b5cd9;
+  --brand-foreground: #0b0812;
+  --brand-gradient: linear-gradient(90deg, #a388ee 0%, #7b5cd9 50%, #c4a0ff 100%);
+  --hero-bg-start: #0b0812;
+  --hero-bg-mid: #12101a;
+  --hero-bg-end: #000000;
   --golden-minor: 38.2%;
   --golden-major: 61.8%;
-  --background: #18181b;
-  --background-alt: #27272a;
-  --foreground: #f5f3ff;
-  --black: #18181b;
-  --card: #27272a;
-  --card-foreground: #f5f3ff;
-  --muted-foreground: #c4b5fd;
-  --button-ripple-color: rgba(255, 255, 255, 0.12);
-}
-
-/* Carbon & Copper – warm, industriell */
-[data-theme="carbon-copper"] {
-  --steel-graphite: #a8a29e;
-  --deep-carbon: #f5f5f4;
-  --light-industrial: #3f3f46;
-  --silver-base: #52525b;
-  --silver-light: #71717a;
-  --silver-dark: #3f3f46;
-  --brand-accent: #d97706;
-  --brand-accent-soft: #fbbf24;
-  --brand-accent-muted: rgba(217, 119, 6, 0.12);
-  --brand: #d97706;
-  --brand-dark: #b45309;
-  --brand-foreground: #0c0c0e;
-  --hero-bg-start: #0c0c0e;
-  --hero-bg-mid: #1a1a1d;
-  --hero-bg-end: #09090b;
-  --background: #0c0c0e;
-  --background-alt: #1a1a1d;
-  --foreground: #f5f5f4;
-  --black: #0c0c0e;
-  --card: #1a1a1d;
-  --card-foreground: #f5f5f4;
-  --muted-foreground: #a8a29e;
-  --button-ripple-color: rgba(255, 255, 255, 0.12);
-}
-
-/* Titanium – neutral, modern, Teal */
-[data-theme="titanium"] {
-  --steel-graphite: #94a3b8;
-  --deep-carbon: #f4f4f5;
-  --light-industrial: #52525b;
-  --silver-base: #71717a;
-  --silver-light: #a1a1aa;
-  --silver-dark: #52525b;
-  --brand-accent: #0d9488;
-  --brand-accent-soft: #2dd4bf;
-  --brand-accent-muted: rgba(13, 148, 136, 0.12);
-  --brand: #0d9488;
-  --brand-dark: #0f766e;
-  --brand-foreground: #18181b;
-  --hero-bg-start: #27272a;
-  --hero-bg-mid: #3f3f46;
-  --hero-bg-end: #18181b;
-  --background: #27272a;
-  --background-alt: #3f3f46;
-  --foreground: #f4f4f5;
-  --black: #18181b;
-  --card: #3f3f46;
-  --card-foreground: #f4f4f5;
-  --muted-foreground: #94a3b8;
-  --button-ripple-color: rgba(255, 255, 255, 0.12);
-}
-
-/* Coral Steel – Stahlgrau mit Rose/Coral-Akzent, mutig & modern */
-[data-theme="coral-steel"] {
-  --steel-graphite: #fda4af;
-  --deep-carbon: #fff1f2;
-  --light-industrial: #831843;
-  --silver-base: #4c0519;
-  --silver-light: #701a75;
-  --silver-dark: #831843;
-  --brand-accent: #f43f5e;
-  --brand-accent-soft: #fb7185;
-  --brand-accent-muted: rgba(244, 63, 94, 0.12);
-  --brand: #f43f5e;
-  --brand-dark: #e11d48;
-  --brand-foreground: #0f172a;
-  --hero-bg-start: #0f172a;
-  --hero-bg-mid: #1e293b;
-  --hero-bg-end: #0c1222;
-  --background: #0f172a;
-  --background-alt: #1f2937;
-  --foreground: #fce7f3;
-  --black: #0f172a;
-  --card: #1f2937;
-  --card-foreground: #fce7f3;
-  --muted-foreground: #fda4af;
-  --button-ripple-color: rgba(255, 255, 255, 0.12);
-}
-
-/* Lavender Iron – Eisengrau mit Lavendel-Akzent, ruhig modern */
-[data-theme="lavender-iron"] {
-  --steel-graphite: #c4b5fd;
-  --deep-carbon: #f5f3ff;
-  --light-industrial: #4c1d95;
-  --silver-base: #3730a3;
-  --silver-light: #5b21b6;
-  --silver-dark: #4c1d95;
-  --brand-accent: #a855f7;
-  --brand-accent-soft: #c084fc;
-  --brand-accent-muted: rgba(168, 85, 247, 0.12);
-  --brand: #a855f7;
-  --brand-dark: #9333ea;
-  --brand-foreground: #18181b;
-  --hero-bg-start: #18181b;
-  --hero-bg-mid: #27272a;
-  --hero-bg-end: #0f0f11;
-  --background: #18181b;
-  --background-alt: #27272a;
-  --foreground: #f5f3ff;
-  --black: #18181b;
-  --card: #27272a;
-  --card-foreground: #f5f3ff;
-  --muted-foreground: #c4b5fd;
+  --background: #0b0812;
+  --background-alt: #12101a;
+  --foreground: #e8e4f0;
+  --black: #000000;
+  --card: #12101a;
+  --card-foreground: #ffffff;
+  --muted-foreground: #b8a9d9;
   --button-ripple-color: rgba(255, 255, 255, 0.12);
 }
 
 html {
   scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
 body {
@@ -153,6 +47,35 @@ body {
 select option {
   background-color: var(--background-alt);
   color: var(--foreground);
+}
+
+/* Brand wordmark: -AI gradient */
+.text-brand-ai {
+  background-image: linear-gradient(90deg, #a388ee 0%, #c4a0ff 55%, #7b5cd9 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Tagline divider lines (logo motif) */
+.brand-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+.brand-divider::before,
+.brand-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #a388ee, transparent);
+}
+.brand-divider::before {
+  background: linear-gradient(90deg, transparent, #7b5cd9);
+}
+.brand-divider::after {
+  background: linear-gradient(90deg, #a388ee, transparent);
 }
 
 /* Lenis smooth scroll */
@@ -169,8 +92,15 @@ html.lenis body {
 .lenis.lenis-stopped {
   overflow: hidden;
 }
-.lenis.lenis-smooth iframe {
+/* Lenis: Iframes standardmäßig ohne Pointer – außer interaktive Spline-Embeds */
+.lenis.lenis-smooth iframe:not(.spline-interactive) {
   pointer-events: none;
+}
+
+/* Spline-Hero: weiße Embed-Fläche in Brand-BG einrechnen */
+.spline-interactive {
+  background-color: transparent !important;
+  color-scheme: light;
 }
 
 /* Aceternity Spotlight animation */

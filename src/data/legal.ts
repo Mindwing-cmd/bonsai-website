@@ -17,9 +17,9 @@ export const LEGAL = {
   ustIdNr: "" as string,
   /** Verantwortlich für den Inhalt gemäß § 55 Abs. 2 RStV / § 5 TMG */
   verantwortlich: "Bastian Schwinger, Nelkenweg 6, 99326 Stadtilm",
-  email: "bonsai.schwinger@gmail.com",
-  /** Anzeige im Impressum */
-  telefon: "015156197764",
+  email: "bastian.schwinger@bonsai-webdesign.de",
+  /** Anzeige im Impressum / Footer */
+  telefon: "+49 151 5619 7764",
   /** Für tel:-Links und strukturierte Daten (E.164) */
   telefonInternational: "+4915156197764",
   region: "Thüringen",
