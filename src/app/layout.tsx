@@ -7,6 +7,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { CookieBanner } from "@/components/CookieBanner";
 import { OrganizationJsonLd } from "@/components/OrganizationJsonLd";
 import { buildPageMetadata, getWebmasterVerification } from "@/data/seo";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const fontPrimary = Libre_Bodoni({
   subsets: ["latin"],
@@ -56,6 +57,7 @@ export default function RootLayout({
           <SiteFooter />
           <CookieBanner />
         </SmoothScroll>
+        <SpeedInsights />
       </body>
     </html>
   );
