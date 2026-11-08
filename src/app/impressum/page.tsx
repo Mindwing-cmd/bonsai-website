@@ -1,12 +1,14 @@
 import { FadeInOnScroll } from "@/components/FadeInOnScroll";
 import { LEGAL } from "@/data/legal";
-import { buildPageMetadata } from "@/data/seo";
+import { JsonLd } from "@/components/JsonLd";
+import { SEO_PAGES, buildPageMetadata, webPageJsonLd } from "@/data/seo";
 
 export const metadata = buildPageMetadata("impressum");
 
 export default function ImpressumPage() {
   return (
     <main className="min-h-screen pt-24">
+      <JsonLd data={webPageJsonLd(SEO_PAGES.impressum.title, SEO_PAGES.impressum.description, "/impressum")} />
       <div className="mx-auto max-w-3xl px-6 py-16 md:px-12 md:py-24">
         <FadeInOnScroll>
           <h1 className="font-primary text-3xl font-bold tracking-tight text-[var(--deep-carbon)] md:text-4xl">

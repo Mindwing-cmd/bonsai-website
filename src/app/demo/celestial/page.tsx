@@ -1,8 +1,9 @@
 import { CelestialSphere } from "@/components/ui/celestial-sphere";
 
 export const metadata = {
-  title: "Celestial Sphere – Demo | BonS-AI",
-  description: "Interactive WebGL shader component demo.",
+  title: { absolute: "Celestial Sphere – Demo | BonS-AI" },
+  description: "Interne Demo einer WebGL-Shader-Komponente von BonS-AI. Diese Seite ist nicht für die Indexierung vorgesehen.",
+  robots: { index: false, follow: false },
 };
 
 export default function DemoCelestialPage() {

@@ -6,7 +6,7 @@ export const WEBSEITEN_PLÄNE: PricingCardProps[] = [
   {
     planName: "Starter",
     description: "Kleine Website, bis 5 Seiten. Ideal für Einsteiger und persönliche Projekte.",
-    price: "2.500",
+    price: "2.499",
     priceSuffix: " € einmalig",
     features: [
       "Bis 5 Unterseiten",
@@ -22,7 +22,7 @@ export const WEBSEITEN_PLÄNE: PricingCardProps[] = [
   {
     planName: "Business",
     description: "Mittlere Website mit CMS und Formularen. Für Unternehmen mit wachsendem Bedarf.",
-    price: "5.000",
+    price: "4.999",
     priceSuffix: " € einmalig",
     features: [
       "Bis 15 Unterseiten",
@@ -114,13 +114,13 @@ export type PaketPlanTable = {
 };
 
 export const PAKETE_WEBDESIGN_TABLE: PaketPlanTable[] = [
-  { name: "Starter", badge: "Bis 5 Seiten", price: "2.500 € einmalig", ctaText: "Anfrage stellen", ctaHref: "/kontakt" },
-  { name: "Business", badge: "Bis 15 Seiten", price: "5.000 € einmalig", ctaText: "Anfrage stellen", ctaHref: "/kontakt" },
+  { name: "Starter", badge: "Bis 5 Seiten", price: "2.499 € einmalig", ctaText: "Anfrage stellen", ctaHref: "/kontakt" },
+  { name: "Business", badge: "Bis 15 Seiten", price: "4.999 € einmalig", ctaText: "Anfrage stellen", ctaHref: "/kontakt" },
   { name: "Enterprise", badge: "Individuell", price: "Individuelles Angebot", ctaText: "Gespräch vereinbaren", ctaHref: "/kontakt" },
 ];
 
 export const PAKETE_WEBDESIGN_FEATURES: FeatureItem[] = [
-  { label: "Preis", values: ["2.500 € einmalig", "5.000 € einmalig", "Individuelles Angebot"] },
+  { label: "Preis", values: ["2.499 € einmalig", "4.999 € einmalig", "Individuelles Angebot"] },
   { label: "Seitenumfang", values: ["Bis 5 Seiten", "Bis 15 Seiten", "Unbegrenzt"] },
   { label: "Responsives Design", values: [true, true, true] },
   { label: "Individuelles UI Design", values: ["Basis Designsystem", "Individuelles Designsystem", "Premium Design + UX Konzept"] },

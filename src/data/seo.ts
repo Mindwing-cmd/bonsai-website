@@ -30,11 +30,11 @@ type SeoPageConfig = {
 
 export const SEO_SITE = {
   brand: "BonS-AI",
-  defaultTitle: "BonS-AI | Bastian Schwinger – Webdesign & KI aus Thüringen",
+  defaultTitle: "Webdesign und KI aus Stadtilm, Thüringen | BonS-AI",
   defaultDescription:
-    "BonS-AI von Bastian Schwinger: Digitales Studio aus Thüringen für Webdesign, KI-Systeme und digitale Innovation mit messbaren Ergebnissen.",
+    "BonS-AI ist das Digital Studio von Bastian Schwinger in Stadtilm. Webdesign, KI-Systeme, Apps und Paid Ads für Unternehmen in Thüringen. Jetzt Projekt anfragen.",
   primaryRegion: "Thüringen",
-  secondaryRegions: ["Erfurt", "Jena", "Gera", "deutschlandweit"] as const,
+  secondaryRegions: ["Stadtilm", "Erfurt", "Jena", "Gera", "deutschlandweit"] as const,
   keywords: [
     "Webdesign Thüringen",
     "KI-Systeme Thüringen",
@@ -54,64 +54,65 @@ export const SEO_PERSON = {
 
 export const SEO_PAGES: Record<SeoPageKey, SeoPageConfig> = {
   home: {
-    title: "BonS-AI | Bastian Schwinger – Webdesign & KI aus Thüringen",
+    title: "Webdesign und KI aus Stadtilm, Thüringen | BonS-AI",
     description:
-      "BonS-AI von Bastian Schwinger: Webdesign, KI-Systeme und digitale Innovation aus Thüringen. Für Unternehmen in Erfurt, Jena, Gera und darüber hinaus.",
+      "BonS-AI ist das Digital Studio von Bastian Schwinger in Stadtilm. Webdesign, KI-Systeme, Apps und Paid Ads für Unternehmen in Thüringen. Jetzt Projekt anfragen.",
     canonicalPath: "/",
     intent: "Startseite mit Leistungsüberblick und Conversion-Einstieg",
     internalLinks: ["/leistungen", "/referenzen", "/kontakt", "/preise"],
   },
   kontakt: {
-    title: "Kontakt mit Bastian Schwinger – BonS-AI",
+    title: "Kontakt zu Bastian Schwinger in Stadtilm | BonS-AI",
     description:
-      "Kontakt mit Bastian Schwinger für Webdesign und KI-Systeme aus Thüringen. In der Regel erhalten Sie innerhalb von 24 Stunden eine Rückmeldung.",
+      "Kontakt zu Bastian Schwinger von BonS-AI in Stadtilm: E-Mail, Telefon und Formular. Sie erhalten in der Regel innerhalb von 24 Stunden eine Rückmeldung.",
     canonicalPath: "/kontakt",
     intent: "Lead-Generierung und Anfrageabschluss",
     internalLinks: ["/leistungen", "/referenzen", "/preise"],
   },
   ueberUns: {
-    title: "Über Bastian Schwinger & BonS-AI",
+    title: "Über Bastian Schwinger und das Studio BonS-AI, Stadtilm",
     description:
-      "Lernen Sie Bastian Schwinger und BonS-AI kennen: Technologiegetriebenes Studio aus Thüringen für Webdesign, KI-Systeme und digitale Produkte.",
+      "Bastian Schwinger führt BonS-AI in Stadtilm, Thüringen. Digital Studio für Webdesign, KI-Systeme, Apps und Paid Ads – von der Strategie bis zum Launch.",
     canonicalPath: "/ueber-uns",
-    intent: "Vertrauensaufbau über Team, Werte und Positionierung",
+    intent: "Vertrauensaufbau über Person, Werte und Positionierung",
     internalLinks: ["/kontakt", "/leistungen", "/referenzen"],
   },
   leistungen: {
-    title: "Leistungen: Webdesign, KI, Apps & Paid Ads | BonS-AI",
+    title: "Leistungen: Webdesign, KI, Apps, Paid Ads | BonS-AI",
     description:
-      "Digital Studio Thüringen: Webdesign, KI-Systeme, Web- und Mobile-Apps, Paid Ads. Klar strukturiert, messbar, auf Wachstum ausgerichtet – BonS-AI.",
+      "BonS-AI bietet Webdesign, KI-Systeme, Web- und Mobile-Apps sowie Paid Ads. Das Studio aus Stadtilm in Thüringen macht Leistungen klar und direkt anfragbar.",
     canonicalPath: "/leistungen",
     intent: "Leistungsverständnis und Angebotsqualifizierung",
     internalLinks: ["/kontakt", "/preise", "/referenzen"],
   },
   preise: {
-    title: "Preise – BonS-AI",
+    title: "Preise: Webdesign ab 2.499 € und Wartung | BonS-AI",
     description:
-      "Preise für Webdesign, Hosting und Wartung aus Thüringen. Transparente Pakete, klare Leistungsumfänge und individuelle Angebote für Ihr Projekt.",
+      "Webdesign bei BonS-AI ab 2.499 Euro einmalig, Wartung ab 99 Euro im Monat. Transparente Pakete aus Thüringen – individuelles Angebot nach dem Gespräch.",
     canonicalPath: "/preise",
     intent: "Preisorientierung und Angebotsvorbereitung",
     internalLinks: ["/kontakt", "/leistungen", "/referenzen"],
   },
   referenzen: {
-    title: "Referenzen – BonS-AI",
+    title: "Veröffentlichte Referenzen von BonS-AI: Websites und Apps",
     description:
-      "Ausgewählte Referenzen aus Webdesign, KI und App-Projekten. Sehen Sie Ergebnisse, Prozesse und messbare Wirkung für Unternehmen aus Thüringen und darüber hinaus.",
+      "Vier Referenzen von BonS-AI: Fitness-App Push, Zahnärzte am Inn, Onlineshop Lindora-Home und Naturverbunden Jena. Case Studies mit Ablauf und Ergebnis.",
     canonicalPath: "/referenzen",
     intent: "Proof durch Case Studies und Projektergebnisse",
     internalLinks: ["/kontakt", "/leistungen", "/preise"],
   },
   impressum: {
-    title: "Impressum – BonS-AI",
-    description: "Impressum und Pflichtangaben gemäß § 5 TMG für BonS-AI.",
+    title: "Impressum von Bastian Schwinger, BonS-AI in Stadtilm",
+    description:
+      "Impressum von BonS-AI: Bastian Schwinger, Nelkenweg 6, 99326 Stadtilm. Anschrift, Telefon, E-Mail und die Verantwortlichkeit für den Inhalt dieser Website.",
     canonicalPath: "/impressum",
     intent: "Rechtliche Transparenz",
     internalLinks: ["/datenschutz", "/kontakt"],
   },
   datenschutz: {
-    title: "Datenschutz – BonS-AI",
+    title: "Datenschutzerklärung von BonS-AI in Stadtilm, Thüringen",
     description:
-      "Datenschutzerklärung mit Informationen zur Verarbeitung personenbezogener Daten gemäß DSGVO.",
+      "Datenschutzerklärung von BonS-AI, Bastian Schwinger in Stadtilm. Welche Daten verarbeitet werden und welche Rechte Ihnen die DSGVO bei einer Anfrage gibt.",
     canonicalPath: "/datenschutz",
     intent: "Datenschutzinformation und DSGVO-Transparenz",
     internalLinks: ["/impressum", "/kontakt"],
@@ -121,80 +122,128 @@ export const SEO_PAGES: Record<SeoPageKey, SeoPageConfig> = {
 export const SEO_LOCAL = {
   businessType: "ProfessionalService",
   areaServed: [
+    { "@type": "City", name: "Stadtilm" },
     { "@type": "State", name: "Thüringen" },
     { "@type": "City", name: "Erfurt" },
     { "@type": "City", name: "Jena" },
     { "@type": "City", name: "Gera" },
+    { "@type": "Country", name: "Deutschland" },
   ],
   sameAs: [] as string[],
 } as const;
 
-function absoluteUrl(path: string) {
+export function absoluteUrl(path: string) {
   if (!path || path === "/") return SEO_BASE_URL;
   return `${SEO_BASE_URL}${path.startsWith("/") ? path : `/${path}`}`;
 }
 
-export function buildPageMetadata(pageKey: SeoPageKey): Metadata {
-  const page = SEO_PAGES[pageKey];
+const ogImage = {
+  url: SITE_LOGO_WIDE_PATH,
+  alt: "Logo von BonS-AI",
+};
+
+export function buildContentMetadata(input: {
+  title: string;
+  description: string;
+  path: string;
+}): Metadata {
+  const url = absoluteUrl(input.path);
   return {
     metadataBase: new URL(SEO_BASE_URL),
-    title: page.title,
-    description: page.description,
+    title: { absolute: input.title },
+    description: input.description,
     icons: {
       icon: SITE_LOGO_SQUARE_PATH,
       apple: SITE_LOGO_SQUARE_PATH,
     },
-    keywords: [...SEO_SITE.keywords],
     alternates: {
-      canonical: absoluteUrl(page.canonicalPath),
+      canonical: url,
     },
     openGraph: {
-      title: page.title,
-      description: page.description,
-      url: absoluteUrl(page.canonicalPath),
+      title: input.title,
+      description: input.description,
+      url,
       siteName: SEO_SITE.brand,
       locale: "de_DE",
       type: "website",
-      images: [{ url: SITE_LOGO_WIDE_PATH, width: 1200, height: 630, alt: "BonS-AI" }],
+      images: [ogImage],
     },
     twitter: {
       card: "summary_large_image",
-      title: page.title,
-      description: page.description,
+      title: input.title,
+      description: input.description,
       images: [SITE_LOGO_WIDE_PATH],
     },
   };
 }
 
+export function buildPageMetadata(pageKey: SeoPageKey): Metadata {
+  const page = SEO_PAGES[pageKey];
+  return buildContentMetadata({
+    title: page.title,
+    description: page.description,
+    path: page.canonicalPath,
+  });
+}
+
 export function buildLeistungMetadata(slug: string, title: string, outcome: string): Metadata {
-  const regionalSuffix = "Für Unternehmen in Thüringen – klar, technisch und messbar umgesetzt.";
+  return buildContentMetadata({
+    title,
+    description: outcome,
+    path: `/leistungen/${slug}`,
+  });
+}
+
+export function webPageJsonLd(name: string, description: string, path: string) {
   return {
-    metadataBase: new URL(SEO_BASE_URL),
-    title: `${title} – BonS-AI`,
-    description: `${outcome} ${regionalSuffix}`.slice(0, 160),
-    icons: {
-      icon: SITE_LOGO_SQUARE_PATH,
-      apple: SITE_LOGO_SQUARE_PATH,
-    },
-    keywords: [...SEO_SITE.keywords, `${title} Thüringen`],
-    alternates: {
-      canonical: absoluteUrl(`/leistungen/${slug}`),
-    },
-    openGraph: {
-      title: `${title} – BonS-AI`,
-      description: `${outcome} ${regionalSuffix}`.slice(0, 160),
-      url: absoluteUrl(`/leistungen/${slug}`),
-      siteName: SEO_SITE.brand,
-      locale: "de_DE",
-      type: "article",
-      images: [{ url: SITE_LOGO_WIDE_PATH, width: 1200, height: 630, alt: "BonS-AI" }],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: `${title} – BonS-AI`,
-      description: `${outcome} ${regionalSuffix}`.slice(0, 160),
-      images: [SITE_LOGO_WIDE_PATH],
-    },
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name,
+    description,
+    url: absoluteUrl(path),
+    inLanguage: "de-DE",
+    isPartOf: { "@id": `${SEO_BASE_URL}#website` },
+    about: { "@id": `${SEO_BASE_URL}#organization` },
+  };
+}
+
+export function breadcrumbJsonLd(items: { name: string; path: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: absoluteUrl(item.path),
+    })),
+  };
+}
+
+export function serviceJsonLd(name: string, description: string, path: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name,
+    description,
+    url: absoluteUrl(path),
+    provider: { "@id": `${SEO_BASE_URL}#organization` },
+    areaServed: SEO_LOCAL.areaServed,
+  };
+}
+
+export function faqPageJsonLd(items: { q: string; a: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
   };
 }
 

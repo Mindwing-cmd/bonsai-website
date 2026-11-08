@@ -62,7 +62,7 @@ export function HeroSection() {
           className="mt-5 brand-divider max-w-sm justify-center md:justify-start"
         >
           <span className="shrink-0 font-secondary text-[11px] font-medium uppercase tracking-[0.28em] text-white/90">
-            Web Design &amp; Digital Innovation
+            Webdesign und digitale Innovation
           </span>
         </motion.p>
         <motion.p
@@ -71,7 +71,7 @@ export function HeroSection() {
           transition={{ duration: reduceMotion ? 0.2 : 0.6, delay: reduceMotion ? 0 : 0.28 }}
           className="mt-6 max-w-md text-[var(--muted-foreground)] drop-shadow-[0_1px_12px_rgba(11,8,18,0.45)]"
         >
-          Technologie-getriebenes Digital Studio. Webdesign, KI-Systeme &amp; Automatisierung – präzise und messbar.
+          BonS-AI ist das Digital Studio von Bastian Schwinger in Stadtilm, Thüringen. Wir gestalten Websites, KI-Systeme, Apps und Paid Ads – präzise, technisch und messbar.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: reduceMotion ? 0 : 16 }}

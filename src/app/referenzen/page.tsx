@@ -4,7 +4,8 @@ import { ArrowUpRight } from "lucide-react";
 import { FadeInOnScroll } from "@/components/FadeInOnScroll";
 import { StaggeredReveal, StaggeredRevealItem } from "@/components/StaggeredReveal";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { buildPageMetadata } from "@/data/seo";
+import { JsonLd } from "@/components/JsonLd";
+import { SEO_PAGES, buildPageMetadata, webPageJsonLd } from "@/data/seo";
 import { PROJEKT_WEBSITES, type ProjektSlug } from "@/data/projekt-websites";
 
 const REFERENZEN: Array<{
@@ -84,13 +85,17 @@ export const metadata = buildPageMetadata("referenzen");
 export default function ReferenzenPage() {
   return (
     <main className="min-h-screen pt-24">
+      <JsonLd data={webPageJsonLd(SEO_PAGES.referenzen.title, SEO_PAGES.referenzen.description, "/referenzen")} />
       <div className="mx-auto max-w-6xl px-6 py-16 md:px-12 md:py-24">
         <FadeInOnScroll>
           <h1 className="font-primary text-3xl font-bold tracking-tight text-[var(--deep-carbon)] md:text-4xl">
-            <span className="border-b-2 border-[var(--brand-accent)]">Referenzen</span>
+            Welche <span className="border-b-2 border-[var(--brand-accent)]">Projekte</span> zeigt BonS-AI?
           </h1>
-          <p className="mt-6 max-w-2xl text-[var(--muted-foreground)]">
-            Ausgewählte Projekte – von Webdesign über KI-Systeme & Apps bis Paid Ads. Filterbar nach Branche und Leistung.
+          <p className="mt-6 max-w-3xl text-[var(--muted-foreground)]">
+            BonS-AI zeigt vier Projekte: die Fitness-App Push, die Praxiswebsite Zahnärzte am Inn für Mühldorf und
+            Töging, den Onlineshop Lindora-Home und die Website Naturverbunden Jena. Jede Case Study beschreibt
+            Ausgangslage, Umsetzung und Ergebnis. Paid Ads werden nicht als eigene Referenz geführt, sondern im
+            Gespräch eingeordnet.
           </p>
         </FadeInOnScroll>
 
@@ -110,7 +115,7 @@ export default function ReferenzenPage() {
                             <div key={i} className="relative h-full min-h-0 w-full overflow-hidden">
                               <Image
                                 src={src}
-                                alt=""
+                                alt={`${ref.title}, Ansicht ${i + 1}`}
                                 fill
                                 className="object-cover transition-transform duration-300 group-hover:scale-105"
                                 sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 16.5vw"
@@ -122,7 +127,7 @@ export default function ReferenzenPage() {
                         <div className="h-full w-full overflow-hidden">
                           <Image
                             src={ref.image}
-                            alt=""
+                            alt={`Vorschau: ${ref.title}`}
                             width={640}
                             height={360}
                             className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
@@ -140,7 +145,7 @@ export default function ReferenzenPage() {
                     <p className="text-xs text-[var(--muted-foreground)]">
                       {ref.branche} · {ref.leistung} · {ref.technologie}
                     </p>
-                    <span className="mt-4 inline-block text-sm font-medium text-[var(--brand-accent)]">Case Study ansehen →</span>
+                    <span className="mt-4 inline-block text-sm font-medium text-[var(--brand-accent)]">Case Study lesen</span>
                   </CardContent>
                 </Link>
                 <div className="px-6 pb-4">

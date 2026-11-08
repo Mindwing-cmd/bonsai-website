@@ -1,5 +1,6 @@
 import { PremiumContactSection } from "@/components/PremiumContactSection";
-import { buildPageMetadata } from "@/data/seo";
+import { JsonLd } from "@/components/JsonLd";
+import { SEO_PAGES, buildPageMetadata, webPageJsonLd } from "@/data/seo";
 import Link from "next/link";
 
 export const metadata = buildPageMetadata("kontakt");
@@ -7,6 +8,7 @@ export const metadata = buildPageMetadata("kontakt");
 export default function KontaktPage() {
   return (
     <main className="min-h-screen pt-24">
+      <JsonLd data={webPageJsonLd(SEO_PAGES.kontakt.title, SEO_PAGES.kontakt.description, "/kontakt")} />
       <PremiumContactSection />
       <section className="pb-16 md:pb-24">
         <div className="mx-auto max-w-6xl px-6 md:px-12">

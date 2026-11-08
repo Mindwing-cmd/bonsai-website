@@ -24,10 +24,10 @@ import {
 } from "lucide-react";
 
 const OVERVIEW_CARDS = [
-  { label: "Industry", value: "Fitness / Health Tech", icon: Target },
-  { label: "Services", value: "UX Design, App Development, Product Strategy", icon: Zap },
-  { label: "Timeline", value: "3–6 Monate", icon: Calendar },
-  { label: "Platform", value: "Web / iOS / Android", icon: Smartphone },
+  { label: "Branche", value: "Fitness / Health-Tech", icon: Target },
+  { label: "Leistungen", value: "UX-Design, App-Entwicklung, Produktstrategie", icon: Zap },
+  { label: "Zeitraum", value: "3–6 Monate", icon: Calendar },
+  { label: "Plattform", value: "Web / iOS / Android", icon: Smartphone },
 ];
 
 const PROBLEM_ROWS = [
@@ -38,7 +38,7 @@ const PROBLEM_ROWS = [
 
 const SOLUTION_ITEMS = [
   {
-    title: "Structured Tracking",
+    title: "Strukturiertes Tracking",
     desc: "Daily-Tracking für Kalorien, Protein, Wasser, Training, Cardio, Schritte – Eintrag unter 30 Sekunden.",
     icon: BarChart3,
   },
@@ -48,21 +48,21 @@ const SOLUTION_ITEMS = [
     icon: Trophy,
   },
   {
-    title: "Social Accountability",
+    title: "Soziale Accountability",
     desc: "Gruppen, Clans, Ranglisten, gemeinsame Challenges – kontinuierlicher sozialer Druck positiver Art.",
     icon: Users,
   },
   {
-    title: "AI Advisor",
+    title: "KI-Berater",
     desc: "Meal Planning, Trainingsanalyse, Kalorienbilanz – konkrete Handlungsempfehlungen & Zieloptimierung.",
     icon: Sparkles,
   },
 ];
 
 const RESULTS = [
-  { label: "User Retention", value: "+45%" },
-  { label: "Tracking Consistency", value: "+60%" },
-  { label: "Goal Completion", value: "+30%" },
+  { label: "Nutzerbindung", value: "+45%" },
+  { label: "Tracking-Konstanz", value: "+60%" },
+  { label: "Zielerreichung", value: "+30%" },
 ];
 
 const BADGES = [
@@ -104,7 +104,7 @@ export function PushCaseStudy() {
                 <h1 className="font-primary text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
                   <span className="border-b-2 border-[var(--brand-accent)]">Push</span>
                   <br />
-                  Designing a Fitness Accountability Platform
+                  Fitness-App für Accountability
                 </h1>
                 <p className="max-w-xl text-lg text-[var(--steel-graphite)]">
                   Push wurde als nächste Generation von Fitness-Apps konzipiert: Nicht nur Daten sammeln,
@@ -152,7 +152,7 @@ export function PushCaseStudy() {
         <div className="mx-auto max-w-6xl px-6 md:px-12">
           <RevealOnScroll>
             <h2 className="font-primary text-2xl font-bold text-[var(--foreground)] md:text-3xl">
-              <span className="border-b-2 border-[var(--brand-accent)]">Project</span> Overview
+              <span className="border-b-2 border-[var(--brand-accent)]">Projekt</span>überblick
             </h2>
           </RevealOnScroll>
           <StaggeredReveal className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4" childDelay={0.06}>
@@ -226,7 +226,7 @@ export function PushCaseStudy() {
         <div className="mx-auto max-w-6xl px-6 md:px-12">
           <RevealOnScroll>
             <h2 className="font-primary text-2xl font-bold text-[var(--foreground)] md:text-3xl">
-              <span className="border-b-2 border-[var(--brand-accent)]">Solution</span>
+              <span className="border-b-2 border-[var(--brand-accent)]">Lösung</span>
             </h2>
             <p className="mt-4 max-w-2xl text-[var(--steel-graphite)]">
               Push kombiniert vier strategische Produktkomponenten.
@@ -367,7 +367,7 @@ export function PushCaseStudy() {
                 <div className="relative aspect-video w-full overflow-hidden">
                   <Image
                     src="/images/referenzen/push-ui-challenges.png"
-                    alt="Push App – Challenges (My challenges & Friends)"
+                    alt="Push-App: Challenges, eigene Herausforderungen und Freunde"
                     fill
                     className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
                     sizes="(max-width: 640px) 100vw, 50vw"
@@ -386,7 +386,7 @@ export function PushCaseStudy() {
         <div className="relative z-10 mx-auto max-w-6xl px-6 md:px-12">
           <RevealOnScroll>
             <h2 className="font-primary text-2xl font-bold text-[var(--foreground)] md:text-3xl">
-              <span className="border-b-2 border-[var(--brand-accent)]">Results</span>
+              <span className="border-b-2 border-[var(--brand-accent)]">Ergebnis</span>
             </h2>
             <p className="mt-4 max-w-2xl text-[var(--steel-graphite)]">
               Erste Nutzertests zeigen messbare Verbesserungen.

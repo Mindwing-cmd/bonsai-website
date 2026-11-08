@@ -4,7 +4,8 @@ import Link from "next/link";
 import { FadeInOnScroll } from "@/components/FadeInOnScroll";
 import { StaggeredReveal, StaggeredRevealItem } from "@/components/StaggeredReveal";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { buildPageMetadata } from "@/data/seo";
+import { JsonLd } from "@/components/JsonLd";
+import { SEO_PAGES, buildPageMetadata, webPageJsonLd } from "@/data/seo";
 
 const CelestialSphere = dynamic(
   () => import("@/components/ui/celestial-sphere").then((m) => ({ default: m.CelestialSphere })),
@@ -38,13 +39,17 @@ export default function UeberUnsPage() {
           className="absolute inset-0 z-[1] bg-[var(--background)]/75"
           aria-hidden
         />
+        <JsonLd data={webPageJsonLd(SEO_PAGES.ueberUns.title, SEO_PAGES.ueberUns.description, "/ueber-uns")} />
         <div className="relative z-10 mx-auto max-w-6xl px-6 md:px-12">
           <FadeInOnScroll className="text-center">
             <h1 className="font-primary text-3xl font-bold tracking-tight text-[var(--foreground)] md:text-4xl lg:text-5xl">
-              Ihre digitale Präsenz – unser Anspruch
+              Wer steckt hinter BonS-AI?
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-base text-[var(--muted-foreground)] md:text-lg">
-              Aus Thüringen: Bastian Schwinger und BonS-AI entwickeln moderne Web- und KI-Lösungen – von der Strategie bis zum Launch.
+              Hinter BonS-AI steht Bastian Schwinger, Gründer und Creative Director. Das Digital Studio sitzt in
+              Stadtilm, Thüringen, und entwickelt Websites, KI-Systeme, Apps und Paid Ads. Von der Strategie über
+              das Design bis zur technischen Umsetzung arbeitet er in einem klaren Prozess. E-Mail und Telefon
+              stehen im Impressum.
             </p>
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               <Link
@@ -71,7 +76,7 @@ export default function UeberUnsPage() {
                 <div className="relative z-0 mx-auto w-[min(100%,320px)] shrink-0 lg:absolute lg:left-0 lg:bottom-0 lg:mx-0 lg:w-[380px] xl:w-[420px]">
                   <Image
                     src="/images/bastian.png"
-                    alt="Bastian – BonS-AI"
+                    alt="Porträt von Bastian Schwinger, Gründer und Creative Director von BonS-AI"
                     width={520}
                     height={680}
                     className="w-full object-contain object-bottom"
@@ -85,7 +90,7 @@ export default function UeberUnsPage() {
                   style={{ boxShadow: "0 0 0 1px rgba(255,255,255,0.06)" }}
                 >
                   <p className="text-sm text-[var(--muted-foreground)] md:text-base">
-                    Unser Team bietet Ihnen eine zielgerichtete Beratung und Umsetzung mit modernster Technik – für Projekte, die messbar wirken.
+                    Bastian Schwinger berät und setzt Projekte mit moderner Technik um – von der Strategie bis zum Launch.
                   </p>
                   <p className="mt-4 font-primary text-xl font-bold text-[var(--foreground)]">Bastian Schwinger</p>
                   <p className="text-sm text-[var(--muted-foreground)]">Gründer & Creative Director</p>
@@ -125,7 +130,7 @@ export default function UeberUnsPage() {
           <FadeInOnScroll>
             <h2 className="font-primary text-2xl font-bold text-[var(--foreground)] md:text-3xl">Positionierung</h2>
             <p className="mt-6 max-w-2xl text-[var(--muted-foreground)]">
-              Wir entwickeln digitale Produkte und Markenauftritte, die funktionieren und überzeugen. Von der Strategie über Design bis zur technischen Umsetzung – mit klarem Prozess und messbarem Ergebnis.
+              BonS-AI entwickelt digitale Produkte und Markenauftritte. Von der Strategie über das Design bis zur technischen Umsetzung – mit klarem Prozess und einem Ergebnis, das sich an den Zielen des Projekts messen lässt.
             </p>
           </FadeInOnScroll>
 

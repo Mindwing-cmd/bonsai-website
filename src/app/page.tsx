@@ -9,13 +9,15 @@ import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { HomeContactForm } from "@/components/HomeContactForm";
 import { LEISTUNGEN_TEASER } from "@/data/leistungen-teaser";
 import { LEGAL } from "@/data/legal";
-import { buildPageMetadata } from "@/data/seo";
+import { JsonLd } from "@/components/JsonLd";
+import { SEO_PAGES, buildPageMetadata, webPageJsonLd } from "@/data/seo";
 
 export const metadata = buildPageMetadata("home");
 
 export default function Home() {
   return (
     <main>
+      <JsonLd data={webPageJsonLd(SEO_PAGES.home.title, SEO_PAGES.home.description, "/")} />
       <HeroSection />
 
       {/* Leistungen-Teaser mit Card-Highlight */}
@@ -50,7 +52,7 @@ export default function Home() {
                         <CardDescription className="text-[var(--muted-foreground)]">{item.description}</CardDescription>
                       </CardHeader>
                       <CardContent className="pt-0">
-                        <span className="text-sm font-medium text-[var(--brand-accent)]">Mehr erfahren →</span>
+                        <span className="text-sm font-medium text-[var(--brand-accent)]">{item.title} ansehen</span>
                       </CardContent>
                     </Card>
                   </div>

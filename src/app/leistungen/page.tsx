@@ -4,7 +4,8 @@ import { StaggeredReveal, StaggeredRevealItem } from "@/components/StaggeredReve
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Spotlight } from "@/components/ui/spotlight";
 import { LEISTUNGEN_TEASER } from "@/data/leistungen-teaser";
-import { buildPageMetadata } from "@/data/seo";
+import { JsonLd } from "@/components/JsonLd";
+import { SEO_PAGES, buildPageMetadata, webPageJsonLd } from "@/data/seo";
 
 export const metadata = buildPageMetadata("leistungen");
 
@@ -24,14 +25,20 @@ export default function LeistungenPage() {
         className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(ellipse_85%_55%_at_15%_-5%,color-mix(in_oklab,var(--brand-accent)_12%,transparent),transparent_55%)]"
         aria-hidden
       />
+      <JsonLd data={webPageJsonLd(SEO_PAGES.leistungen.title, SEO_PAGES.leistungen.description, "/leistungen")} />
       <div className="relative z-10 mx-auto max-w-6xl px-6 py-16 md:px-12 md:py-24">
         <FadeInOnScroll>
           <h1 className="font-primary text-3xl font-bold tracking-tight text-[var(--deep-carbon)] md:text-4xl">
-            <span className="border-b-2 border-[var(--brand-accent)]">Leistungen</span>
+            <span className="border-b-2 border-[var(--brand-accent)]">Leistungen</span> von BonS-AI
           </h1>
-          <p className="mt-6 max-w-2xl text-[var(--muted-foreground)]">
-            BonS-AI – technologiegetriebenes Digital Studio aus Thüringen: Webdesign, KI-Systeme, Web- und
-            Mobile-Apps sowie Paid Ads. Kurzüberblick mit Tiefgang auf den Detailseiten.
+          <h2 className="mt-8 font-primary text-2xl font-semibold text-[var(--deep-carbon)]">
+            Was bietet BonS-AI an?
+          </h2>
+          <p className="mt-4 max-w-3xl text-[var(--muted-foreground)]">
+            BonS-AI bietet vier Leistungen: Webdesign, KI-Systeme und Automatisierung, Web- und Mobile-Apps sowie
+            Paid Ads. Bastian Schwinger setzt sie von Stadtilm in Thüringen aus um, von der Konzeption über Design
+            und Technik bis zum Launch. Hosting und Wartung sind gesonderte Pakete. Auf eine Anfrage folgt in der
+            Regel innerhalb von 24 Stunden eine Rückmeldung.
           </p>
         </FadeInOnScroll>
 
@@ -51,7 +58,7 @@ export default function LeistungenPage() {
                     <CardDescription className="text-[var(--muted-foreground)]">{item.description}</CardDescription>
                   </CardHeader>
                   <CardContent className="pt-0">
-                    <span className="text-sm font-medium text-[var(--brand-accent)]">Details & Ablauf →</span>
+                    <span className="text-sm font-medium text-[var(--brand-accent)]">{item.title} ansehen</span>
                   </CardContent>
                 </Card>
               </Link>

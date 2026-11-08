@@ -5,7 +5,37 @@ import { InteractiveNeuralVortex } from "@/components/InteractiveNeuralVortex";
 import { WebdesignPageWithTabs } from "@/components/WebdesignPageWithTabs";
 import { LeistungDetailWithRoadmap } from "@/components/LeistungDetailWithRoadmap";
 import { ROADMAPS } from "@/data/leistungen-roadmaps";
-import { buildLeistungMetadata } from "@/data/seo";
+import { JsonLd } from "@/components/JsonLd";
+import {
+  breadcrumbJsonLd,
+  buildLeistungMetadata,
+  faqPageJsonLd,
+  serviceJsonLd,
+  webPageJsonLd,
+} from "@/data/seo";
+
+const LEISTUNG_SEO: Record<string, { title: string; description: string }> = {
+  webdesign: {
+    title: "Webdesign-Leistungen für Unternehmen in Thüringen | BonS-AI",
+    description:
+      "Webdesign bei BonS-AI heißt Konzeption, UI, responsive Umsetzung und Übergabe. Unternehmen in Thüringen planen etwa vier bis acht Wochen ein. Jetzt anfragen.",
+  },
+  "ki-systeme": {
+    title: "KI-Systeme und Automatisierung aus Thüringen | BonS-AI",
+    description:
+      "KI-Systeme und Automatisierung von BonS-AI: Use-Case, Daten, Integration und Rollout. Für Unternehmen in Thüringen, typisch in acht bis sechzehn Wochen.",
+  },
+  innovation: {
+    title: "Web- und Mobile-Apps entwickeln in Thüringen | BonS-AI",
+    description:
+      "Web- und Mobile-Apps von BonS-AI: Strategie, Design, MVP und Launch für Web, iOS und Android. Der Start ist ein Gespräch. Das Studio sitzt in Thüringen.",
+  },
+  "paid-ads": {
+    title: "Bezahlte Werbung auf Google, Meta und LinkedIn | BonS-AI",
+    description:
+      "Paid Ads von BonS-AI auf Google, Meta und LinkedIn: Strategie, Creatives, Tracking und Reporting. Erste Ergebnisse zeigen sich oft in zwei bis vier Wochen.",
+  },
+};
 
 const LEISTUNGEN_DATA: Record<
   string,
@@ -13,7 +43,8 @@ const LEISTUNGEN_DATA: Record<
 > = {
   webdesign: {
     title: "Webdesign",
-    outcome: "Eine klare, hochwertige Webpräsenz mit starker Struktur und lesbarer Hierarchie.",
+    outcome:
+      "Webdesign bei BonS-AI ist die Konzeption und Umsetzung einer klaren, responsiven Website mit lesbarer Hierarchie.",
     inhalt: [
       "Konzeption und Struktur",
       "UI/UX und visuelles Design",
@@ -22,13 +53,20 @@ const LEISTUNGEN_DATA: Record<
     ],
     zeitrahmen: "Ca. 4–8 Wochen je nach Umfang.",
     faq: [
-      { q: "Für welche Branchen?", a: "Für alle Branchen – von Handwerk bis Tech. Wir passen das Design an Ihre Marke an." },
-      { q: "Was ist enthalten?", a: "Design, Umsetzung, Einrichtung und Übergabe. Optional: Hosting und Wartung." },
+      {
+        q: "Was ist im Webdesign von BonS-AI enthalten?",
+        a: "Enthalten sind Konzeption und Struktur, UI und UX, die responsive Umsetzung sowie Content-Integration und Übergabe. Der Ablauf führt über Analyse, Informationsarchitektur und Designsystem zur Entwicklung. Hosting und Wartung sind optional und als eigene Pakete buchbar. Je nach Umfang dauert ein Projekt etwa vier bis acht Wochen.",
+      },
+      {
+        q: "Für welche Branchen eignet sich das Webdesign?",
+        a: "BonS-AI setzt Webdesign branchenoffen um, vom Handwerk bis zu technischen Produkten, und passt das Design an die jeweilige Marke an. Veröffentlicht sind eine Zahnarztpraxis mit zwei Standorten, ein Kerzen-Onlineshop, eine Website für Gespräche in Jena und die Fitness-App Push. Die Struktur bleibt klar und lesbar.",
+      },
     ],
   },
   "ki-systeme": {
     title: "KI-Systeme & Automatisierung",
-    outcome: "Skalierbare, zukunftssichere Anwendungen mit KI-Komponenten – von Chatbots bis Automatisierung.",
+    outcome:
+      "Ein KI-System bei BonS-AI ist eine skalierbare Anwendung mit KI-Komponente, vom Chatbot bis zur Automatisierung.",
     inhalt: [
       "Anforderungsanalyse und Architektur",
       "Integration von KI/ML-Modulen",
@@ -37,13 +75,20 @@ const LEISTUNGEN_DATA: Record<
     ],
     zeitrahmen: "Projektabhängig, typisch 8–16 Wochen.",
     faq: [
-      { q: "Welche Technologien?", a: "Moderne Stacks (z. B. Next.js, Python), Cloud und bewährte KI-Frameworks." },
-      { q: "Wartung?", a: "Optional: Hosting, Updates und Support nach Launch." },
+      {
+        q: "Was ist ein KI-System bei BonS-AI?",
+        a: "Ein KI-System bei BonS-AI ist eine Anwendung mit KI-Komponente, zum Beispiel ein Chatbot oder eine Automatisierung. Der Weg führt von der Anforderung über Daten und Schnittstellen zur Modell-Integration, Entwicklung, Tests, Rollout und Wartung. Typisch sind acht bis sechzehn Wochen. Next.js, Python und Cloud-Dienste können zum Einsatz kommen.",
+      },
+      {
+        q: "Gibt es Betreuung nach dem Launch?",
+        a: "Ja, auf Wunsch. Hosting, Updates und Support nach dem Launch sind optional und nicht automatisch Teil jedes Projekts. Dazu gehören laufende Updates, Monitoring, Dokumentation und Anpassungen, wenn sich Anforderungen ändern. Den Umfang legt BonS-AI im Gespräch fest. So bleibt das System nach dem Rollout wartbar.",
+      },
     ],
   },
   innovation: {
     title: "Web- und Mobile-App-Entwicklung",
-    outcome: "Von der Strategie bis zum Launch – native und cross-platform Apps, strukturierte Prozesse.",
+    outcome:
+      "Eine App bei BonS-AI ist ein digitales Produkt für Web, iOS oder Android, von der Strategie bis zum Launch.",
     inhalt: [
       "Strategie und Roadmap",
       "App-Design (iOS, Android, Web)",
@@ -52,13 +97,20 @@ const LEISTUNGEN_DATA: Record<
     ],
     zeitrahmen: "Abhängig vom Projekt – von wenigen Wochen bis zu mehreren Monaten.",
     faq: [
-      { q: "Wie starten wir?", a: "Mit einem kurzen Kennenlerngespräch und einer klaren Definition der Ziele." },
-      { q: "Referenzen?", a: "Gern zeigen wir Ihnen passende Projekte aus unserem Portfolio." },
+      {
+        q: "Wie startet die Entwicklung einer App?",
+        a: "Eine App startet bei BonS-AI mit einem kurzen Kennenlerngespräch und einer klaren Zieldefinition. Danach folgen Strategie, Nutzererlebnis, Design und Prototyp, dann das MVP, Tests und der Launch auf Web, iOS oder Android. Die Dauer reicht von wenigen Wochen bis zu mehreren Monaten. Kernfunktionen kommen vor späteren Ausbaustufen.",
+      },
+      {
+        q: "Welche App hat BonS-AI veröffentlicht?",
+        a: "Als App-Referenz zeigt BonS-AI die Fitness-App Push mit Accountability, Gamification und KI-gestützter Optimierung. Die Case Study beschreibt Produktstrategie, UX und die technische Umsetzung. Weitere veröffentlichte Arbeiten sind Zahnärzte am Inn, Lindora-Home und Naturverbunden Jena. Welche davon passt, zeigt das Gespräch zur Anfrage.",
+      },
     ],
   },
   "paid-ads": {
     title: "Paid Ads",
-    outcome: "Bezahlte Werbung, die ankommt – Google Ads, Meta, LinkedIn. Zielgerichtet, messbar und skalierbar.",
+    outcome:
+      "Paid Ads bei BonS-AI ist bezahlte Werbung auf Google, Meta und LinkedIn, zielgerichtet und mit Reporting.",
     inhalt: [
       "Kampagnenstrategie und Zieldefinition",
       "Anzeigenkonzeption und Creatives",
@@ -67,19 +119,46 @@ const LEISTUNGEN_DATA: Record<
     ],
     zeitrahmen: "Erste Ergebnisse oft innerhalb von 2–4 Wochen. Laufende Betreuung nach Bedarf.",
     faq: [
-      { q: "Welche Kanäle?", a: "Google Ads, Meta (Facebook/Instagram), LinkedIn und weitere – abhängig von Ihrem Ziel und Ihrer Zielgruppe." },
-      { q: "Budget?", a: "Wir beraten Sie zu sinnvollen Budgets und setzen auf messbare KPIs (z. B. CPA, ROAS)." },
+      {
+        q: "Welche Kanäle umfasst Paid Ads bei BonS-AI?",
+        a: "Paid Ads bei BonS-AI ist bezahlte Werbung auf Google Ads, Meta (Facebook und Instagram), LinkedIn und weiteren Kanälen, je nach Ziel und Zielgruppe. Der Ablauf umfasst Ziele, Kanal und Budget, Kampagnen-Setup, Creatives, Launch, Optimierung und Reporting. Erste Ergebnisse zeigen sich oft innerhalb von zwei bis vier Wochen.",
+      },
+      {
+        q: "Wie wird das Werbebudget festgelegt?",
+        a: "BonS-AI berät zu einem sinnvollen Budget und richtet Kampagnen an messbaren Kennzahlen aus, zum Beispiel Kosten pro Anfrage und dem Verhältnis von Umsatz zu Werbekosten. Tracking, Auswertung und ein verständliches Reporting gehören zum Ablauf. Eine feste Budgetgrenze nennt das Angebot nicht, sie entsteht im Gespräch.",
+      },
     ],
   },
 };
 
 type Props = { params: Promise<{ slug: string }> };
 
+function LeistungJsonLd({ slug }: { slug: string }) {
+  const data = LEISTUNGEN_DATA[slug];
+  const seo = LEISTUNG_SEO[slug];
+  if (!data || !seo) return null;
+  return (
+    <>
+      <JsonLd data={webPageJsonLd(seo.title, seo.description, `/leistungen/${slug}`)} />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Start", path: "/" },
+          { name: "Leistungen", path: "/leistungen" },
+          { name: data.title, path: `/leistungen/${slug}` },
+        ])}
+      />
+      <JsonLd data={serviceJsonLd(data.title, data.outcome, `/leistungen/${slug}`)} />
+      {data.faq ? <JsonLd data={faqPageJsonLd(data.faq)} /> : null}
+    </>
+  );
+}
+
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
+  const seo = LEISTUNG_SEO[slug];
   const data = LEISTUNGEN_DATA[slug];
-  if (!data) return buildLeistungMetadata(slug, "Leistung", "Leistungsdetails von BonS-AI");
-  return buildLeistungMetadata(slug, data.title, data.outcome);
+  if (!seo || !data) return buildLeistungMetadata(slug, "Leistung von BonS-AI", "Leistungsdetails von BonS-AI aus Stadtilm in Thüringen.");
+  return buildLeistungMetadata(slug, seo.title, seo.description);
 }
 
 export async function generateStaticParams() {
@@ -94,6 +173,7 @@ export default async function LeistungDetailPage({ params }: Props) {
   if (slug === "webdesign") {
     return (
       <main className="relative min-h-screen pt-24">
+        <LeistungJsonLd slug={slug} />
         <InteractiveNeuralVortex
           opacity={0.9}
           pointerInfluence={0.15}
@@ -110,6 +190,7 @@ export default async function LeistungDetailPage({ params }: Props) {
   if (roadmap) {
     return (
       <main className="relative min-h-screen pt-24">
+        <LeistungJsonLd slug={slug} />
         <InteractiveNeuralVortex
           opacity={0.9}
           pointerInfluence={0.15}

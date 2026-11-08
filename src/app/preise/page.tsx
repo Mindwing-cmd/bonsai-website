@@ -4,7 +4,8 @@ import { StaggeredReveal, StaggeredRevealItem } from "@/components/StaggeredReve
 import { PricingCard, ShaderCanvas } from "@/components/ui/animated-glassy-pricing";
 import { ShinyLink } from "@/components/ui/shiny-button";
 import { WEBSEITEN_PLÄNE, WARTUNG_PLÄNE } from "@/data/preise-pakete";
-import { buildPageMetadata } from "@/data/seo";
+import { JsonLd } from "@/components/JsonLd";
+import { SEO_PAGES, buildPageMetadata, webPageJsonLd } from "@/data/seo";
 
 export const metadata = buildPageMetadata("preise");
 
@@ -14,13 +15,20 @@ export default function PreisePage() {
       <div className="fixed top-24 left-0 right-0 bottom-0 z-0" aria-hidden>
         <ShaderCanvas />
       </div>
+      <JsonLd data={webPageJsonLd(SEO_PAGES.preise.title, SEO_PAGES.preise.description, "/preise")} />
       <div className="relative z-10 mx-auto max-w-6xl px-6 py-16 md:px-12 md:py-24">
         <FadeInOnScroll>
           <h1 className="font-primary text-3xl font-bold tracking-tight text-[var(--deep-carbon)] md:text-4xl">
-            <span className="border-b-2 border-[var(--brand-accent)]">Preise</span>
+            <span className="border-b-2 border-[var(--brand-accent)]">Preise</span> für Webdesign und Wartung
           </h1>
-          <p className="mt-6 max-w-2xl text-[var(--muted-foreground)]">
-            Transparente Orientierung für Webdesign sowie Hosting und Wartung. Individuelle Angebote nach Abstimmung.
+          <h2 className="mt-8 font-primary text-2xl font-semibold text-[var(--deep-carbon)]">
+            Was kostet eine Website bei BonS-AI?
+          </h2>
+          <p className="mt-4 max-w-3xl text-[var(--muted-foreground)]">
+            Eine Website bei BonS-AI startet im Paket Starter bei 2.499 Euro einmalig, bis fünf Seiten. Business
+            kostet 4.999 Euro einmalig, bis fünfzehn Seiten, mit CMS und erweiterter SEO. Enterprise wird
+            individuell angeboten. Wartung beginnt bei 99 Euro im Monat, Business-Wartung bei 399 Euro. Das
+            konkrete Angebot folgt dem Gespräch.
           </p>
         </FadeInOnScroll>
 

@@ -3,12 +3,15 @@
 import React from "react";
 import Link from "next/link";
 import { FadeInOnScroll } from "@/components/FadeInOnScroll";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { FaqBlock } from "@/components/FaqBlock";
 import { Timeline } from "@/components/ui/timeline";
 import type { RoadmapData } from "@/data/leistungen-roadmaps";
 
 type LeistungDetailData = {
   title: string;
   outcome: string;
+  faq?: { q: string; a: string }[];
 };
 
 type LeistungDetailWithRoadmapProps = {
@@ -26,9 +29,13 @@ export function LeistungDetailWithRoadmap({ data, roadmap }: LeistungDetailWithR
     <>
       <div className="mx-auto max-w-6xl px-6 pt-4 md:px-12">
         <FadeInOnScroll>
-          <Link href="/" className="text-sm text-[var(--steel-graphite)] hover:text-[var(--brand-accent)]">
-            ← Zur Startseite
-          </Link>
+          <Breadcrumbs
+            items={[
+              { name: "Start", href: "/" },
+              { name: "Leistungen", href: "/leistungen" },
+              { name: data.title },
+            ]}
+          />
           <h1 className="mt-4 font-primary text-3xl font-bold tracking-tight text-[var(--foreground)] md:text-4xl">
             <span className="border-b-2 border-[var(--brand-accent)]">{data.title}</span>
           </h1>
@@ -55,6 +62,7 @@ export function LeistungDetailWithRoadmap({ data, roadmap }: LeistungDetailWithR
           </Link>
         </div>
       </div>
+      <FaqBlock items={data.faq} />
     </>
   );
 }

@@ -9,7 +9,7 @@ export function SiteFooter() {
       <div className="mx-auto max-w-6xl px-6 md:px-12">
         <div className="mb-10 brand-divider">
           <span className="shrink-0 font-secondary text-[10px] font-medium uppercase tracking-[0.28em] text-[var(--muted-foreground)]">
-            Web Design &amp; Digital Innovation
+            Webdesign und digitale Innovation
           </span>
         </div>
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-8 lg:gap-12">
@@ -17,7 +17,7 @@ export function SiteFooter() {
             <Link href="/" className="inline-flex w-fit items-center">
               <Image
                 src={SITE_LOGO_WIDE_PATH}
-                alt="BonS-AI"
+                alt="Logo von BonS-AI"
                 width={200}
                 height={64}
                 className="h-12 w-auto max-w-[180px] object-contain object-left"

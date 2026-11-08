@@ -6,6 +6,31 @@ import { PushCaseStudy } from "@/components/PushCaseStudy";
 import { ZahnaerzteAmInnCaseStudy } from "@/components/ZahnaerzteAmInnCaseStudy";
 import { LindoraCaseStudy } from "@/components/LindoraCaseStudy";
 import { NaturverbundenJenaCaseStudy } from "@/components/NaturverbundenJenaCaseStudy";
+import { JsonLd } from "@/components/JsonLd";
+import { buildContentMetadata, webPageJsonLd } from "@/data/seo";
+
+const REFERENZ_SEO: Record<string, { title: string; description: string }> = {
+  "innovation-mvp": {
+    title: "Case Study zur Fitness-App Push von BonS-AI, Thüringen",
+    description:
+      "Case Study zur Fitness-App Push von BonS-AI: Accountability, Gamification und KI-Optimierung. Produktstrategie, UX und Full-Stack-Entwicklung im Überblick.",
+  },
+  "zahnaerzte-am-inn": {
+    title: "Case Study Zahnärzte am Inn: Praxiswebsite | BonS-AI",
+    description:
+      "Case Study Zahnärzte am Inn von BonS-AI: Praxiswebsite für Mühldorf und Töging, mit Kontaktformular, SEO und DSGVO-Seiten, umgesetzt mit Next.js und Resend.",
+  },
+  "lindora-home": {
+    title: "Case Study Lindora-Home: Onlineshop mit CMS | BonS-AI",
+    description:
+      "Case Study Lindora-Home von BonS-AI: Onlineshop für handgegossene Kerzen mit Katalog, Stripe-Checkout, Pflege-CMS und Shop-Rechtstexten. Auf Next.js umgesetzt.",
+  },
+  "naturverbunden-jena": {
+    title: "Case Study Naturverbunden Jena mit Local SEO | BonS-AI",
+    description:
+      "Case Study Naturverbunden Jena von BonS-AI: ruhige Website für naturnahe Gespräche in Jena, mit Begleitung, FAQ, Kontakt und Local SEO. Auf Next.js umgesetzt.",
+  },
+};
 
 const CASE_STUDIES: Record<
   string,
@@ -56,37 +81,20 @@ type Props = { params: Promise<{ slug: string }> };
 
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
-  const data = CASE_STUDIES[slug];
-  if (slug === "innovation-mvp") {
-    return {
-      title: "Push – Fitness & Accountability App – BonS-AI",
+  const seo = REFERENZ_SEO[slug];
+  if (!seo) {
+    return buildContentMetadata({
+      title: "Referenz von BonS-AI aus Stadtilm, Thüringen",
       description:
-        "Case Study: Fitness-App mit Accountability, Gamification und AI-Optimierung. Produktstrategie, UX/UI, Full-Stack.",
-    };
+        "Referenz von BonS-AI, dem Digital Studio von Bastian Schwinger in Stadtilm. Case Studies zu Websites, Shops und Apps aus Thüringen.",
+      path: `/referenzen/${slug}`,
+    });
   }
-  if (slug === "zahnaerzte-am-inn") {
-    return {
-      title: "Zahnärzte am Inn – Petri & Kollegen – BonS-AI",
-      description:
-        "Case Study: Praxis-Website für zwei Standorte. Webdesign, SEO, DSGVO, Kontaktformular. Next.js, Resend, JSON-LD.",
-    };
-  }
-  if (slug === "lindora-home") {
-    return {
-      title: "Lindora-Home – Onlineshop mit CMS – BonS-AI",
-      description:
-        "Case Study: Onlineshop für handgegossene Kerzen. Stripe-Checkout, CMS/Pflege, Supabase, Rechtstexte. Next.js.",
-    };
-  }
-  if (slug === "naturverbunden-jena") {
-    return {
-      title: "Naturverbunden Jena – BonS-AI",
-      description:
-        "Case Study: Ruhige Website für naturnahe Gespräche in Jena. Webdesign, Content, Local SEO, DSGVO. Next.js.",
-    };
-  }
-  if (!data) return { title: "Referenz – BonS-AI" };
-  return { title: `${data.title} – BonS-AI`, description: data.ergebnis };
+  return buildContentMetadata({
+    title: seo.title,
+    description: seo.description,
+    path: `/referenzen/${slug}`,
+  });
 }
 
 export async function generateStaticParams() {
@@ -98,17 +106,42 @@ export default async function ReferenzDetailPage({ params }: Props) {
   const data = CASE_STUDIES[slug];
   if (!data) notFound();
 
+  const seo = REFERENZ_SEO[slug];
+  const schema = seo ? (
+    <JsonLd data={webPageJsonLd(seo.title, seo.description, `/referenzen/${slug}`)} />
+  ) : null;
+
   if (slug === "innovation-mvp") {
-    return <PushCaseStudy />;
+    return (
+      <>
+        {schema}
+        <PushCaseStudy />
+      </>
+    );
   }
   if (slug === "zahnaerzte-am-inn") {
-    return <ZahnaerzteAmInnCaseStudy />;
+    return (
+      <>
+        {schema}
+        <ZahnaerzteAmInnCaseStudy />
+      </>
+    );
   }
   if (slug === "lindora-home") {
-    return <LindoraCaseStudy />;
+    return (
+      <>
+        {schema}
+        <LindoraCaseStudy />
+      </>
+    );
   }
   if (slug === "naturverbunden-jena") {
-    return <NaturverbundenJenaCaseStudy />;
+    return (
+      <>
+        {schema}
+        <NaturverbundenJenaCaseStudy />
+      </>
+    );
   }
 
   return (

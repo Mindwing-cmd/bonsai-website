@@ -10,7 +10,6 @@ import {
   Clock,
   Shield,
   Zap,
-  Briefcase,
 } from "lucide-react";
 import { LEGAL } from "@/data/legal";
 import { SynapseBackground } from "@/components/ui/synapse-background";
@@ -35,16 +34,16 @@ const contactMethods = [
   {
     icon: MapPin,
     title: "Standort",
-    description: "Wir sind digital für Sie da",
-    value: "Deutschlandweit",
-    link: "#",
+    description: "Nelkenweg 6, 99326 Stadtilm",
+    value: "Thüringen",
+    link: "/impressum",
   },
 ];
 
 const companyStats = [
   { label: "Antwortzeit", value: "< 24 h", icon: Clock, animateNumber: true, numberValue: 24, prefix: "< ", suffix: " h" },
-  { label: "Projekte", value: "15", icon: Briefcase, animateNumber: true, numberValue: 15 },
-  { label: "Sicherheit", value: "DSGVO konform", icon: Shield },
+  { label: "Standort", value: "Stadtilm", icon: MapPin },
+  { label: "Sicherheit", value: "DSGVO-konform", icon: Shield },
   { label: "Umsetzung", value: "Messbar", icon: Zap },
 ];
 
@@ -196,17 +195,19 @@ export function PremiumContactSection() {
       >
         {/* Header */}
         <motion.div className="text-center mb-16 md:mb-20" variants={fadeInUp}>
-          <motion.h2
+          <motion.h1
             className="font-primary text-3xl font-bold tracking-tight text-[var(--foreground)] sm:text-4xl md:text-5xl lg:text-6xl mb-6"
             variants={fadeInUp}
           >
-            <span className="border-b-2 border-[var(--brand-accent)]">Schreiben</span> Sie uns
-          </motion.h2>
+            Wie erreichen Sie <span className="border-b-2 border-[var(--brand-accent)]">BonS-AI</span>?
+          </motion.h1>
           <motion.p
-            className="text-xl text-white/60 max-w-2xl mx-auto"
+            className="mx-auto max-w-3xl text-base text-white/70 md:text-lg"
             variants={fadeInUp}
           >
-            Projekt im Kopf? Wir melden uns zeitnah – in der Regel innerhalb von 24 Stunden.
+            BonS-AI erreichen Sie über {LEGAL.anbieter} in {LEGAL.city}, {LEGAL.region}, {LEGAL.strasse}, {LEGAL.plzOrt}.
+            Schreiben Sie an {LEGAL.email} oder rufen Sie {LEGAL.telefon} an. Eine Rückmeldung kommt in der Regel
+            innerhalb von 24 Stunden. Das Studio arbeitet für Unternehmen in Thüringen und darüber hinaus.
           </motion.p>
         </motion.div>
 
@@ -271,7 +272,7 @@ export function PremiumContactSection() {
                     <div className="flex-1 min-w-0">
                       <h4 className="text-xl font-semibold text-[var(--foreground)] mb-1">{method.title}</h4>
                       <p className="text-white/60 text-sm mb-2">{method.description}</p>
-                      <p className="text-[var(--foreground)] font-medium truncate">{method.value}</p>
+                      <p className="text-[var(--foreground)] font-medium break-words">{method.value}</p>
                     </div>
                     <ArrowRight className="w-5 h-5 text-white/40 shrink-0 group-hover:text-white group-hover:translate-x-1 transition-all" />
                   </div>

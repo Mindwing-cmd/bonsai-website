@@ -7,7 +7,7 @@ export const LEISTUNGEN_VERGLEICH_PLÄNE: LeistungVergleichPlan[] = [
     slug: "webdesign",
     name: "Webdesign",
     badge: "Website",
-    price: "Ab 2.500 €",
+    price: "Ab 2.499 €",
   },
   {
     slug: "ki-systeme",
